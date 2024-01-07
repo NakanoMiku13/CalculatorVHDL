@@ -1,0 +1,33 @@
+if buttonPressFlag = '1' and selector = x"0" then
+				leds <= not "0000";
+			elsif buttonPressFlag = '1' and selector = x"1" then
+				leds <= not "0001";
+			elsif buttonPressFlag = '1' and selector = x"2" then
+				leds <= not "0010";
+			elsif buttonPressFlag = '1' and selector = x"3" then
+				leds <= not "0011";
+			elsif buttonPressFlag = '1' and selector = x"4" then
+				leds <= not "0011";
+			elsif buttonPressFlag = '1' and selector = x"5" then
+				leds <= not "0101";
+			elsif buttonPressFlag = '1' and selector = x"6" then
+				leds <= not "0110";
+			elsif buttonPressFlag = '1' and selector = x"7" then
+				leds <= not "0111";
+			elsif buttonPressFlag = '1' and selector = x"8" then
+				leds <= not "1000";
+			elsif buttonPressFlag = '1' and selector = x"9" then
+				leds <= not "1001";
+			elsif buttonPressFlag = '1' and selector = x"A" then
+				leds <= not "1010";
+			elsif buttonPressFlag = '1' and selector = x"B" then
+				leds <= not "1011";
+			elsif buttonPressFlag = '1' and selector = x"C" then
+				leds <= not "1100";
+			elsif buttonPressFlag = '1' and selector = x"D" then -- 
+				leds <= not "1101";
+			elsif buttonPressFlag = '1' and selector = x"E" then -- *
+				leds <= not "1110";
+			elsif buttonPressFlag = '1' and selector = x"F" then -- B
+				leds <= not "1111";*/
+			end if;

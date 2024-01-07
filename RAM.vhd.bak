@@ -1,0 +1,6 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity RAM is
+	Port(
+		direction, dataIn : in std_logic_vector(3 downto 0);
+		dataOut : out std_logic_vector(3 downto 0);

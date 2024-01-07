@@ -1,0 +1,133 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rows[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rows[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rows[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rows[3]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "lcdData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segments[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rs",
+					"strict" : false
+				},
+				{
+					"name" : "e",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "cols[3]",
+					"strict" : false
+				},
+				{
+					"name" : "cols[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cols[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cols[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity ConvertToLCD is
+	Port(
+		input : in std_logic_vector(39 downto 0);
+		lcd_data : out std_logic_vector(127 downto 0);
+		clock, reset : in std_logic
+	);
+end ConvertToLCD;
+architecture ArchConvertToLCD of ConvertToLCD is
+	signal tempResult : std_logic_vector(127 downto 0) := (others => '0');
+begin
+	if

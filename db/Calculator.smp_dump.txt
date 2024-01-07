@@ -1,0 +1,9 @@
+
+State Machine - |Calculator|LCD:DisplayLCD|state
+Name state.send state.line2 state.line1 state.RESETLINE state.initialize state.power_up 
+state.power_up 0 0 0 0 0 0 
+state.initialize 0 0 0 0 1 1 
+state.RESETLINE 0 0 0 1 0 1 
+state.line1 0 0 1 0 0 1 
+state.line2 0 1 0 0 0 1 
+state.send 1 0 0 0 0 1 

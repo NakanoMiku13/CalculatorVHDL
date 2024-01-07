@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity CPU is
+	Port(
+		clock, reset : in std_logic;
+		opCode : in std_logic_vector(3 downto 0);
+		result : out std_logic_vector(31 downto 0)
+	);
+end CPU;
+architecture ArchCPU of CPU is
+begin
+
+end ArchCPU;
