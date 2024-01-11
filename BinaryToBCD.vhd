@@ -4,28 +4,24 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity BinaryToBCD is
-    Port (
-		input : in  STD_LOGIC_VECTOR (31 downto 0);
-		clock, reset : in  STD_LOGIC;
-		indexBegin, indexEnd, divider : integer;
-		output : out  STD_LOGIC_VECTOR (63 downto 0)
-    );
+    Port ( input : in  STD_LOGIC_VECTOR (15 downto 0);
+           clock, reset : in  STD_LOGIC;
+           output : out  STD_LOGIC_VECTOR (15 downto 0)
+          );
 end BinaryToBCD;
 
 architecture Behavioral of BinaryToBCD is
     signal  err :  STD_LOGIC;
 begin
 	process (clock)
-		variable temp : integer ;
 	begin
-		if rising_edge(clock) then
-			--output(127 downto 64) <= (others => '0');
-			temp := conv_integer(input);
-			if divider = 1 then
-				output(indexBegin downto indexEnd) <= "0011" & conv_std_logic_vector(temp MOD 10,4);
-			else
-				output(indexBegin downto indexEnd) <= "0011" & conv_std_logic_vector(temp / divider,4);
-			end if;
+		if reset = '0' then
+			output <= (others => '0');
+		elsif rising_edge(clock) then
+			output(15 downto 12) <= conv_std_logic_vector((conv_integer(input) / 1000),4);
+			output(11 downto 8) <= conv_std_logic_vector((conv_integer(input) / 100)MOD 10,4);
+			output(7 downto 4) <= conv_std_logic_vector((conv_integer(input) / 10)MOD 10,4);
+			output(3 downto 0) <= conv_std_logic_vector((conv_integer(input))MOD 10,4);
 		end if;
 	end process;
 end Behavioral;

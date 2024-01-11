@@ -1,1 +1,5 @@
 v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_out4,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_mult3,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_mult1,

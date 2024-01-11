@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Calculator
-Sat Jan  6 22:30:29 2024
+Wed Jan 10 21:14:12 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -13,22 +13,32 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Calculator|LCD:DisplayLCD|state
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Keyboard:InputKeyboard
- 15. Port Connectivity Checks: "LCD:DisplayLCD"
- 16. Port Connectivity Checks: "CPU:Calculator|Multiplier:Multi"
- 17. Port Connectivity Checks: "CPU:Calculator|FullAdder:Adder"
- 18. Port Connectivity Checks: "CPU:Calculator|FullAdder:AdderPC"
- 19. Port Connectivity Checks: "CPU:Calculator|ROM:ROMAccess"
- 20. Port Connectivity Checks: "CPU:Calculator"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |Calculator|LCD:DisplayLCD|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Keyboard:InputKeyboard
+ 16. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div2
+ 17. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod1
+ 18. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div1
+ 19. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod2
+ 21. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: Converter:ConverterRAM|lpm_mult:Mult0
+ 23. lpm_mult Parameter Settings by Entity Instance
+ 24. Port Connectivity Checks: "CPU:Calculator|Divider:Divi"
+ 25. Port Connectivity Checks: "CPU:Calculator|Multiplier:Multi"
+ 26. Port Connectivity Checks: "CPU:Calculator|FullAdder:Substract"
+ 27. Port Connectivity Checks: "CPU:Calculator|FullAdder:Adder"
+ 28. Port Connectivity Checks: "CPU:Calculator|FullAdder:AdderPC"
+ 29. Port Connectivity Checks: "CPU:Calculator|ROM:ROMAccess"
+ 30. Port Connectivity Checks: "CPU:Calculator"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -55,19 +65,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jan  6 22:30:29 2024          ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 10 21:14:12 2024          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Calculator                                     ;
 ; Top-level Entity Name              ; Calculator                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 842                                            ;
-;     Total combinational functions  ; 705                                            ;
-;     Dedicated logic registers      ; 361                                            ;
-; Total registers                    ; 361                                            ;
+; Total logic elements               ; 3,512                                          ;
+;     Total combinational functions  ; 3,159                                          ;
+;     Dedicated logic registers      ; 1,020                                          ;
+; Total registers                    ; 1020                                           ;
 ; Total pins                         ; 37                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 4                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
@@ -170,26 +180,52 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; ROM.vhd                          ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/ROM.vhd        ;         ;
-; Multiplier.vhd                   ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/Multiplier.vhd ;         ;
-; FullAdder.vhd                    ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/FullAdder.vhd  ;         ;
-; Calculator.vhd                   ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/Calculator.vhd ;         ;
-; Keyboard.vhd                     ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/Keyboard.vhd   ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/CPU.vhd        ;         ;
-; LCD.vhd                          ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/LCD.vhd        ;         ;
-; RAM.vhd                          ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/RAM.vhd        ;         ;
-; Display.vhd                      ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/Display.vhd    ;         ;
-; Converter.vhd                    ; yes             ; User VHDL File  ; /mnt/External/Codigos/Calculator32bits/Converter.vhd  ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; ROM.vhd                          ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/ROM.vhd                                        ;         ;
+; Multiplier.vhd                   ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Multiplier.vhd                                 ;         ;
+; FullAdder.vhd                    ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/FullAdder.vhd                                  ;         ;
+; Calculator.vhd                   ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Calculator.vhd                                 ;         ;
+; Keyboard.vhd                     ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Keyboard.vhd                                   ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/CPU.vhd                                        ;         ;
+; LCD.vhd                          ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/LCD.vhd                                        ;         ;
+; RAM.vhd                          ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/RAM.vhd                                        ;         ;
+; Display.vhd                      ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Display.vhd                                    ;         ;
+; Converter.vhd                    ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Converter.vhd                                  ;         ;
+; BinaryToBCD.vhd                  ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd                                ;         ;
+; Divider.vhd                      ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Divider.vhd                                    ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc      ;         ;
+; db/lpm_divide_2jm.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/lpm_divide_2jm.tdf                          ;         ;
+; db/sign_div_unsign_qlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_qlh.tdf                     ;         ;
+; db/alt_u_div_87f.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/alt_u_div_87f.tdf                           ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/add_sub_7pc.tdf                             ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/add_sub_8pc.tdf                             ;         ;
+; db/lpm_divide_ocm.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/lpm_divide_ocm.tdf                          ;         ;
+; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_dnh.tdf                     ;         ;
+; db/alt_u_div_eaf.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf                           ;         ;
+; db/lpm_divide_5jm.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/lpm_divide_5jm.tdf                          ;         ;
+; db/sign_div_unsign_tlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_tlh.tdf                     ;         ;
+; db/alt_u_div_e7f.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/alt_u_div_e7f.tdf                           ;         ;
+; db/lpm_divide_fkm.tdf            ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/lpm_divide_fkm.tdf                          ;         ;
+; db/sign_div_unsign_7nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_7nh.tdf                     ;         ;
+; db/alt_u_div_2af.tdf             ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/alt_u_div_2af.tdf                           ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/multcore.inc        ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/bypassff.inc        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/altshift.inc        ;         ;
+; db/mult_k4t.tdf                  ; yes             ; Auto-Generated Megafunction  ; /mnt/External/Codigos/Calculator32bits/db/mult_k4t.tdf                                ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -197,47 +233,97 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 842         ;
+; Estimated Total logic elements              ; 3,512       ;
 ;                                             ;             ;
-; Total combinational functions               ; 705         ;
+; Total combinational functions               ; 3159        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 373         ;
-;     -- 3 input functions                    ; 69          ;
-;     -- <=2 input functions                  ; 263         ;
+;     -- 4 input functions                    ; 1208        ;
+;     -- 3 input functions                    ; 932         ;
+;     -- <=2 input functions                  ; 1019        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 546         ;
-;     -- arithmetic mode                      ; 159         ;
+;     -- normal mode                          ; 2340        ;
+;     -- arithmetic mode                      ; 819         ;
 ;                                             ;             ;
-; Total registers                             ; 361         ;
-;     -- Dedicated logic registers            ; 361         ;
+; Total registers                             ; 1020        ;
+;     -- Dedicated logic registers            ; 1020        ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 37          ;
 ;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
+; Embedded Multiplier 9-bit elements          ; 4           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 361         ;
-; Total fan-out                               ; 3281        ;
-; Average fan-out                             ; 2.88        ;
+; Maximum fan-out                             ; 1020        ;
+; Total fan-out                               ; 12753       ;
+; Average fan-out                             ; 3.00        ;
 +---------------------------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+-------------+--------------+
-; |Calculator                 ; 705 (235)           ; 361 (95)                  ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |Calculator                                  ; CPU         ; work         ;
-;    |CPU:Calculator|         ; 56 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator                   ; CPU         ; work         ;
-;       |FullAdder:AdderPC|   ; 32 (32)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|FullAdder:AdderPC ; FullAdder   ; work         ;
-;       |FullAdder:Adder|     ; 24 (24)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|FullAdder:Adder   ; FullAdder   ; work         ;
-;    |Display:Display4Dig|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|Display:Display4Dig              ; Display     ; work         ;
-;    |Keyboard:InputKeyboard| ; 129 (129)           ; 170 (170)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|Keyboard:InputKeyboard           ; Keyboard    ; work         ;
-;    |LCD:DisplayLCD|         ; 278 (278)           ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|LCD:DisplayLCD                   ; LCD         ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                           ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                               ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Calculator                               ; 3159 (486)          ; 1020 (340)                ; 0           ; 4            ; 0       ; 2         ; 37   ; 0            ; |Calculator                                                                                                                       ; CPU                 ; work         ;
+;    |BinaryToBCD:BinaryBCD|                ; 1492 (13)           ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD                                                                                                 ; BinaryToBCD         ; work         ;
+;       |lpm_divide:Div0|                   ; 182 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_fkm:auto_generated|  ; 182 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0|lpm_divide_fkm:auto_generated                                                   ; lpm_divide_fkm      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 182 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0|lpm_divide_fkm:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_2af:divider|    ; 182 (182)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0|lpm_divide_fkm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider ; alt_u_div_2af       ; work         ;
+;       |lpm_divide:Div1|                   ; 210 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_5jm:auto_generated|  ; 210 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div1|lpm_divide_5jm:auto_generated                                                   ; lpm_divide_5jm      ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 210 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div1|lpm_divide_5jm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh ; work         ;
+;                |alt_u_div_e7f:divider|    ; 210 (210)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div1|lpm_divide_5jm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_e7f:divider ; alt_u_div_e7f       ; work         ;
+;       |lpm_divide:Div2|                   ; 169 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_2jm:auto_generated|  ; 169 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div2|lpm_divide_2jm:auto_generated                                                   ; lpm_divide_2jm      ; work         ;
+;             |sign_div_unsign_qlh:divider| ; 169 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh ; work         ;
+;                |alt_u_div_87f:divider|    ; 169 (169)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div2|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ; alt_u_div_87f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 244 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ocm:auto_generated|  ; 244 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated                                                   ; lpm_divide_ocm      ; work         ;
+;             |sign_div_unsign_dnh:divider| ; 244 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;                |alt_u_div_eaf:divider|    ; 244 (244)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider ; alt_u_div_eaf       ; work         ;
+;       |lpm_divide:Mod1|                   ; 313 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ocm:auto_generated|  ; 313 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated                                                   ; lpm_divide_ocm      ; work         ;
+;             |sign_div_unsign_dnh:divider| ; 313 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;                |alt_u_div_eaf:divider|    ; 313 (313)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod1|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider ; alt_u_div_eaf       ; work         ;
+;       |lpm_divide:Mod2|                   ; 361 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ocm:auto_generated|  ; 361 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod2|lpm_divide_ocm:auto_generated                                                   ; lpm_divide_ocm      ; work         ;
+;             |sign_div_unsign_dnh:divider| ; 361 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod2|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;                |alt_u_div_eaf:divider|    ; 361 (361)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod2|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider ; alt_u_div_eaf       ; work         ;
+;    |CPU:Calculator|                       ; 655 (166)           ; 276 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator                                                                                                        ; CPU                 ; work         ;
+;       |Divider:Divi|                      ; 86 (86)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Divider:Divi                                                                                           ; Divider             ; work         ;
+;       |FullAdder:Adder|                   ; 109 (109)           ; 97 (97)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|FullAdder:Adder                                                                                        ; FullAdder           ; work         ;
+;       |FullAdder:Substract|               ; 153 (153)           ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|FullAdder:Substract                                                                                    ; FullAdder           ; work         ;
+;       |Multiplier:Multi|                  ; 139 (139)           ; 80 (80)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Multiplier:Multi                                                                                       ; Multiplier          ; work         ;
+;       |ROM:ROMAccess|                     ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|ROM:ROMAccess                                                                                          ; ROM                 ; work         ;
+;    |Converter:ConverterRAM|               ; 56 (46)             ; 96 (96)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |Calculator|Converter:ConverterRAM                                                                                                ; Converter           ; work         ;
+;       |lpm_mult:Mult0|                    ; 10 (0)              ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |Calculator|Converter:ConverterRAM|lpm_mult:Mult0                                                                                 ; lpm_mult            ; work         ;
+;          |mult_k4t:auto_generated|        ; 10 (10)             ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |Calculator|Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated                                                         ; mult_k4t            ; work         ;
+;    |Display:Display4Dig|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|Display:Display4Dig                                                                                                   ; Display             ; work         ;
+;    |Keyboard:InputKeyboard|               ; 130 (130)           ; 170 (170)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|Keyboard:InputKeyboard                                                                                                ; Keyboard            ; work         ;
+;    |LCD:DisplayLCD|                       ; 268 (268)           ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|LCD:DisplayLCD                                                                                                        ; LCD                 ; work         ;
+;    |RAM:RAM_1|                            ; 65 (65)             ; 68 (68)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|RAM:RAM_1                                                                                                             ; RAM                 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 2           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 4           ;
+; Signed Embedded Multipliers           ; 1           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 1           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 Encoding Type:  One-Hot
@@ -255,186 +341,208 @@ Encoding Type:  One-Hot
 +------------------+------------+-------------+-------------+-----------------+------------------+----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                               ;
-+----------------------------------------------------+-------------------------------------------------------------+
-; Register name                                      ; Reason for Removal                                          ;
-+----------------------------------------------------+-------------------------------------------------------------+
-; line1[127]                                         ; Stuck at GND due to stuck port data_in                      ;
-; line1[120]                                         ; Stuck at VCC due to stuck port data_in                      ;
-; line1[119]                                         ; Stuck at GND due to stuck port data_in                      ;
-; line1[117]                                         ; Stuck at VCC due to stuck port data_in                      ;
-; line1[116]                                         ; Stuck at GND due to stuck port data_in                      ;
-; line1[114]                                         ; Stuck at VCC due to stuck port data_in                      ;
-; line1[113]                                         ; Stuck at GND due to stuck port data_in                      ;
-; line1[112]                                         ; Stuck at VCC due to stuck port data_in                      ;
-; line1[111]                                         ; Stuck at GND due to stuck port data_in                      ;
-; line1[109]                                         ; Stuck at VCC due to stuck port data_in                      ;
-; line1[95,96,100,103..105,108]                      ; Stuck at GND due to stuck port data_in                      ;
-; line1[94]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[86,87,92]                                    ; Stuck at GND due to stuck port data_in                      ;
-; line1[85]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[79,80,82]                                    ; Stuck at GND due to stuck port data_in                      ;
-; line1[77]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[71,72,75]                                    ; Stuck at GND due to stuck port data_in                      ;
-; line1[70]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[63]                                          ; Stuck at GND due to stuck port data_in                      ;
-; line1[62]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[47,55]                                       ; Stuck at GND due to stuck port data_in                      ;
-; line1[45]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[39]                                          ; Stuck at GND due to stuck port data_in                      ;
-; line1[37]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[31]                                          ; Stuck at GND due to stuck port data_in                      ;
-; line1[29]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[23]                                          ; Stuck at GND due to stuck port data_in                      ;
-; line1[21]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[15,20]                                       ; Stuck at GND due to stuck port data_in                      ;
-; line1[13]                                          ; Stuck at VCC due to stuck port data_in                      ;
-; line1[7,12]                                        ; Stuck at GND due to stuck port data_in                      ;
-; line1[5]                                           ; Stuck at VCC due to stuck port data_in                      ;
-; line1[4]                                           ; Stuck at GND due to stuck port data_in                      ;
-; operationSelector[3]                               ; Stuck at GND due to stuck port data_in                      ;
-; line2[4,5]                                         ; Stuck at VCC due to stuck port data_in                      ;
-; line2[6,7]                                         ; Stuck at GND due to stuck port data_in                      ;
-; CPU:Calculator|Multiplier:Multi|tB[16..31]         ; Stuck at GND due to stuck port data_in                      ;
-; line1[56,81,83,84,101,106,107,110,118,121,124]     ; Merged with line1[126]                                      ;
-; line1[73,74,76,78,91,93,97..99,102,115,122,123]    ; Merged with line1[125]                                      ;
-; line1[53]                                          ; Merged with line1[61]                                       ;
-; line1[9,17,36]                                     ; Merged with line1[43]                                       ;
-; line1[0,1]                                         ; Merged with line1[41]                                       ;
-; line1[2,3]                                         ; Merged with line1[6]                                        ;
-; CPU:Calculator|FullAdder:Adder|count[31]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[31]      ;
-; CPU:Calculator|FullAdder:Adder|count[30]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[30]      ;
-; CPU:Calculator|FullAdder:Adder|count[29]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[29]      ;
-; CPU:Calculator|FullAdder:Adder|count[28]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[28]      ;
-; CPU:Calculator|FullAdder:Adder|count[27]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[27]      ;
-; CPU:Calculator|FullAdder:Adder|count[26]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[26]      ;
-; CPU:Calculator|FullAdder:Adder|count[25]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[25]      ;
-; CPU:Calculator|FullAdder:Adder|count[24]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[24]      ;
-; CPU:Calculator|FullAdder:Adder|count[23]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[23]      ;
-; CPU:Calculator|FullAdder:Adder|count[22]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[22]      ;
-; CPU:Calculator|FullAdder:Adder|count[21]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[21]      ;
-; CPU:Calculator|FullAdder:Adder|count[20]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[20]      ;
-; CPU:Calculator|FullAdder:Adder|count[19]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[19]      ;
-; CPU:Calculator|FullAdder:Adder|count[18]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[18]      ;
-; CPU:Calculator|FullAdder:Adder|count[17]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[17]      ;
-; CPU:Calculator|FullAdder:Adder|count[16]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[16]      ;
-; CPU:Calculator|FullAdder:Adder|count[15]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[15]      ;
-; CPU:Calculator|FullAdder:Adder|count[14]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[14]      ;
-; CPU:Calculator|FullAdder:Adder|count[13]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[13]      ;
-; CPU:Calculator|FullAdder:Adder|count[12]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[12]      ;
-; CPU:Calculator|FullAdder:Adder|count[11]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[11]      ;
-; CPU:Calculator|FullAdder:Adder|count[10]           ; Merged with CPU:Calculator|FullAdder:AdderPC|count[10]      ;
-; CPU:Calculator|FullAdder:Adder|count[9]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[9]       ;
-; CPU:Calculator|FullAdder:Adder|count[8]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[8]       ;
-; CPU:Calculator|FullAdder:Adder|count[7]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[7]       ;
-; CPU:Calculator|FullAdder:Adder|count[6]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[6]       ;
-; CPU:Calculator|FullAdder:Adder|count[4]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[4]       ;
-; CPU:Calculator|FullAdder:Adder|count[3]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[3]       ;
-; CPU:Calculator|FullAdder:Adder|count[2]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[2]       ;
-; CPU:Calculator|FullAdder:Adder|count[1]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[1]       ;
-; CPU:Calculator|FullAdder:Adder|count[0]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[0]       ;
-; CPU:Calculator|FullAdder:Adder|count[5]            ; Merged with CPU:Calculator|FullAdder:AdderPC|count[5]       ;
-; CPU:Calculator|Multiplier:Multi|tempResult[0]      ; Merged with CPU:Calculator|Multiplier:Multi|bufferResult[0] ;
-; CPU:Calculator|Multiplier:Multi|tempResult[1]      ; Merged with CPU:Calculator|Multiplier:Multi|bufferResult[1] ;
-; CPU:Calculator|Multiplier:Multi|tempResult[2]      ; Merged with CPU:Calculator|Multiplier:Multi|bufferResult[2] ;
-; CPU:Calculator|Multiplier:Multi|tempResult[3]      ; Merged with CPU:Calculator|Multiplier:Multi|bufferResult[3] ;
-; CPU:Calculator|FullAdder:AdderPC|cin[0..32]        ; Stuck at GND due to stuck port data_in                      ;
-; CPU:Calculator|Multiplier:Multi|tB[0,1,3..15]      ; Stuck at GND due to stuck port data_in                      ;
-; CPU:Calculator|FullAdder:AdderPC|tempResult[0..3]  ; Stuck at GND due to stuck port data_in                      ;
-; CPU:Calculator|FullAdder:AdderPC|result[0..3]      ; Stuck at GND due to stuck port data_in                      ;
-; line1[125]                                         ; Merged with line1[126]                                      ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[0..3] ; Lost fanout                                                 ;
-; CPU:Calculator|Multiplier:Multi|counter[0..31]     ; Lost fanout                                                 ;
-; CPU:Calculator|Multiplier:Multi|tB[2]              ; Lost fanout                                                 ;
-; line1[41]                                          ; Merged with line1[54]                                       ;
-; LCD:DisplayLCD|rw                                  ; Stuck at GND due to stuck port data_in                      ;
-; CPU:Calculator|FullAdder:Adder|cin[0,4..32]        ; Stuck at GND due to stuck port data_in                      ;
-; Keyboard:InputKeyboard|CONTA_1MS[0]                ; Merged with Keyboard:InputKeyboard|CONTA_10MS[0]            ;
-; Keyboard:InputKeyboard|CONTA_1MS[1]                ; Merged with Keyboard:InputKeyboard|CONTA_10MS[1]            ;
-; Keyboard:InputKeyboard|CONTA_1MS[2]                ; Merged with Keyboard:InputKeyboard|CONTA_10MS[2]            ;
-; Keyboard:InputKeyboard|CONTA_1MS[3]                ; Merged with Keyboard:InputKeyboard|CONTA_10MS[3]            ;
-; CPU:Calculator|FullAdder:Adder|cin[1]              ; Stuck at GND due to stuck port data_in                      ;
-; Total Number of Removed Registers = 268            ;                                                             ;
-+----------------------------------------------------+-------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++-----------------------------------------------------+----------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal  ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------+------------------------+
+; CPU:Calculator|setB[6]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[5]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[4]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[7]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[9]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[10]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[8]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[11]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[1]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[2]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[0]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[3]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[14]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[13]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[12]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[15]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[21]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[25]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[17]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[29]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[26]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[22]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[18]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[30]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[24]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[20]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[16]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[28]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[23]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[27]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[19]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setB[31]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[10]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[9]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[8]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[11]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[5]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[6]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[4]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[7]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[2]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[1]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[0]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[3]                              ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[13]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[14]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[12]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[15]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[22]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[26]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[18]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[30]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[25]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[21]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[17]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[29]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[20]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[24]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[16]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[28]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[27]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[23]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[19]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|setA[31]                             ; CPU:Calculator|Mux33 ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[0]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[1]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[2]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[3]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[4]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[5]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[6]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[7]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[8]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[9]     ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[10]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[11]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[12]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[13]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[14]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[15]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[16]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[17]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[18]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[19]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[20]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[21]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[22]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[23]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[24]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[25]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[26]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[27]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[28]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[29]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[30]    ; resetCPU             ; yes                    ;
+; CPU:Calculator|Divider:Divi|tempSubstraction[31]    ; resetCPU             ; yes                    ;
+; Number of user-specified and inferred latches = 96  ;                      ;                        ;
++-----------------------------------------------------+----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                              ;
-+------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
-; Register name                            ; Reason for Removal        ; Registers Removed due to This Register                                            ;
-+------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
-; CPU:Calculator|FullAdder:AdderPC|cin[32] ; Stuck at GND              ; CPU:Calculator|FullAdder:AdderPC|tempResult[3],                                   ;
-;                                          ; due to stuck port data_in ; CPU:Calculator|FullAdder:AdderPC|tempResult[2],                                   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:AdderPC|tempResult[1],                                   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:AdderPC|tempResult[0],                                   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:AdderPC|result[3],                                       ;
-;                                          ;                           ; CPU:Calculator|FullAdder:AdderPC|result[2],                                       ;
-;                                          ;                           ; CPU:Calculator|FullAdder:AdderPC|result[1],                                       ;
-;                                          ;                           ; CPU:Calculator|FullAdder:AdderPC|result[0],                                       ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|bufferResult[1],                                  ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|bufferResult[0],                                  ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[32], CPU:Calculator|FullAdder:Adder|cin[31],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[30], CPU:Calculator|FullAdder:Adder|cin[29],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[28], CPU:Calculator|FullAdder:Adder|cin[27],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[26], CPU:Calculator|FullAdder:Adder|cin[25],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[24], CPU:Calculator|FullAdder:Adder|cin[23],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[22], CPU:Calculator|FullAdder:Adder|cin[21],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[20], CPU:Calculator|FullAdder:Adder|cin[19],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[18], CPU:Calculator|FullAdder:Adder|cin[17],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[16], CPU:Calculator|FullAdder:Adder|cin[15],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[14], CPU:Calculator|FullAdder:Adder|cin[13],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[12], CPU:Calculator|FullAdder:Adder|cin[11],   ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[10], CPU:Calculator|FullAdder:Adder|cin[9],    ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[8], CPU:Calculator|FullAdder:Adder|cin[7],     ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[6], CPU:Calculator|FullAdder:Adder|cin[5],     ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[4], CPU:Calculator|FullAdder:Adder|cin[0],     ;
-;                                          ;                           ; CPU:Calculator|FullAdder:Adder|cin[1]                                             ;
-; CPU:Calculator|Multiplier:Multi|tB[15]   ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[31],                                      ;
-;                                          ; due to stuck port data_in ; CPU:Calculator|Multiplier:Multi|counter[30],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[29],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[28],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[27],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[26],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[25],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[24],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[22],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[21],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[20],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[19],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[18],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[17],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[16],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[15],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[14],                                      ;
-;                                          ;                           ; CPU:Calculator|Multiplier:Multi|counter[13]                                       ;
-; CPU:Calculator|Multiplier:Multi|tB[3]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[1], CPU:Calculator|Multiplier:Multi|tB[2] ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[14]   ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[12]                                       ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[13]   ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[11]                                       ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[12]   ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[10]                                       ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[11]   ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[9]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[10]   ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[8]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[9]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[7]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[8]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[6]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[7]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[5]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[6]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[4]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[5]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[3]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[4]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[2]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-; CPU:Calculator|Multiplier:Multi|tB[1]    ; Stuck at GND              ; CPU:Calculator|Multiplier:Multi|counter[0]                                        ;
-;                                          ; due to stuck port data_in ;                                                                                   ;
-+------------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                     ;
++-------------------------------------------------+------------------------------------------------------+
+; Register name                                   ; Reason for Removal                                   ;
++-------------------------------------------------+------------------------------------------------------+
+; line1[127]                                      ; Stuck at GND due to stuck port data_in               ;
+; line1[120]                                      ; Stuck at VCC due to stuck port data_in               ;
+; line1[119]                                      ; Stuck at GND due to stuck port data_in               ;
+; line1[117]                                      ; Stuck at VCC due to stuck port data_in               ;
+; line1[116]                                      ; Stuck at GND due to stuck port data_in               ;
+; line1[114]                                      ; Stuck at VCC due to stuck port data_in               ;
+; line1[113]                                      ; Stuck at GND due to stuck port data_in               ;
+; line1[112]                                      ; Stuck at VCC due to stuck port data_in               ;
+; line1[111]                                      ; Stuck at GND due to stuck port data_in               ;
+; line1[109]                                      ; Stuck at VCC due to stuck port data_in               ;
+; line1[95,96,100,103..105,108]                   ; Stuck at GND due to stuck port data_in               ;
+; line1[94]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[86,87,92]                                 ; Stuck at GND due to stuck port data_in               ;
+; line1[85]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[79,80,82]                                 ; Stuck at GND due to stuck port data_in               ;
+; line1[77]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[71,72,75]                                 ; Stuck at GND due to stuck port data_in               ;
+; line1[70]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[63]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[62]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[47,55]                                    ; Stuck at GND due to stuck port data_in               ;
+; line1[45]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[39]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[37]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[31]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[29]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[23]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[21]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[15,20]                                    ; Stuck at GND due to stuck port data_in               ;
+; line1[13]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[7,12]                                     ; Stuck at GND due to stuck port data_in               ;
+; line1[5]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[4]                                        ; Stuck at GND due to stuck port data_in               ;
+; line2[4,5]                                      ; Stuck at VCC due to stuck port data_in               ;
+; line2[6,7]                                      ; Stuck at GND due to stuck port data_in               ;
+; line2[12,13]                                    ; Stuck at VCC due to stuck port data_in               ;
+; line2[14,15]                                    ; Stuck at GND due to stuck port data_in               ;
+; line2[20,21]                                    ; Stuck at VCC due to stuck port data_in               ;
+; line2[22,23]                                    ; Stuck at GND due to stuck port data_in               ;
+; line2[28,29]                                    ; Stuck at VCC due to stuck port data_in               ;
+; line2[30,31]                                    ; Stuck at GND due to stuck port data_in               ;
+; CPU:Calculator|Divider:Divi|tA[1]               ; Stuck at GND due to stuck port data_in               ;
+; CPU:Calculator|Multiplier:Multi|tB[16..31]      ; Stuck at GND due to stuck port data_in               ;
+; operationSelector[3]                            ; Stuck at GND due to stuck port data_in               ;
+; line2[32..127]                                  ; Stuck at GND due to stuck port data_in               ;
+; line1[56,81,83,84,101,106,107,110,118,121,124]  ; Merged with line1[126]                               ;
+; line1[73,74,76,78,91,93,97..99,102,115,122,123] ; Merged with line1[125]                               ;
+; line1[1,41]                                     ; Merged with line1[0]                                 ;
+; line1[9,36,43]                                  ; Merged with line1[17]                                ;
+; line1[3,6]                                      ; Merged with line1[2]                                 ;
+; line1[61]                                       ; Merged with line1[53]                                ;
+; CPU:Calculator|FullAdder:Substract|count[31]    ; Merged with CPU:Calculator|FullAdder:Adder|count[31] ;
+; CPU:Calculator|FullAdder:Substract|count[30]    ; Merged with CPU:Calculator|FullAdder:Adder|count[30] ;
+; CPU:Calculator|FullAdder:Substract|count[29]    ; Merged with CPU:Calculator|FullAdder:Adder|count[29] ;
+; CPU:Calculator|FullAdder:Substract|count[28]    ; Merged with CPU:Calculator|FullAdder:Adder|count[28] ;
+; CPU:Calculator|FullAdder:Substract|count[27]    ; Merged with CPU:Calculator|FullAdder:Adder|count[27] ;
+; CPU:Calculator|FullAdder:Substract|count[26]    ; Merged with CPU:Calculator|FullAdder:Adder|count[26] ;
+; CPU:Calculator|FullAdder:Substract|count[25]    ; Merged with CPU:Calculator|FullAdder:Adder|count[25] ;
+; CPU:Calculator|FullAdder:Substract|count[24]    ; Merged with CPU:Calculator|FullAdder:Adder|count[24] ;
+; CPU:Calculator|FullAdder:Substract|count[23]    ; Merged with CPU:Calculator|FullAdder:Adder|count[23] ;
+; CPU:Calculator|FullAdder:Substract|count[22]    ; Merged with CPU:Calculator|FullAdder:Adder|count[22] ;
+; CPU:Calculator|FullAdder:Substract|count[21]    ; Merged with CPU:Calculator|FullAdder:Adder|count[21] ;
+; CPU:Calculator|FullAdder:Substract|count[20]    ; Merged with CPU:Calculator|FullAdder:Adder|count[20] ;
+; CPU:Calculator|FullAdder:Substract|count[19]    ; Merged with CPU:Calculator|FullAdder:Adder|count[19] ;
+; CPU:Calculator|FullAdder:Substract|count[18]    ; Merged with CPU:Calculator|FullAdder:Adder|count[18] ;
+; CPU:Calculator|FullAdder:Substract|count[17]    ; Merged with CPU:Calculator|FullAdder:Adder|count[17] ;
+; CPU:Calculator|FullAdder:Substract|count[16]    ; Merged with CPU:Calculator|FullAdder:Adder|count[16] ;
+; CPU:Calculator|FullAdder:Substract|count[15]    ; Merged with CPU:Calculator|FullAdder:Adder|count[15] ;
+; CPU:Calculator|FullAdder:Substract|count[14]    ; Merged with CPU:Calculator|FullAdder:Adder|count[14] ;
+; CPU:Calculator|FullAdder:Substract|count[13]    ; Merged with CPU:Calculator|FullAdder:Adder|count[13] ;
+; CPU:Calculator|FullAdder:Substract|count[12]    ; Merged with CPU:Calculator|FullAdder:Adder|count[12] ;
+; CPU:Calculator|FullAdder:Substract|count[11]    ; Merged with CPU:Calculator|FullAdder:Adder|count[11] ;
+; CPU:Calculator|FullAdder:Substract|count[10]    ; Merged with CPU:Calculator|FullAdder:Adder|count[10] ;
+; CPU:Calculator|FullAdder:Substract|count[9]     ; Merged with CPU:Calculator|FullAdder:Adder|count[9]  ;
+; CPU:Calculator|FullAdder:Substract|count[8]     ; Merged with CPU:Calculator|FullAdder:Adder|count[8]  ;
+; CPU:Calculator|FullAdder:Substract|count[7]     ; Merged with CPU:Calculator|FullAdder:Adder|count[7]  ;
+; CPU:Calculator|FullAdder:Substract|count[6]     ; Merged with CPU:Calculator|FullAdder:Adder|count[6]  ;
+; CPU:Calculator|FullAdder:Substract|count[4]     ; Merged with CPU:Calculator|FullAdder:Adder|count[4]  ;
+; CPU:Calculator|FullAdder:Substract|count[3]     ; Merged with CPU:Calculator|FullAdder:Adder|count[3]  ;
+; CPU:Calculator|FullAdder:Substract|count[2]     ; Merged with CPU:Calculator|FullAdder:Adder|count[2]  ;
+; CPU:Calculator|FullAdder:Substract|count[1]     ; Merged with CPU:Calculator|FullAdder:Adder|count[1]  ;
+; CPU:Calculator|FullAdder:Substract|count[0]     ; Merged with CPU:Calculator|FullAdder:Adder|count[0]  ;
+; CPU:Calculator|FullAdder:Substract|count[5]     ; Merged with CPU:Calculator|FullAdder:Adder|count[5]  ;
+; line1[125]                                      ; Merged with line1[126]                               ;
+; LCD:DisplayLCD|rw                               ; Stuck at GND due to stuck port data_in               ;
+; Keyboard:InputKeyboard|CONTA_1MS[0]             ; Merged with Keyboard:InputKeyboard|CONTA_10MS[0]     ;
+; Keyboard:InputKeyboard|CONTA_1MS[1]             ; Merged with Keyboard:InputKeyboard|CONTA_10MS[1]     ;
+; Keyboard:InputKeyboard|CONTA_1MS[2]             ; Merged with Keyboard:InputKeyboard|CONTA_10MS[2]     ;
+; Keyboard:InputKeyboard|CONTA_1MS[3]             ; Merged with Keyboard:InputKeyboard|CONTA_10MS[3]     ;
+; Total Number of Removed Registers = 248         ;                                                      ;
++-------------------------------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -442,12 +550,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 361   ;
-; Number of registers using Synchronous Clear  ; 14    ;
-; Number of registers using Synchronous Load   ; 12    ;
-; Number of registers using Asynchronous Clear ; 38    ;
+; Total registers                              ; 1020  ;
+; Number of registers using Synchronous Clear  ; 71    ;
+; Number of registers using Synchronous Load   ; 84    ;
+; Number of registers using Asynchronous Clear ; 291   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 212   ;
+; Number of registers using Clock Enable       ; 580   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -457,39 +565,52 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; LCD:DisplayLCD|ptr[1]                  ; 31      ;
-; LCD:DisplayLCD|ptr[2]                  ; 30      ;
+; LCD:DisplayLCD|ptr[0]                  ; 24      ;
+; LCD:DisplayLCD|ptr[1]                  ; 35      ;
+; LCD:DisplayLCD|ptr[2]                  ; 32      ;
 ; LCD:DisplayLCD|ptr[3]                  ; 18      ;
-; LCD:DisplayLCD|ptr[0]                  ; 16      ;
 ; LCD:DisplayLCD|line                    ; 5       ;
-; writeRAM1_Flag                         ; 40      ;
-; Total number of inverted registers = 6 ;         ;
+; resetCPU                               ; 296     ;
+; writeRAM1_Flag                         ; 186     ;
+; multiplier[0]                          ; 4       ;
+; Total number of inverted registers = 8 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[11]                            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[35]                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[27]                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[33]                            ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[28]                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line1[52]                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[64]                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[59]                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[44]                            ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[66]                            ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|opCode[2]                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line1[48]                            ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |Calculator|memoryDirection1[17]                 ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |Calculator|LCD:DisplayLCD|clk_count[1]          ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |Calculator|Keyboard:InputKeyboard|BOTON_PRES[3] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Calculator|Mux68                                ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; No         ; |Calculator|LCD:DisplayLCD|state                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[8]                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[25]                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[22]                               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[67]                               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|inputA[3]                               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|inputB[31]                              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|bufferConvert[13]                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|counter[12]                             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[59]                               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[44]                               ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[2]                                ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|opCode[2]                               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[33]                               ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[49]                               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[64]                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line1[40]                               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line1[48]                               ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 28 LEs               ; 16 LEs                 ; Yes        ; |Calculator|inputBuffer1[2]                         ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |Calculator|memoryDirection1[26]                    ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |Calculator|LCD:DisplayLCD|clk_count[30]            ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |Calculator|Keyboard:InputKeyboard|BOTON_PRES[2]    ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |Calculator|multiplier[16]                          ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |Calculator|RAM:RAM_1|dataOut[3]                    ;
+; 1:1                ; 64 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |Calculator|CPU:Calculator|Mux45                    ;
+; 17:1               ; 15 bits   ; 165 LEs       ; 60 LEs               ; 105 LEs                ; No         ; |Calculator|CPU:Calculator|Mux33                    ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |Calculator|CPU:Calculator|FullAdder:Substract|Mux1 ;
+; 33:1               ; 2 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |Calculator|CPU:Calculator|FullAdder:Adder|Mux2     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; No         ; |Calculator|LCD:DisplayLCD|state                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -502,13 +623,206 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------+
-; Port Connectivity Checks: "LCD:DisplayLCD"             ;
-+----------------------+-------+----------+--------------+
-; Port                 ; Type  ; Severity ; Details      ;
-+----------------------+-------+----------+--------------+
-; line2_buffer[127..8] ; Input ; Info     ; Stuck at GND ;
-+----------------------+-------+----------+--------------+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div2 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                      ;
+; LPM_WIDTHD             ; 4              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_2jm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                      ;
+; LPM_WIDTHD             ; 16             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_ocm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_5jm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                      ;
+; LPM_WIDTHD             ; 16             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_ocm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod2 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                      ;
+; LPM_WIDTHD             ; 16             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_ocm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                                      ;
+; LPM_WIDTHD             ; 10             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_fkm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Converter:ConverterRAM|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------+
+; Parameter Name                                 ; Value        ; Type                   ;
++------------------------------------------------+--------------+------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE         ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                ;
+; LPM_WIDTHP                                     ; 37           ; Untyped                ;
+; LPM_WIDTHR                                     ; 37           ; Untyped                ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                ;
+; LATENCY                                        ; 0            ; Untyped                ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                ;
+; USE_EAB                                        ; OFF          ; Untyped                ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K    ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                ;
+; CBXI_PARAMETER                                 ; mult_k4t     ; Untyped                ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                ;
++------------------------------------------------+--------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                ;
++---------------------------------------+---------------------------------------+
+; Name                                  ; Value                                 ;
++---------------------------------------+---------------------------------------+
+; Number of entity instances            ; 1                                     ;
+; Entity Instance                       ; Converter:ConverterRAM|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 5                                     ;
+;     -- LPM_WIDTHB                     ; 32                                    ;
+;     -- LPM_WIDTHP                     ; 37                                    ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                    ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                    ;
+;     -- USE_EAB                        ; OFF                                   ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                  ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                    ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                    ;
++---------------------------------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:Calculator|Divider:Divi"                                                           ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; residue ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -516,6 +830,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; negative ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:Calculator|FullAdder:Substract"                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; x        ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; negative ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -532,18 +857,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:Calculator|FullAdder:AdderPC"                                                            ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; a             ; Input  ; Info     ; Stuck at GND                                                                        ;
-; b             ; Input  ; Info     ; Stuck at GND                                                                        ;
-; x             ; Input  ; Info     ; Stuck at GND                                                                        ;
-; overflow      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; negative      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; result[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:Calculator|FullAdder:AdderPC"                                                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; a        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; x        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; negative ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; result   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -555,18 +880,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:Calculator"                                                                              ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; a[1..0]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; a[31..2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; b[31..3]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; b[1..0]       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; b[2]          ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; result[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:Calculator"                                                                                                    ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                  ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; result[31..16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; negative       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -575,27 +896,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 361                         ;
-;     CLR               ; 7                           ;
-;     ENA               ; 181                         ;
-;     ENA CLR           ; 31                          ;
-;     SCLR              ; 8                           ;
-;     SCLR SLD          ; 6                           ;
-;     SLD               ; 6                           ;
-;     plain             ; 122                         ;
-; cycloneiii_lcell_comb ; 711                         ;
-;     arith             ; 159                         ;
-;         2 data inputs ; 153                         ;
-;         3 data inputs ; 6                           ;
-;     normal            ; 552                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 15                          ;
-;         2 data inputs ; 99                          ;
-;         3 data inputs ; 63                          ;
-;         4 data inputs ; 373                         ;
+; cycloneiii_ff         ; 1020                        ;
+;     CLR               ; 115                         ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 277                         ;
+;     ENA CLR           ; 175                         ;
+;     ENA SCLR          ; 61                          ;
+;     ENA SLD           ; 67                          ;
+;     SCLR              ; 6                           ;
+;     SCLR SLD          ; 4                           ;
+;     SLD               ; 12                          ;
+;     plain             ; 302                         ;
+; cycloneiii_lcell_comb ; 3165                        ;
+;     arith             ; 819                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 245                         ;
+;         3 data inputs ; 565                         ;
+;     normal            ; 2346                        ;
+;         0 data inputs ; 62                          ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 679                         ;
+;         3 data inputs ; 367                         ;
+;         4 data inputs ; 1208                        ;
+; cycloneiii_mac_mult   ; 2                           ;
+; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 12.00                       ;
-; Average LUT depth     ; 5.48                        ;
+; Max LUT depth         ; 46.60                       ;
+; Average LUT depth     ; 19.68                       ;
 +-----------------------+-----------------------------+
 
 
@@ -604,7 +931,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -614,7 +941,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sat Jan  6 22:30:12 2024
+    Info: Processing started: Wed Jan 10 21:13:59 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Calculator -c Calculator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -634,8 +961,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file Keyboar
     Info (12022): Found design unit 1: Keyboard-Behavioral File: /mnt/External/Codigos/Calculator32bits/Keyboard.vhd Line: 73
     Info (12023): Found entity 1: Keyboard File: /mnt/External/Codigos/Calculator32bits/Keyboard.vhd Line: 57
 Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
-    Info (12022): Found design unit 1: CPU-ArchCPU File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 11
-    Info (12023): Found entity 1: CPU File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 3
+    Info (12022): Found design unit 1: CPU-ArchCPU File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 14
+    Info (12023): Found entity 1: CPU File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file LCD.vhd
     Info (12022): Found design unit 1: LCD-controller File: /mnt/External/Codigos/Calculator32bits/LCD.vhd Line: 15
     Info (12023): Found entity 1: LCD File: /mnt/External/Codigos/Calculator32bits/LCD.vhd Line: 5
@@ -652,169 +979,259 @@ Info (12021): Found 2 design units, including 1 entities, in source file Convert
     Info (12022): Found design unit 1: ConvertToLCD-ArchConvertToLCD File: /mnt/External/Codigos/Calculator32bits/ConvertToLCD.vhd Line: 10
     Info (12023): Found entity 1: ConvertToLCD File: /mnt/External/Codigos/Calculator32bits/ConvertToLCD.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file BinaryToBCD.vhd
-    Info (12022): Found design unit 1: BinaryToBCD-Behavioral File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 15
+    Info (12022): Found design unit 1: BinaryToBCD-Behavioral File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 13
     Info (12023): Found entity 1: BinaryToBCD File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file Divider.vhd
+    Info (12022): Found design unit 1: Divider-ArchDivider File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 10
+    Info (12023): Found entity 1: Divider File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 3
 Info (12127): Elaborating entity "Calculator" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at Calculator.vhd(86): used explicit default value for signal "A" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 86
-Warning (10540): VHDL Signal Declaration warning at Calculator.vhd(87): used explicit default value for signal "B" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 87
-Warning (10036): Verilog HDL or VHDL warning at Calculator.vhd(90): object "enableRAM1_Flag" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 90
-Warning (10873): Using initial value X (don't care) for net "line2[127..8]" at Calculator.vhd(98) File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 98
-Info (12128): Elaborating entity "Keyboard" for hierarchy "Keyboard:InputKeyboard" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 149
-Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM_1" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 279
-Warning (10492): VHDL Process Statement warning at RAM.vhd(18): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/RAM.vhd Line: 18
-Warning (10492): VHDL Process Statement warning at RAM.vhd(18): signal "resetLogic" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/RAM.vhd Line: 18
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Calculator" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 280
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(35): object "adderOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(35): object "multiplierOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(35): object "adderNegative" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(35): object "multiNegative" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(35): object "pcOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(35): object "pcNegative" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 35
-Warning (10540): VHDL Signal Declaration warning at CPU.vhd(37): used explicit default value for signal "addPC" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 37
-Warning (10540): VHDL Signal Declaration warning at CPU.vhd(37): used explicit default value for signal "tempPC" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 37
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(46): object "nextStep" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 46
-Warning (10492): VHDL Process Statement warning at CPU.vhd(55): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at CPU.vhd(56): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 56
-Warning (10492): VHDL Process Statement warning at CPU.vhd(58): signal "AdderResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at CPU.vhd(60): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at CPU.vhd(61): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at CPU.vhd(62): signal "MultiplierResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 62
-Warning (10631): VHDL Process Statement warning at CPU.vhd(45): inferring latch(es) for signal or variable "setA", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (10631): VHDL Process Statement warning at CPU.vhd(45): inferring latch(es) for signal or variable "setB", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[0]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[1]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[2]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[3]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[4]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[5]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[6]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[7]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[8]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[9]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[10]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[11]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[12]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[13]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[14]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[15]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[16]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[17]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[18]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[19]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[20]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[21]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[22]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[23]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[24]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[25]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[26]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[27]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[28]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[29]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[30]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setB[31]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[0]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[1]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[2]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[3]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[4]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[5]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[6]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[7]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[8]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[9]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[10]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[11]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[12]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[13]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[14]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[15]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[16]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[17]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[18]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[19]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[20]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[21]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[22]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[23]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[24]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[25]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[26]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[27]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[28]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[29]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[30]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (10041): Inferred latch for "setA[31]" at CPU.vhd(45) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Info (12128): Elaborating entity "ROM" for hierarchy "CPU:Calculator|ROM:ROMAccess" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 43
-Info (12128): Elaborating entity "FullAdder" for hierarchy "CPU:Calculator|FullAdder:AdderPC" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 67
-Info (12128): Elaborating entity "Multiplier" for hierarchy "CPU:Calculator|Multiplier:Multi" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 69
+Warning (10036): Verilog HDL or VHDL warning at Calculator.vhd(91): object "enableRAM1_Flag" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 91
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Calculator" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 150
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(44): object "DividerResidue" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 44
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "adderOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "subsOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "multiplierOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "adderNegative" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "subsNegative" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "multiNegative" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "pcOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(45): object "pcNegative" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(47): object "tempPC32" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 47
+Warning (10540): VHDL Signal Declaration warning at CPU.vhd(47): used explicit default value for signal "addPC" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 47
+Warning (10540): VHDL Signal Declaration warning at CPU.vhd(47): used explicit default value for signal "tempPC" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 47
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(78): object "nextStep" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at CPU.vhd(87): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at CPU.vhd(88): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at CPU.vhd(90): signal "AdderResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at CPU.vhd(92): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at CPU.vhd(93): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at CPU.vhd(95): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at CPU.vhd(95): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at CPU.vhd(97): signal "SubstractionResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 97
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(64): object "tempA" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at CPU.vhd(99): signal "SubstractionResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at CPU.vhd(103): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at CPU.vhd(104): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at CPU.vhd(106): signal "MultiplierResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at CPU.vhd(108): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at CPU.vhd(109): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at CPU.vhd(111): signal "DividerResult" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 111
+Warning (10631): VHDL Process Statement warning at CPU.vhd(77): inferring latch(es) for signal or variable "setA", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Warning (10631): VHDL Process Statement warning at CPU.vhd(77): inferring latch(es) for signal or variable "setB", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Warning (10631): VHDL Process Statement warning at CPU.vhd(77): inferring latch(es) for signal or variable "negative", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "negative" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[0]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[1]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[2]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[3]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[4]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[5]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[6]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[7]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[8]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[9]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[10]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[11]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[12]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[13]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[14]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[15]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[16]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[17]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[18]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[19]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[20]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[21]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[22]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[23]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[24]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[25]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[26]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[27]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[28]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[29]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[30]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setB[31]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[0]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[1]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[2]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[3]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[4]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[5]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[6]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[7]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[8]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[9]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[10]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[11]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[12]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[13]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[14]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[15]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[16]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[17]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[18]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[19]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[20]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[21]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[22]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[23]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[24]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[25]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[26]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[27]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[28]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[29]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[30]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (10041): Inferred latch for "setA[31]" at CPU.vhd(77) File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 77
+Info (12128): Elaborating entity "ROM" for hierarchy "CPU:Calculator|ROM:ROMAccess" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 75
+Info (12128): Elaborating entity "FullAdder" for hierarchy "CPU:Calculator|FullAdder:AdderPC" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 116
+Info (12128): Elaborating entity "Multiplier" for hierarchy "CPU:Calculator|Multiplier:Multi" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 119
 Warning (10541): VHDL Signal Declaration warning at Multiplier.vhd(10): used implicit default value for signal "overflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 10
 Warning (10541): VHDL Signal Declaration warning at Multiplier.vhd(10): used implicit default value for signal "negative" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 10
+Warning (10036): Verilog HDL or VHDL warning at Multiplier.vhd(14): object "tempResult" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 14
 Warning (10540): VHDL Signal Declaration warning at Multiplier.vhd(15): used explicit default value for signal "tempA" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 15
-Info (12128): Elaborating entity "LCD" for hierarchy "LCD:DisplayLCD" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 281
-Info (12128): Elaborating entity "Display" for hierarchy "Display:Display4Dig" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 282
+Warning (10492): VHDL Process Statement warning at Multiplier.vhd(38): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 38
+Info (12128): Elaborating entity "Divider" for hierarchy "CPU:Calculator|Divider:Divi" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 120
+Warning (10036): Verilog HDL or VHDL warning at Divider.vhd(11): object "counter" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 11
+Warning (10036): Verilog HDL or VHDL warning at Divider.vhd(12): object "tempResult" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 12
+Warning (10492): VHDL Process Statement warning at Divider.vhd(63): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 63
+Warning (10631): VHDL Process Statement warning at Divider.vhd(53): inferring latch(es) for signal or variable "tempSubstraction", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[0]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[1]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[2]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[3]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[4]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[5]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[6]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[7]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[8]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[9]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[10]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[11]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[12]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[13]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[14]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[15]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[16]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[17]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[18]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[19]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[20]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[21]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[22]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[23]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[24]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[25]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[26]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[27]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[28]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[29]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[30]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (10041): Inferred latch for "tempSubstraction[31]" at Divider.vhd(53) File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 53
+Info (12128): Elaborating entity "Keyboard" for hierarchy "Keyboard:InputKeyboard" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 151
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM_1" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 308
+Warning (10492): VHDL Process Statement warning at RAM.vhd(18): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/RAM.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at RAM.vhd(18): signal "resetLogic" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/RAM.vhd Line: 18
+Info (12128): Elaborating entity "LCD" for hierarchy "LCD:DisplayLCD" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 309
+Info (12128): Elaborating entity "Display" for hierarchy "Display:Display4Dig" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 310
 Warning (10492): VHDL Process Statement warning at Display.vhd(54): signal "display_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Display.vhd Line: 54
-Info (12128): Elaborating entity "Converter" for hierarchy "Converter:ConverterRAM" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 283
-Warning (14026): LATCH primitive "CPU:Calculator|setB[4]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[3]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[2]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[1]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[0]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[9]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[10]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[11]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[12]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[13]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[14]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[15]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[16]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[17]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[18]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[19]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[20]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[21]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[22]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[23]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[24]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[25]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[26]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[27]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[28]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[29]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[30]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setB[31]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[0]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[1]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[2]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[3]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[4]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[5]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[6]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[7]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[8]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[9]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[10]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[11]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[12]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[13]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[14]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[15]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[16]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[17]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[18]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[19]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[20]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[21]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[22]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[23]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[24]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[25]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[26]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[27]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[28]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[29]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[30]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
-Warning (14026): LATCH primitive "CPU:Calculator|setA[31]" is permanently enabled File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 45
+Info (12128): Elaborating entity "Converter" for hierarchy "Converter:ConverterRAM" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 311
+Info (12128): Elaborating entity "BinaryToBCD" for hierarchy "BinaryToBCD:BinaryBCD" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 312
+Warning (10492): VHDL Process Statement warning at BinaryToBCD.vhd(18): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 18
+Info (278001): Inferred 7 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BinaryBCD|Div2" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BinaryBCD|Mod1" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 23
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BinaryBCD|Div1" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 22
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BinaryBCD|Mod0" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 22
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BinaryBCD|Mod2" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BinaryBCD|Div0" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 21
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Converter:ConverterRAM|Mult0" File: /mnt/External/Codigos/Calculator32bits/Converter.vhd Line: 21
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BinaryBCD|lpm_divide:Div2" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 23
+Info (12133): Instantiated megafunction "BinaryToBCD:BinaryBCD|lpm_divide:Div2" with the following parameter: File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2jm.tdf
+    Info (12023): Found entity 1: lpm_divide_2jm File: /mnt/External/Codigos/Calculator32bits/db/lpm_divide_2jm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_qlh File: /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_qlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_87f.tdf
+    Info (12023): Found entity 1: alt_u_div_87f File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_87f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /mnt/External/Codigos/Calculator32bits/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /mnt/External/Codigos/Calculator32bits/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BinaryBCD|lpm_divide:Mod1" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 23
+Info (12133): Instantiated megafunction "BinaryToBCD:BinaryBCD|lpm_divide:Mod1" with the following parameter: File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 23
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ocm.tdf
+    Info (12023): Found entity 1: lpm_divide_ocm File: /mnt/External/Codigos/Calculator32bits/db/lpm_divide_ocm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dnh File: /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_dnh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_eaf.tdf
+    Info (12023): Found entity 1: alt_u_div_eaf File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BinaryBCD|lpm_divide:Div1" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 22
+Info (12133): Instantiated megafunction "BinaryToBCD:BinaryBCD|lpm_divide:Div1" with the following parameter: File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 22
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5jm.tdf
+    Info (12023): Found entity 1: lpm_divide_5jm File: /mnt/External/Codigos/Calculator32bits/db/lpm_divide_5jm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_tlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_tlh File: /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_tlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e7f.tdf
+    Info (12023): Found entity 1: alt_u_div_e7f File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_e7f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "BinaryToBCD:BinaryBCD|lpm_divide:Div0" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 21
+Info (12133): Instantiated megafunction "BinaryToBCD:BinaryBCD|lpm_divide:Div0" with the following parameter: File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 21
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fkm.tdf
+    Info (12023): Found entity 1: lpm_divide_fkm File: /mnt/External/Codigos/Calculator32bits/db/lpm_divide_fkm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7nh File: /mnt/External/Codigos/Calculator32bits/db/sign_div_unsign_7nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2af.tdf
+    Info (12023): Found entity 1: alt_u_div_2af File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_2af.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "Converter:ConverterRAM|lpm_mult:Mult0" File: /mnt/External/Codigos/Calculator32bits/Converter.vhd Line: 21
+Info (12133): Instantiated megafunction "Converter:ConverterRAM|lpm_mult:Mult0" with the following parameter: File: /mnt/External/Codigos/Calculator32bits/Converter.vhd Line: 21
+    Info (12134): Parameter "LPM_WIDTHA" = "5"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "37"
+    Info (12134): Parameter "LPM_WIDTHR" = "37"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_k4t.tdf
+    Info (12023): Found entity 1: mult_k4t File: /mnt/External/Codigos/Calculator32bits/db/mult_k4t.tdf Line: 31
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13014): Ignored 39 buffer(s)
+    Info (13019): Ignored 39 SOFT buffer(s)
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[15]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[15]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[15]~1" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[14]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[14]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[14]~5" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[13]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[13]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[13]~9" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[12]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[12]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[12]~13" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[11]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[11]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[11]~17" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[10]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[10]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[10]~21" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[9]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[9]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[9]~25" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[8]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[8]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[8]~29" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[7]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[7]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[7]~33" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[6]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[6]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[6]~37" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[5]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[5]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[5]~41" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[4]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[4]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[4]~45" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[3]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[3]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[3]~49" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[2]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[2]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[2]~53" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[1]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[1]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[1]~57" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Multiplier:Multi|tB[0]" is converted into an equivalent circuit using register "CPU:Calculator|Multiplier:Multi|tB[0]~_emulated" and latch "CPU:Calculator|Multiplier:Multi|tB[0]~61" File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 34
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "anodes[0]" is stuck at GND File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
     Warning (13410): Pin "anodes[1]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
@@ -823,17 +1240,25 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "segments[0]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
     Warning (13410): Pin "rw" is stuck at GND File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 37 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_15_result_int[0]~0" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 62
+    Info (17048): Logic cell "BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_9_result_int[0]~20" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 102
+    Info (17048): Logic cell "BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_10_result_int[0]~22" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 37
+    Info (17048): Logic cell "BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_11_result_int[0]~24" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 42
+    Info (17048): Logic cell "BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_12_result_int[0]~26" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 47
+    Info (17048): Logic cell "BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_13_result_int[0]~28" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 52
+    Info (17048): Logic cell "BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ocm:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_eaf:divider|add_sub_14_result_int[0]~30" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_eaf.tdf Line: 57
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 891 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3575 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 854 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 95 warnings
-    Info: Peak virtual memory: 422 megabytes
-    Info: Processing ended: Sat Jan  6 22:30:29 2024
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:36
+    Info (21061): Implemented 3534 logic cells
+    Info (21062): Implemented 4 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
+    Info: Peak virtual memory: 455 megabytes
+    Info: Processing ended: Wed Jan 10 21:14:12 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:20
 
 

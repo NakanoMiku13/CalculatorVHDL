@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Jan  6 22:30:29 2024
+Analysis & Synthesis Status : Successful - Wed Jan 10 21:14:12 2024
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : Calculator
 Top-level Entity Name : Calculator
 Family : Cyclone IV E
-Total logic elements : 842
-    Total combinational functions : 705
-    Dedicated logic registers : 361
-Total registers : 361
+Total logic elements : 3,512
+    Total combinational functions : 3,159
+    Dedicated logic registers : 1,020
+Total registers : 1020
 Total pins : 37
 Total virtual pins : 0
 Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
+Embedded Multiplier 9-bit elements : 4
 Total PLLs : 0

@@ -35,19 +35,17 @@ begin
 			tempResult <= (others => '0');
 			bufferResult <= (others => '0');
 			counter <= 0;
+			tB <= conv_integer(B);
 		elsif rising_edge(clock) then
-			if tB = 0 then
-				tB <= conv_integer(B);
-			end if;
+			tB <= conv_integer(B);
 			if counter < tB then
 				tempResult <= bufferResult;
-				bufferResult <= Adder(tempA, tempResult);
-				tempResult <= Adder(tempA, bufferResult);
+				bufferResult <= Adder(tempA, bufferResult);
+				--tempResult <= Adder(tempA, bufferResult);
 				counter <= counter + 1;
-			end if;
-			if counter = tB then
+			else
 				--result <= conv_std_logic_vector(counter, 32);
-				result <= tempResult;
+				result <= bufferResult;
 			end if;
 		end if;
 	end process;

@@ -17,6 +17,10 @@ begin
 	process(clock)
 	begin
 		if rising_edge(clock) then
+			-- 456
+			-- 4 * 100 - 400
+			-- 5 * 10 - 50
+			-- 6 * 1 - 6 
 			A <= conv_integer(preNumber);
 			B <= conv_integer(numberConvert) * multiplier;
 			result <= conv_std_logic_vector(A + B, 32);
