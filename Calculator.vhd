@@ -73,29 +73,30 @@ architecture ArchCalculator of Calculator is
 		Port (
 			input : in  STD_LOGIC_VECTOR (15 downto 0);
 			clock, reset : in  STD_LOGIC;
-			output : out  STD_LOGIC_VECTOR (15 downto 0)
+			output : out  STD_LOGIC_VECTOR (19 downto 0)
 		);
 	end component;
-	component ConvertToLCD is
-	Port(
-		input : in std_logic_vector(31 downto 0);
-		lcd_data : out std_logic_vector(127 downto 0);
-		clock, reset : in std_logic
-	);
+	component BinaryToBCDLow is
+		Port (
+			input : in  STD_LOGIC_VECTOR (7 downto 0);
+			clock, reset : in  STD_LOGIC;
+			output : out  STD_LOGIC_VECTOR (15 downto 0)
+		);
 	end component;
 	--signal A : std_logic_vector(31 downto 0) := "00000000000000000000000000000001";
 	--signal A : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
 	--signal B : std_logic_vector(31 downto 0) := "00000000000000000000000000000101";
 	--signal B : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
 	-- Flags
-	signal inputBuffer1, dataOut, selector, opCode, operationSelector : std_logic_vector(3 downto 0) := (others => '0');
+	signal inputBuffer1, dataOut, selector, opCode, operationSelector, ramOut : std_logic_vector(3 downto 0) := (others => '0');
 	signal buttonPressFlag, enableRAM1_Flag, getRAM1_Flag, readingRam, resetRAM, inputAComplete, inputBComplete, negativeCPU : std_logic := '0';
 	signal memoryDirection1, steps, globalSteps, counter, counter2, temp, indexEnd : integer := 0;
 	signal indexBegin : integer := 7;
 	signal multiplier, divider : integer := 1;
 	signal writeRAM1_Flag, resetCPU : std_logic := '1';
 	signal secondClock : std_logic;
-	signal resultCPUBCD : std_logic_vector(15 downto 0);
+	signal resultCPUBCD : std_logic_vector(19 downto 0);
+	signal ABCD, BBCD : std_logic_vector(15 downto 0);
 	signal inputA, inputB, A, B, bufferConvert, bufferConvert2, resultCPU : std_logic_vector(31 downto 0) := (others => '0');
 	signal line1, line2 : std_logic_vector(127 downto 0);
 	function PrintCurrentOp(opCode : std_logic_vector(3 downto 0); selectorOp : std_logic_vector(3 downto 0)) return std_logic_vector is
@@ -150,6 +151,7 @@ architecture ArchCalculator of Calculator is
 begin
 	Calculator : CPU Port Map(clock => clock, reset => resetCPU, opCode => opCode, A => A, B => B, result => resultCPU, negative => negativeCPU);
 	InputKeyboard : Keyboard Generic Map (FREQ_CLK => 50000000) Port Map (CLK => clock, COLUMNAS => cols, FILAS => rows, BOTON_PRES => selector, IND => buttonPressFlag);
+	RAM_1 : RAM Port Map(dataIn => inputBuffer1, direction => memoryDirection1, dataOut => dataOut, we => writeRAM1_Flag, clock => clock, reset => reset, resetLogic => resetRAM);
 	process(clock, selector, buttonPressFlag, reset, writeRAM1_Flag)
 	begin
 		--leds <= not conv_std_logic_vector(memoryDirection1, 4);
@@ -157,7 +159,6 @@ begin
 			
 			--leds(1) <= not inputAComplete;
 			--leds(0) <= not inputBComplete;
-			leds <= not resultCPU(3 downto 0);
 			A <= inputA;
 			B <= inputB;
 			if inputAComplete = '1' and inputBComplete = '1' then
@@ -186,19 +187,22 @@ begin
 					memoryDirection1 <= 0;
 					writeRAM1_Flag <= '1';
 					counter <= 0;
+					resetRAM <= '1';
 				else
 				-- Dump out the RAM values
 					if memoryDirection1 >= 0 then
-						if counter > 0 then
-							bufferConvert <= bufferConvert2;
+						if counter = 1 then
 							multiplier <= multiplier * 10;
+							ramOut <= dataOut;
+							bufferConvert <= bufferConvert2;
 						else
-							counter <= counter + 1;
+							counter <= 1;
 						end if;
 						memoryDirection1 <= memoryDirection1 - 1;
 					else
 						readingRam <= '0';
 					end if;
+					
 				end if;
 			else
 				writeRAM1_Flag <= '1';
@@ -303,15 +307,35 @@ begin
 				end if;
 			end if;
 			line1 <= PrintCurrentOp(opCode, operationSelector);
-			if negativeCPU = '1' then
-				--line2(37 downto 32)
+			if opCode = "1001" then
+				if resultCPU(2 downto 2) = "1" then
+					line2 <= x"20202020202041203D20422020202020";
+				elsif resultCPU(0 downto 0) = "1" then
+					line2 <= x"20202020202041203E20422020202020";
+				elsif resultCPU(1 downto 1) = "1" then
+					line2 <= x"20202020202041203C20422020202020";
+				else
+					line2 <= x"204572726F7220646574656374656420";
+				end if;
+			else
+				if negativeCPU = '1' and opCode = "0001" then
+					line2(47 downto 40) <= "00101101";
+				else 
+					line2(47 downto 40) <= x"20";
+				end if;
+				line2(127 downto 96) <= "0011" & ABCD(15 downto 12) & "0011" & ABCD(11 downto 8) & "0011" & ABCD(7 downto 4) & "0011" & ABCD(3 downto 0);
+				line2(95 downto 88) <= x"20";
+				line2(87 downto 56) <= "0011" & BBCD(15 downto 12) & "0011" & BBCD(11 downto 8) & "0011" & BBCD(7 downto 4) & "0011" & BBCD(3 downto 0);
+				line2(55 downto 48) <= x"20";
+				line2(39 downto 0) <= "0011" & resultCPUBCD(19 downto 16) & "0011" & resultCPUBCD(15 downto 12) & "0011" & resultCPUBCD(11 downto 8) & "0011" & resultCPUBCD(7 downto 4) & "0011" & resultCPUBCD(3 downto 0);
 			end if;
-			line2(31 downto 0) <= "0011" & resultCPUBCD(15 downto 12) & "0011" & resultCPUBCD(11 downto 8) & "0011" & resultCPUBCD(7 downto 4) & "0011" & resultCPUBCD(3 downto 0);
 		end if;
 	end process;
-	RAM_1 : RAM Port Map(dataIn => inputBuffer1, direction => memoryDirection1, dataOut => dataOut, we => writeRAM1_Flag, clock => clock, reset => reset, resetLogic => resetRAM);
+	
 	DisplayLCD : LCD Port Map (clk => clock, reset => reset, lcd_data => lcdData, line1_buffer => line1, line2_buffer => line2, rs => rs, rw => rw, e => e);
 	Display4Dig : Display Port Map(clk => clock, reset => reset, number => selector, segments => segments, anodes => anodes);
 	ConverterRAM : Converter Port Map(multiplier => multiplier, numberConvert => dataOut, preNumber => bufferConvert, result => bufferConvert2, clock => clock);
 	BinaryBCD : BinaryToBCD Port Map(input => resultCPU(15 downto 0), reset => resetCPU, clock => clock, output => resultCPUBCD);
+	BinaryBCDA : BinaryToBCDLow Port Map(input => A(7 downto 0), reset => resetCPU, clock => clock, output => ABCD);
+	BinaryBCDB : BinaryToBCDLow Port Map(input => B(7 downto 0), reset => resetCPU, clock => clock, output => BBCD);
 end ArchCalculator;

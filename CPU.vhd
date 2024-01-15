@@ -36,21 +36,48 @@ architecture ArchCPU of CPU is
 	end component;
 	component Divider is
 	Port(
-		A, B : in std_logic_vector(31 downto 0);
-		quotient, residue : out std_logic_vector(31 downto 0);
+		A, B : in std_logic_vector(15 downto 0);
+		result : out std_logic_vector(31 downto 0);
 		clock, reset : in std_logic
 	);
 	end component;
-	signal setA, setB, AdderResult, SubstractionResult, MultiplierResult, DividerResult, DividerResidue : std_logic_vector(31 downto 0) := (others => '0');
-	signal adderOverflow, subsOverflow, multiplierOverflow, adderNegative, subsNegative, multiNegative, pcOverflow, pcNegative : std_logic := '0';
+	component Comparison is
+	Port(
+		A, B: in std_logic_vector(31 downto 0);
+		Higher, Lower, Equal : out std_logic;
+		clock, reset : in std_logic
+	);
+	end component;
+	component Power is
+	Port(
+		A, B : in std_logic_vector(7 downto 0);
+		clock, reset : in std_logic;
+		result : out std_logic_vector(31 downto 0)
+	);
+	end component;
+	component Factorial is
+	Port(
+		A : in std_logic_vector(3 downto 0);
+		clock, reset : in std_logic;
+		result : out std_logic_vector(31 downto 0)
+	);
+	end component;
+	component Random is
+	Port(
+		A, B : in std_logic_vector(31 downto 0);
+		result : out std_logic_vector(31 downto 0);
+		clock, reset : in std_logic
+	);
+	end component;
+	signal setA, setB, AdderResult, SubstractionResult, MultiplierResult, DividerResult, DividerResidue, PowerResult, FactorialResult, RandomResult : std_logic_vector(31 downto 0) := (others => '0');
+	signal adderOverflow, subsOverflow, multiplierOverflow, adderNegative, subsNegative, multiNegative, pcOverflow, pcNegative, equal, higher, lower : std_logic := '0';
 	signal decodeValue : std_logic_vector(7 downto 0) := (others => '0');
-	signal tempPC32, addPC, tempPC : std_logic_vector(31 downto 0) := (others => '0');
+	signal tempPC32, addPC, tempPC, tR : std_logic_vector(31 downto 0) := (others => '0');
 	signal pc : std_logic_vector(3 downto 0) := (others => '0');
 	function Adder1 (A : std_logic_vector(31 downto 0); B : std_logic_vector(31 downto 0)) return std_logic_vector is
 		variable cout : std_logic_vector(32 downto 0);
 		variable result : std_logic_vector(31 downto 0);
 		constant X : std_logic := '0';
-		--constant empty : std_logic_vector := (others => '0');
 	begin
 		cout := (others => '0');
 		result := (others => '0');
@@ -65,7 +92,6 @@ architecture ArchCPU of CPU is
 	begin
 		result := (others => '0');
 		tempA := (others => '0');
-		tempA := not A;
 		result := not A; --Adder1(tempA, "00000000000000000000000000000001");
 		return result;
 	end ConvertFromCA2;
@@ -87,7 +113,7 @@ begin
 				setA <= A;
 				setB <= B;
 				negative <= '0';
-				result <= adderResult;
+				result <= AdderResult;
 			when "0001" =>
 				setA <= A;
 				setB <= B;
@@ -109,6 +135,27 @@ begin
 				setB <= B;
 				negative <= '0';
 				result <= DividerResult;
+			when "0100" =>
+				setA <= A;
+				setB <= B;
+				negative <= '0';
+				result <= PowerResult;
+			when "0101" =>
+				setA <= A;
+				negative <= '0';
+				result <= FactorialResult;
+			when "1001" =>
+				setA <= A;
+				setB <= B;
+				result(2 downto 0) <= equal & lower & higher;
+			when "0110" =>
+				setA <= A;
+				setB <= B;
+				negative <= '0';
+				result <= RandomResult;
+				--operation := "1111";
+			--when "1111" =>
+				--result <= RandomResult;
 			when others =>
 				result <= (others => '0');
 		end case;
@@ -117,5 +164,9 @@ begin
 	Adder : FullAdder Port Map (A => setA, B => setB, clock => clock, reset => reset, X => '0', overflow => adderOverflow, result => AdderResult, negative => adderNegative);
 	Substract : FullAdder Port Map (A => setA, B => setB, clock => clock, reset => reset, X => '1', overflow => subsOverflow, result => SubstractionResult, negative => subsNegative);
 	Multi : Multiplier Port Map (A => setA(15 downto 0), B => setB(15 downto 0), clock => clock, reset => reset, result => MultiplierResult, overflow => multiplierOverflow, negative => multiNegative);
-	Divi : Divider Port Map(A => A, B => B, clock => clock, reset => reset, quotient => DividerResult, residue => DividerResidue);
+	Divi : Divider Port Map(A => setA(15 downto 0), B => setB(15 downto 0), clock => clock, reset => reset, result => DividerResult);
+	Compare : Comparison Port Map(A => setA, B => setB, clock => clock, reset => reset, Equal => equal, Higher => higher, Lower => lower);
+	Pow : Power Port Map (A => setA(7 downto 0), B => setB(7 downto 0), result => PowerResult, clock => clock, reset => reset);
+	Fact: Factorial Port Map (A => setA(3 downto 0), clock => clock, reset => reset, result => FactorialResult);
+	Rand : Random Port Map (A => setA, B => setB, clock => clock, reset => reset, result => RandomResult);
 end ArchCPU;

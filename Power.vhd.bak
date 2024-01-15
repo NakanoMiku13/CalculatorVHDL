@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity Power is
+	Port(
+		A, B : in std_logic_vector(7 downto 0);
+		clock, reset : in std_logic;
+		result : out std_logic_vector(31 downto 0)
+	);
+end Power;
+architecture ArchPower of Power is
+begin
+	process(clock, reset)
+	begin
+	end process;
+end ArchPower;

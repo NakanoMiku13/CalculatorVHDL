@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity Random is
+	Port(
+		A, B : in std_logic_vector(31 downto 0);
+		result : out std_logic_vector(31 downto 0);
+		clock, reset : in std_logic
+	);
+end Random;
+architecture ArchRandom of Random is
+begin
+	
+end ArchRandom;

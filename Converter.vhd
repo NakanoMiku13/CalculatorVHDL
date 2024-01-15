@@ -23,7 +23,7 @@ begin
 			-- 6 * 1 - 6 
 			A <= conv_integer(preNumber);
 			B <= conv_integer(numberConvert) * multiplier;
-			result <= conv_std_logic_vector(A + B, 32);
+			result <= conv_std_logic_vector((A + B), 32);
 		end if;
 	end process;
 end ArchConverter;

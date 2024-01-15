@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("/mnt/External/Codigos/Calculator32bits/output_files/") File("Calculator.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE10E22) Path("/mnt/External/Codigos/Calculator32bits/output_files/") File("Calculator.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
