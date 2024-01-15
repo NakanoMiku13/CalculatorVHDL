@@ -3,84 +3,84 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock'
-Slack : -36.737
-TNS   : -7974.142
+Slack : -49.623
+TNS   : -9143.959
 
 Type  : Slow 1200mV 85C Model Setup 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : -9.240
-TNS   : -292.944
+Slack : -10.542
+TNS   : -332.896
 
 Type  : Slow 1200mV 85C Model Setup 'opCode[0]'
-Slack : -6.961
-TNS   : -136.205
+Slack : -7.488
+TNS   : -171.776
 
 Type  : Slow 1200mV 85C Model Setup 'resetCPU'
-Slack : -5.285
-TNS   : -125.765
+Slack : -5.004
+TNS   : -125.966
 
 Type  : Slow 1200mV 85C Model Setup 'CPU:Calculator|Random:Rand|fourthClock'
-Slack : -4.876
-TNS   : -172.517
+Slack : -4.587
+TNS   : -179.993
 
 Type  : Slow 1200mV 85C Model Setup 'CPU:Calculator|Random:Rand|secondClock'
-Slack : -2.982
-TNS   : -52.104
+Slack : -3.034
+TNS   : -48.548
 
 Type  : Slow 1200mV 85C Model Hold 'opCode[0]'
-Slack : -0.023
-TNS   : -0.023
-
-Type  : Slow 1200mV 85C Model Hold 'clock'
-Slack : 0.036
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : 0.147
-TNS   : 0.000
+Slack : -0.641
+TNS   : -1.081
 
 Type  : Slow 1200mV 85C Model Hold 'resetCPU'
-Slack : 0.240
+Slack : 0.265
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CPU:Calculator|Random:Rand|secondClock'
-Slack : 0.284
+Slack : 0.354
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CPU:Calculator|Random:Rand|fourthClock'
-Slack : 0.507
+Slack : 0.509
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CPU:Calculator|Random:Rand|thirdClock'
+Slack : 0.566
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clock'
-Slack : -1.093
-TNS   : -57.148
+Slack : -1.128
+TNS   : -57.620
 
 Type  : Slow 1200mV 85C Model Recovery 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : 1.370
+Slack : 0.785
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'CPU:Calculator|Random:Rand|secondClock'
-Slack : 1.410
+Slack : 1.366
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'CPU:Calculator|Random:Rand|secondClock'
-Slack : -1.247
-TNS   : -39.696
+Slack : -1.189
+TNS   : -38.047
 
 Type  : Slow 1200mV 85C Model Removal 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : -1.204
-TNS   : -38.320
+Slack : -0.593
+TNS   : -18.768
 
 Type  : Slow 1200mV 85C Model Removal 'clock'
-Slack : -0.292
-TNS   : -183.531
+Slack : -0.295
+TNS   : -193.528
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -1523.006
+TNS   : -1603.712
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPU:Calculator|Random:Rand|fourthClock'
 Slack : -1.000
-TNS   : -48.000
+TNS   : -52.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CPU:Calculator|Random:Rand|secondClock'
 Slack : -1.000
@@ -91,92 +91,92 @@ Slack : -1.000
 TNS   : -32.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'opCode[0]'
-Slack : 0.337
+Slack : 0.279
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'resetCPU'
-Slack : 0.390
+Slack : 0.387
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clock'
-Slack : -32.701
-TNS   : -7018.037
+Slack : -44.293
+TNS   : -8065.675
 
 Type  : Slow 1200mV 0C Model Setup 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : -8.225
-TNS   : -260.624
+Slack : -9.358
+TNS   : -295.424
 
 Type  : Slow 1200mV 0C Model Setup 'opCode[0]'
-Slack : -6.177
-TNS   : -113.907
+Slack : -6.542
+TNS   : -144.806
 
 Type  : Slow 1200mV 0C Model Setup 'resetCPU'
-Slack : -4.786
-TNS   : -113.630
+Slack : -4.537
+TNS   : -113.749
 
 Type  : Slow 1200mV 0C Model Setup 'CPU:Calculator|Random:Rand|fourthClock'
-Slack : -4.262
-TNS   : -150.070
+Slack : -4.004
+TNS   : -157.562
 
 Type  : Slow 1200mV 0C Model Setup 'CPU:Calculator|Random:Rand|secondClock'
-Slack : -2.623
-TNS   : -41.792
+Slack : -2.680
+TNS   : -39.304
 
 Type  : Slow 1200mV 0C Model Hold 'opCode[0]'
-Slack : -0.015
-TNS   : -0.015
-
-Type  : Slow 1200mV 0C Model Hold 'clock'
-Slack : 0.026
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : 0.199
-TNS   : 0.000
+Slack : -0.601
+TNS   : -0.979
 
 Type  : Slow 1200mV 0C Model Hold 'resetCPU'
-Slack : 0.229
+Slack : 0.265
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.296
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|secondClock'
-Slack : 0.259
+Slack : 0.327
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|fourthClock'
 Slack : 0.457
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|thirdClock'
+Slack : 0.510
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Recovery 'clock'
-Slack : -0.872
-TNS   : -44.488
+Slack : -0.896
+TNS   : -45.000
 
 Type  : Slow 1200mV 0C Model Recovery 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : 1.261
+Slack : 0.743
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'CPU:Calculator|Random:Rand|secondClock'
-Slack : 1.303
+Slack : 1.292
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'CPU:Calculator|Random:Rand|secondClock'
-Slack : -1.118
-TNS   : -35.568
+Slack : -1.097
+TNS   : -35.087
 
 Type  : Slow 1200mV 0C Model Removal 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : -1.076
-TNS   : -34.224
+Slack : -0.534
+TNS   : -16.896
 
 Type  : Slow 1200mV 0C Model Removal 'clock'
-Slack : -0.313
-TNS   : -197.667
+Slack : -0.316
+TNS   : -209.812
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -1522.712
+TNS   : -1603.712
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPU:Calculator|Random:Rand|fourthClock'
 Slack : -1.000
-TNS   : -48.000
+TNS   : -52.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CPU:Calculator|Random:Rand|secondClock'
 Slack : -1.000
@@ -187,92 +187,92 @@ Slack : -1.000
 TNS   : -32.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'opCode[0]'
-Slack : 0.423
+Slack : 0.380
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'resetCPU'
-Slack : 0.426
+Slack : 0.429
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clock'
-Slack : -20.554
-TNS   : -4027.876
+Slack : -27.966
+TNS   : -4652.787
 
 Type  : Fast 1200mV 0C Model Setup 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : -5.023
-TNS   : -159.232
+Slack : -5.758
+TNS   : -181.824
 
 Type  : Fast 1200mV 0C Model Setup 'opCode[0]'
-Slack : -3.829
-TNS   : -55.980
+Slack : -4.211
+TNS   : -79.036
 
 Type  : Fast 1200mV 0C Model Setup 'resetCPU'
-Slack : -2.764
-TNS   : -61.905
+Slack : -2.533
+TNS   : -60.582
 
 Type  : Fast 1200mV 0C Model Setup 'CPU:Calculator|Random:Rand|fourthClock'
-Slack : -2.654
-TNS   : -87.752
+Slack : -2.183
+TNS   : -79.909
 
 Type  : Fast 1200mV 0C Model Setup 'CPU:Calculator|Random:Rand|secondClock'
-Slack : -1.264
-TNS   : -15.848
+Slack : -1.321
+TNS   : -13.769
 
 Type  : Fast 1200mV 0C Model Hold 'opCode[0]'
-Slack : -0.040
-TNS   : -0.040
-
-Type  : Fast 1200mV 0C Model Hold 'clock'
-Slack : 0.011
-TNS   : 0.000
+Slack : -0.335
+TNS   : -0.683
 
 Type  : Fast 1200mV 0C Model Hold 'resetCPU'
 Slack : 0.054
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|secondClock'
-Slack : 0.099
+Slack : 0.102
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : 0.242
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.178
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|fourthClock'
-Slack : 0.263
+Slack : 0.264
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CPU:Calculator|Random:Rand|thirdClock'
+Slack : 0.302
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clock'
-Slack : -0.211
-TNS   : -7.226
+Slack : -0.225
+TNS   : -6.962
 
 Type  : Fast 1200mV 0C Model Recovery 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : 1.041
+Slack : 0.697
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'CPU:Calculator|Random:Rand|secondClock'
-Slack : 1.088
+Slack : 1.083
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'CPU:Calculator|Random:Rand|secondClock'
-Slack : -0.796
-TNS   : -25.328
+Slack : -0.782
+TNS   : -25.023
 
 Type  : Fast 1200mV 0C Model Removal 'CPU:Calculator|Random:Rand|thirdClock'
-Slack : -0.746
-TNS   : -23.760
+Slack : -0.388
+TNS   : -12.304
 
 Type  : Fast 1200mV 0C Model Removal 'clock'
-Slack : -0.167
-TNS   : -103.827
+Slack : -0.169
+TNS   : -110.166
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -1595.717
+TNS   : -1682.879
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPU:Calculator|Random:Rand|fourthClock'
 Slack : -1.000
-TNS   : -48.000
+TNS   : -52.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CPU:Calculator|Random:Rand|secondClock'
 Slack : -1.000
@@ -283,11 +283,11 @@ Slack : -1.000
 TNS   : -32.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'opCode[0]'
-Slack : 0.294
+Slack : 0.262
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'resetCPU'
-Slack : 0.411
+Slack : 0.410
 TNS   : 0.000
 
 ------------------------------------------------------------

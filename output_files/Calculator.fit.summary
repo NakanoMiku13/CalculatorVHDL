@@ -1,14 +1,14 @@
-Fitter Status : Successful - Sun Jan 14 21:41:24 2024
+Fitter Status : Successful - Sun Jan 14 22:39:35 2024
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : Calculator
 Top-level Entity Name : Calculator
 Family : Cyclone IV E
 Device : EP4CE10E22C6
 Timing Models : Final
-Total logic elements : 5,126 / 10,320 ( 50 % )
-    Total combinational functions : 4,794 / 10,320 ( 46 % )
-    Dedicated logic registers : 1,588 / 10,320 ( 15 % )
-Total registers : 1588
+Total logic elements : 8,186 / 10,320 ( 79 % )
+    Total combinational functions : 7,862 / 10,320 ( 76 % )
+    Dedicated logic registers : 1,673 / 10,320 ( 16 % )
+Total registers : 1673
 Total pins : 37 / 92 ( 40 % )
 Total virtual pins : 0
 Total memory bits : 0 / 423,936 ( 0 % )

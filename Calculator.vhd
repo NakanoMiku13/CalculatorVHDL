@@ -71,22 +71,18 @@ architecture ArchCalculator of Calculator is
 	end component;
 	component BinaryToBCD is
 		Port (
-			input : in  STD_LOGIC_VECTOR (15 downto 0);
+			input : in  STD_LOGIC_VECTOR (19 downto 0);
 			clock, reset : in  STD_LOGIC;
-			output : out  STD_LOGIC_VECTOR (19 downto 0)
+			output : out  STD_LOGIC_VECTOR (23 downto 0)
 		);
 	end component;
 	component BinaryToBCDLow is
 		Port (
-			input : in  STD_LOGIC_VECTOR (7 downto 0);
+			input : in  STD_LOGIC_VECTOR (12 downto 0);
 			clock, reset : in  STD_LOGIC;
 			output : out  STD_LOGIC_VECTOR (15 downto 0)
 		);
 	end component;
-	--signal A : std_logic_vector(31 downto 0) := "00000000000000000000000000000001";
-	--signal A : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
-	--signal B : std_logic_vector(31 downto 0) := "00000000000000000000000000000101";
-	--signal B : std_logic_vector(31 downto 0) := "00000000000000000000000000000000";
 	-- Flags
 	signal inputBuffer1, dataOut, selector, opCode, operationSelector, ramOut : std_logic_vector(3 downto 0) := (others => '0');
 	signal buttonPressFlag, enableRAM1_Flag, getRAM1_Flag, readingRam, resetRAM, inputAComplete, inputBComplete, negativeCPU : std_logic := '0';
@@ -95,7 +91,8 @@ architecture ArchCalculator of Calculator is
 	signal multiplier, divider : integer := 1;
 	signal writeRAM1_Flag, resetCPU : std_logic := '1';
 	signal secondClock : std_logic;
-	signal resultCPUBCD : std_logic_vector(19 downto 0);
+	--signal resultCPUBCD : std_logic_vector(39 downto 0);
+	signal resultCPUBCD : std_logic_vector(23 downto 0);
 	signal ABCD, BBCD : std_logic_vector(15 downto 0);
 	signal inputA, inputB, A, B, bufferConvert, bufferConvert2, resultCPU : std_logic_vector(31 downto 0) := (others => '0');
 	signal line1, line2 : std_logic_vector(127 downto 0);
@@ -307,27 +304,49 @@ begin
 				end if;
 			end if;
 			line1 <= PrintCurrentOp(opCode, operationSelector);
-			if opCode = "1001" then
-				if resultCPU(2 downto 2) = "1" then
-					line2 <= x"20202020202041203D20422020202020";
-				elsif resultCPU(0 downto 0) = "1" then
-					line2 <= x"20202020202041203E20422020202020";
-				elsif resultCPU(1 downto 1) = "1" then
-					line2 <= x"20202020202041203C20422020202020";
+			if opCode /= "1010" then
+				if opCode = "1001" then
+					if resultCPU(2 downto 2) = "1" then
+						line2 <= x"20202020202041203D20422020202020";
+					elsif resultCPU(0 downto 0) = "1" then
+						line2 <= x"20202020202041203E20422020202020";
+					elsif resultCPU(1 downto 1) = "1" then
+						line2 <= x"20202020202041203C20422020202020";
+					else
+						line2 <= x"204572726F7220646574656374656420";
+					end if;
 				else
-					line2 <= x"204572726F7220646574656374656420";
+					if negativeCPU = '1' and opCode = "0001" then
+						line2(47 downto 40) <= "00101101";
+					else 
+						line2(47 downto 40) <= x"20";
+					end if;
+					line2(127 downto 96) <= "0011" & ABCD(15 downto 12) & "0011" & ABCD(11 downto 8) & "0011" & ABCD(7 downto 4) & "0011" & ABCD(3 downto 0);
+					if opCode = "0000" then
+						line2(95 downto 88) <= x"2B";
+					elsif opCode = "0001" then
+						line2(95 downto 88) <= x"2D";
+					elsif opCode = "0010" then
+						line2(95 downto 88) <= x"2A";
+					elsif opCode = "0011" then
+						line2(95 downto 88) <= x"2F";
+					elsif opCode = "0100" then
+						line2(95 downto 88) <= x"5E";
+					elsif opCode = "0101" then
+						line2(95 downto 88) <= x"21";
+					else
+						line2(95 downto 88) <= x"20";
+					end if;
+					line2(87 downto 56) <= "0011" & BBCD(15 downto 12) & "0011" & BBCD(11 downto 8) & "0011" & BBCD(7 downto 4) & "0011" & BBCD(3 downto 0);
+					line2(55 downto 48) <= x"3D";
+					line2(47 downto 0) <="0011" & resultCPUBCD(23 downto 20) & "0011" & resultCPUBCD(19 downto 16) & "0011" & resultCPUBCD(15 downto 12) & "0011" & resultCPUBCD(11 downto 8) & "0011" & resultCPUBCD(7 downto 4) & "0011" & resultCPUBCD(3 downto 0);
+					if negativeCPU = '1' and opCode = "0001" then
+						line2(47 downto 40) <= "00101101";
+					end if;
+					--line2(63 downto 0) <= "0011" & resultCPUBCD(31 downto 28) & "0011" & resultCPUBCD(27 downto 24) & "0011" & resultCPUBCD(23 downto 20) & "0011" & resultCPUBCD(19 downto 16) & "0011" & resultCPUBCD(15 downto 12) & "0011" & resultCPUBCD(11 downto 8) & "0011" & resultCPUBCD(7 downto 4) & "0011" & resultCPUBCD(3 downto 0);
 				end if;
 			else
-				if negativeCPU = '1' and opCode = "0001" then
-					line2(47 downto 40) <= "00101101";
-				else 
-					line2(47 downto 40) <= x"20";
-				end if;
-				line2(127 downto 96) <= "0011" & ABCD(15 downto 12) & "0011" & ABCD(11 downto 8) & "0011" & ABCD(7 downto 4) & "0011" & ABCD(3 downto 0);
-				line2(95 downto 88) <= x"20";
-				line2(87 downto 56) <= "0011" & BBCD(15 downto 12) & "0011" & BBCD(11 downto 8) & "0011" & BBCD(7 downto 4) & "0011" & BBCD(3 downto 0);
-				line2(55 downto 48) <= x"20";
-				line2(39 downto 0) <= "0011" & resultCPUBCD(19 downto 16) & "0011" & resultCPUBCD(15 downto 12) & "0011" & resultCPUBCD(11 downto 8) & "0011" & resultCPUBCD(7 downto 4) & "0011" & resultCPUBCD(3 downto 0);
+				line2 <= x"20202020202020202020202020202020";
 			end if;
 		end if;
 	end process;
@@ -335,7 +354,8 @@ begin
 	DisplayLCD : LCD Port Map (clk => clock, reset => reset, lcd_data => lcdData, line1_buffer => line1, line2_buffer => line2, rs => rs, rw => rw, e => e);
 	Display4Dig : Display Port Map(clk => clock, reset => reset, number => selector, segments => segments, anodes => anodes);
 	ConverterRAM : Converter Port Map(multiplier => multiplier, numberConvert => dataOut, preNumber => bufferConvert, result => bufferConvert2, clock => clock);
-	BinaryBCD : BinaryToBCD Port Map(input => resultCPU(15 downto 0), reset => resetCPU, clock => clock, output => resultCPUBCD);
-	BinaryBCDA : BinaryToBCDLow Port Map(input => A(7 downto 0), reset => resetCPU, clock => clock, output => ABCD);
-	BinaryBCDB : BinaryToBCDLow Port Map(input => B(7 downto 0), reset => resetCPU, clock => clock, output => BBCD);
+	--BinaryBCD : BinaryToBCD Port Map(input => resultCPU, reset => resetCPU, clock => clock, output => resultCPUBCD);
+	BinaryBCD : BinaryToBCD Port Map(input => resultCPU(19 downto 0), reset => resetCPU, clock => clock, output => resultCPUBCD);
+	BinaryBCDA : BinaryToBCDLow Port Map(input => A(12 downto 0), reset => resetCPU, clock => clock, output => ABCD);
+	BinaryBCDB : BinaryToBCDLow Port Map(input => B(12 downto 0), reset => resetCPU, clock => clock, output => BBCD);
 end ArchCalculator;

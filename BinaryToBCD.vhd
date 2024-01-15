@@ -4,9 +4,11 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity BinaryToBCD is
-    Port ( input : in  STD_LOGIC_VECTOR (15 downto 0);
+    --Port ( input : in  STD_LOGIC_VECTOR (31 downto 0);
+    Port ( input : in  STD_LOGIC_VECTOR (19 downto 0);
            clock, reset : in  STD_LOGIC;
-           output : out  STD_LOGIC_VECTOR (19 downto 0)
+           --output : out  STD_LOGIC_VECTOR (19 downto 0)
+           output : out  STD_LOGIC_VECTOR (23 downto 0)
           );
 end BinaryToBCD;
 
@@ -18,6 +20,11 @@ begin
 		if reset = '0' then
 			output <= (others => '0');
 		elsif rising_edge(clock) then
+			--output(39 downto 36) <= conv_std_logic_vector((conv_integer(input) / 1000000000)MOD 10,4);
+			--output(35 downto 32) <= conv_std_logic_vector((conv_integer(input) / 100000000)MOD 10,4);
+			--output(31 downto 28) <= conv_std_logic_vector((conv_integer(input) / 10000000)MOD 10,4);
+			--output(27 downto 24) <= conv_std_logic_vector((conv_integer(input) / 1000000)MOD 10,4);
+			output(23 downto 20) <= conv_std_logic_vector((conv_integer(input) / 100000)MOD 10,4);
 			output(19 downto 16) <= conv_std_logic_vector((conv_integer(input) / 10000)MOD 10,4);
 			output(15 downto 12) <= conv_std_logic_vector((conv_integer(input) / 1000)MOD 10,4);
 			output(11 downto 8) <= conv_std_logic_vector((conv_integer(input) / 100)MOD 10,4);
