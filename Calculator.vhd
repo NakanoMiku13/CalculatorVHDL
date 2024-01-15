@@ -89,7 +89,7 @@ architecture ArchCalculator of Calculator is
 	signal memoryDirection1, steps, globalSteps, counter, counter2, temp, indexEnd : integer := 0;
 	signal indexBegin : integer := 7;
 	signal multiplier, divider : integer := 1;
-	signal writeRAM1_Flag, resetCPU : std_logic := '1';
+	signal writeRAM1_Flag, resetCPU, resetBCD : std_logic := '1';
 	signal secondClock : std_logic;
 	--signal resultCPUBCD : std_logic_vector(39 downto 0);
 	signal resultCPUBCD : std_logic_vector(23 downto 0);
@@ -172,11 +172,13 @@ begin
 						inputA <= bufferConvert2;
 						inputAComplete <= '1';
 						A <= inputA;
+						resetBCD <= '1';
 						--resetCPU <= '0';
 					elsif inputBComplete = '0' then
 						inputB <= bufferConvert2;
 						inputBComplete <= '1';
 						B <= inputB;
+						resetBCD <= '1';
 						--resetCPU <= '0';
 					end if;
 					bufferConvert <= (others => '0');
@@ -199,7 +201,6 @@ begin
 					else
 						readingRam <= '0';
 					end if;
-					
 				end if;
 			else
 				writeRAM1_Flag <= '1';
@@ -286,6 +287,8 @@ begin
 					when "0011" => operationSelector <= "0100"; -- D
 					when others => operationSelector <= "0000"; -- Rolback
 					end case;
+					line2 <= x"20202020202020202020202020202020";
+					opCode <= "1010";
 				elsif buttonPressFlag = '1' and selector = "0001" then -- *
 					-- Time to read the next number
 					writeRAM1_Flag <= '0';
@@ -356,6 +359,6 @@ begin
 	ConverterRAM : Converter Port Map(multiplier => multiplier, numberConvert => dataOut, preNumber => bufferConvert, result => bufferConvert2, clock => clock);
 	--BinaryBCD : BinaryToBCD Port Map(input => resultCPU, reset => resetCPU, clock => clock, output => resultCPUBCD);
 	BinaryBCD : BinaryToBCD Port Map(input => resultCPU(19 downto 0), reset => resetCPU, clock => clock, output => resultCPUBCD);
-	BinaryBCDA : BinaryToBCDLow Port Map(input => A(12 downto 0), reset => resetCPU, clock => clock, output => ABCD);
-	BinaryBCDB : BinaryToBCDLow Port Map(input => B(12 downto 0), reset => resetCPU, clock => clock, output => BBCD);
+	BinaryBCDA : BinaryToBCDLow Port Map(input => A(12 downto 0), reset => resetBCD, clock => clock, output => ABCD);
+	BinaryBCDB : BinaryToBCDLow Port Map(input => B(12 downto 0), reset => resetBCD, clock => clock, output => BBCD);
 end ArchCalculator;

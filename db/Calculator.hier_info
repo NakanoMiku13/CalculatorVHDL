@@ -431,6 +431,7 @@ clock => inputB[28].CLK
 clock => inputB[29].CLK
 clock => inputB[30].CLK
 clock => inputB[31].CLK
+clock => resetBCD.CLK
 clock => inputAComplete.CLK
 clock => inputA[0].CLK
 clock => inputA[1].CLK
