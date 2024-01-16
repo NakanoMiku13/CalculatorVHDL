@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Calculator
-Mon Jan 15 19:12:21 2024
+Tue Jan 16 10:48:34 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -84,16 +84,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 15 19:12:21 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 16 10:48:34 2024          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Calculator                                     ;
 ; Top-level Entity Name              ; Calculator                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 8,383                                          ;
-;     Total combinational functions  ; 7,889                                          ;
-;     Dedicated logic registers      ; 1,731                                          ;
-; Total registers                    ; 1731                                           ;
-; Total pins                         ; 37                                             ;
+; Total logic elements               ; 8,514                                          ;
+;     Total combinational functions  ; 8,019                                          ;
+;     Dedicated logic registers      ; 1,837                                          ;
+; Total registers                    ; 1837                                           ;
+; Total pins                         ; 69                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 4                                              ;
@@ -226,6 +226,7 @@ https://fpgasoftware.intel.com/eula.
 ; BinaryToBCDLow.vhd               ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/BinaryToBCDLow.vhd                             ;         ;
 ; Factorial.vhd                    ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Factorial.vhd                                  ;         ;
 ; Random.vhd                       ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/Random.vhd                                     ;         ;
+; RGBMatrix.vhd                    ; yes             ; User VHDL File               ; /mnt/External/Codigos/Calculator32bits/RGBMatrix.vhd                                  ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/miku/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
@@ -276,30 +277,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 8,383       ;
+; Estimated Total logic elements              ; 8,514       ;
 ;                                             ;             ;
-; Total combinational functions               ; 7889        ;
+; Total combinational functions               ; 8019        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 2242        ;
-;     -- 3 input functions                    ; 2342        ;
-;     -- <=2 input functions                  ; 3305        ;
+;     -- 4 input functions                    ; 2271        ;
+;     -- 3 input functions                    ; 2345        ;
+;     -- <=2 input functions                  ; 3403        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 5384        ;
-;     -- arithmetic mode                      ; 2505        ;
+;     -- normal mode                          ; 5452        ;
+;     -- arithmetic mode                      ; 2567        ;
 ;                                             ;             ;
-; Total registers                             ; 1731        ;
-;     -- Dedicated logic registers            ; 1731        ;
+; Total registers                             ; 1837        ;
+;     -- Dedicated logic registers            ; 1837        ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 37          ;
+; I/O pins                                    ; 69          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 4           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 1615        ;
-; Total fan-out                               ; 27970       ;
-; Average fan-out                             ; 2.88        ;
+; Maximum fan-out                             ; 1652        ;
+; Total fan-out                               ; 28607       ;
+; Average fan-out                             ; 2.86        ;
 +---------------------------------------------+-------------+
 
 
@@ -308,7 +309,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Calculator                               ; 7889 (522)          ; 1731 (361)                ; 0           ; 4            ; 0       ; 2         ; 37   ; 0            ; |Calculator                                                                                                                           ; CPU                 ; work         ;
+; |Calculator                               ; 8019 (526)          ; 1837 (365)                ; 0           ; 4            ; 0       ; 2         ; 69   ; 0            ; |Calculator                                                                                                                           ; CPU                 ; work         ;
 ;    |BinaryToBCD:BinaryBCD|                ; 3213 (1)            ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD                                                                                                     ; BinaryToBCD         ; work         ;
 ;       |lpm_divide:Div0|                   ; 142 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
 ;          |lpm_divide_okm:auto_generated|  ; 142 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0|lpm_divide_okm:auto_generated                                                       ; lpm_divide_okm      ; work         ;
@@ -354,7 +355,7 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_ecm:auto_generated|  ; 575 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
 ;             |sign_div_unsign_lnh:divider| ; 575 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
 ;                |alt_u_div_r9f:divider|    ; 575 (575)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
-;    |BinaryToBCDLow:BinaryBCDA|            ; 887 (1)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA                                                                                                 ; BinaryToBCDLow      ; work         ;
+;    |BinaryToBCDLow:BinaryBCDA|            ; 888 (1)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA                                                                                                 ; BinaryToBCDLow      ; work         ;
 ;       |lpm_divide:Div0|                   ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_ckm:auto_generated|  ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0|lpm_divide_ckm:auto_generated                                                   ; lpm_divide_ckm      ; work         ;
 ;             |sign_div_unsign_4nh:divider| ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider                       ; sign_div_unsign_4nh ; work         ;
@@ -375,10 +376,10 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_icm:auto_generated|  ; 109 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 109 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 109 (109)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;       |lpm_divide:Mod2|                   ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_jnh:divider| ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
-;                |alt_u_div_5af:divider|    ; 184 (184)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
+;       |lpm_divide:Mod2|                   ; 185 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 185 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_jnh:divider| ; 185 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
+;                |alt_u_div_5af:divider|    ; 185 (185)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
 ;       |lpm_divide:Mod3|                   ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_icm:auto_generated|  ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
@@ -412,7 +413,7 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_icm:auto_generated|  ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 232 (232)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;    |CPU:Calculator|                       ; 1797 (263)          ; 926 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator                                                                                                            ; CPU                 ; work         ;
+;    |CPU:Calculator|                       ; 1790 (256)          ; 926 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator                                                                                                            ; CPU                 ; work         ;
 ;       |Comparison:Compare|                ; 67 (67)             ; 69 (69)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Comparison:Compare                                                                                         ; Comparison          ; work         ;
 ;       |Divider:Divi|                      ; 131 (131)           ; 73 (73)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Divider:Divi                                                                                               ; Divider             ; work         ;
 ;       |Factorial:Fact|                    ; 306 (306)           ; 161 (161)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Factorial:Fact                                                                                             ; Factorial           ; work         ;
@@ -427,8 +428,9 @@ https://fpgasoftware.intel.com/eula.
 ;          |mult_k4t:auto_generated|        ; 10 (10)             ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |Calculator|Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated                                                             ; mult_k4t            ; work         ;
 ;    |Display:Display4Dig|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|Display:Display4Dig                                                                                                       ; Display             ; work         ;
 ;    |Keyboard:InputKeyboard|               ; 130 (130)           ; 170 (170)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|Keyboard:InputKeyboard                                                                                                    ; Keyboard            ; work         ;
-;    |LCD:DisplayLCD|                       ; 325 (325)           ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|LCD:DisplayLCD                                                                                                            ; LCD                 ; work         ;
+;    |LCD:DisplayLCD|                       ; 322 (322)           ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|LCD:DisplayLCD                                                                                                            ; LCD                 ; work         ;
 ;    |RAM:RAM_1|                            ; 65 (65)             ; 68 (68)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|RAM:RAM_1                                                                                                                 ; RAM                 ; work         ;
+;    |RGBMatrix:Matrix|                     ; 135 (135)           ; 102 (102)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|RGBMatrix:Matrix                                                                                                          ; RGBMatrix           ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -634,6 +636,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; counter[1..30]                                   ; Merged with counter[31]                              ;
 ; line1[56,81,83,84,101,106,107,110,118,121,124]   ; Merged with line1[126]                               ;
 ; line1[73,74,76,78,91,93,97..99,102,115,122,123]  ; Merged with line1[125]                               ;
+; RGBMatrix:Matrix|bue[1..3]                       ; Merged with RGBMatrix:Matrix|bue[0]                  ;
 ; line1[1,41]                                      ; Merged with line1[0]                                 ;
 ; line2[4,12,20,36,48,51,68,76,124]                ; Merged with line2[116]                               ;
 ; line1[9,36,43]                                   ; Merged with line1[17]                                ;
@@ -642,6 +645,38 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; line1[61]                                        ; Merged with line1[53]                                ;
 ; line2[77]                                        ; Merged with line2[45]                                ;
 ; line2[14,22,30,38,54,62,70,86,110,118]           ; Merged with line2[102]                               ;
+; RGBMatrix:Matrix|counter3[31]                    ; Merged with RGBMatrix:Matrix|counter2[31]            ;
+; RGBMatrix:Matrix|counter3[30]                    ; Merged with RGBMatrix:Matrix|counter2[30]            ;
+; RGBMatrix:Matrix|counter3[29]                    ; Merged with RGBMatrix:Matrix|counter2[29]            ;
+; RGBMatrix:Matrix|counter3[28]                    ; Merged with RGBMatrix:Matrix|counter2[28]            ;
+; RGBMatrix:Matrix|counter3[27]                    ; Merged with RGBMatrix:Matrix|counter2[27]            ;
+; RGBMatrix:Matrix|counter3[26]                    ; Merged with RGBMatrix:Matrix|counter2[26]            ;
+; RGBMatrix:Matrix|counter3[25]                    ; Merged with RGBMatrix:Matrix|counter2[25]            ;
+; RGBMatrix:Matrix|counter3[24]                    ; Merged with RGBMatrix:Matrix|counter2[24]            ;
+; RGBMatrix:Matrix|counter3[23]                    ; Merged with RGBMatrix:Matrix|counter2[23]            ;
+; RGBMatrix:Matrix|counter3[22]                    ; Merged with RGBMatrix:Matrix|counter2[22]            ;
+; RGBMatrix:Matrix|counter3[21]                    ; Merged with RGBMatrix:Matrix|counter2[21]            ;
+; RGBMatrix:Matrix|counter3[20]                    ; Merged with RGBMatrix:Matrix|counter2[20]            ;
+; RGBMatrix:Matrix|counter3[19]                    ; Merged with RGBMatrix:Matrix|counter2[19]            ;
+; RGBMatrix:Matrix|counter3[18]                    ; Merged with RGBMatrix:Matrix|counter2[18]            ;
+; RGBMatrix:Matrix|counter3[17]                    ; Merged with RGBMatrix:Matrix|counter2[17]            ;
+; RGBMatrix:Matrix|counter3[16]                    ; Merged with RGBMatrix:Matrix|counter2[16]            ;
+; RGBMatrix:Matrix|counter3[15]                    ; Merged with RGBMatrix:Matrix|counter2[15]            ;
+; RGBMatrix:Matrix|counter3[14]                    ; Merged with RGBMatrix:Matrix|counter2[14]            ;
+; RGBMatrix:Matrix|counter3[13]                    ; Merged with RGBMatrix:Matrix|counter2[13]            ;
+; RGBMatrix:Matrix|counter3[12]                    ; Merged with RGBMatrix:Matrix|counter2[12]            ;
+; RGBMatrix:Matrix|counter3[11]                    ; Merged with RGBMatrix:Matrix|counter2[11]            ;
+; RGBMatrix:Matrix|counter3[10]                    ; Merged with RGBMatrix:Matrix|counter2[10]            ;
+; RGBMatrix:Matrix|counter3[9]                     ; Merged with RGBMatrix:Matrix|counter2[9]             ;
+; RGBMatrix:Matrix|counter3[8]                     ; Merged with RGBMatrix:Matrix|counter2[8]             ;
+; RGBMatrix:Matrix|counter3[7]                     ; Merged with RGBMatrix:Matrix|counter2[7]             ;
+; RGBMatrix:Matrix|counter3[6]                     ; Merged with RGBMatrix:Matrix|counter2[6]             ;
+; RGBMatrix:Matrix|counter3[5]                     ; Merged with RGBMatrix:Matrix|counter2[5]             ;
+; RGBMatrix:Matrix|counter3[4]                     ; Merged with RGBMatrix:Matrix|counter2[4]             ;
+; RGBMatrix:Matrix|counter3[3]                     ; Merged with RGBMatrix:Matrix|counter2[3]             ;
+; RGBMatrix:Matrix|counter3[2]                     ; Merged with RGBMatrix:Matrix|counter2[2]             ;
+; RGBMatrix:Matrix|counter3[1]                     ; Merged with RGBMatrix:Matrix|counter2[1]             ;
+; RGBMatrix:Matrix|counter3[0]                     ; Merged with RGBMatrix:Matrix|counter2[0]             ;
 ; CPU:Calculator|FullAdder:Substract|count[31]     ; Merged with CPU:Calculator|FullAdder:Adder|count[31] ;
 ; CPU:Calculator|FullAdder:Substract|count[30]     ; Merged with CPU:Calculator|FullAdder:Adder|count[30] ;
 ; CPU:Calculator|FullAdder:Substract|count[29]     ; Merged with CPU:Calculator|FullAdder:Adder|count[29] ;
@@ -693,41 +728,68 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CPU:Calculator|Power:Pow|tB[8,9,11..31]          ; Merged with CPU:Calculator|Power:Pow|tB[10]          ;
 ; CPU:Calculator|Factorial:Fact|tA[4..9,11..31]    ; Merged with CPU:Calculator|Factorial:Fact|tA[10]     ;
 ; counter[31]                                      ; Stuck at GND due to stuck port data_in               ;
+; RGBMatrix:Matrix|bue[0]                          ; Stuck at VCC due to stuck port data_in               ;
+; RGBMatrix:Matrix|Blue[0..3]                      ; Stuck at VCC due to stuck port data_in               ;
 ; line1[125]                                       ; Merged with line1[126]                               ;
 ; LCD:DisplayLCD|rw                                ; Stuck at GND due to stuck port data_in               ;
 ; resetBCD                                         ; Stuck at VCC due to stuck port data_in               ;
 ; CPU:Calculator|Divider:Divi|bufferResult[30,31]  ; Stuck at GND due to stuck port data_in               ;
 ; CPU:Calculator|Divider:Divi|bufferResult[17..28] ; Stuck at GND due to stuck port clock_enable          ;
+; RGBMatrix:Matrix|gr[2,3]                         ; Stuck at VCC due to stuck port data_in               ;
+; RGBMatrix:Matrix|rd[0..3]                        ; Stuck at VCC due to stuck port data_in               ;
+; RGBMatrix:Matrix|bue[4]                          ; Stuck at VCC due to stuck port data_in               ;
+; RGBMatrix:Matrix|Green[2,3]                      ; Stuck at VCC due to stuck port data_in               ;
+; RGBMatrix:Matrix|Red[0..3]                       ; Stuck at VCC due to stuck port data_in               ;
+; RGBMatrix:Matrix|Blue[4]                         ; Stuck at VCC due to stuck port data_in               ;
 ; CPU:Calculator|Divider:Divi|bufferResult[29]     ; Stuck at GND due to stuck port data_in               ;
+; RGBMatrix:Matrix|gr[1]                           ; Merged with RGBMatrix:Matrix|gr[0]                   ;
+; RGBMatrix:Matrix|bue[6,7]                        ; Merged with RGBMatrix:Matrix|bue[5]                  ;
 ; Keyboard:InputKeyboard|CONTA_1MS[0]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[0]     ;
 ; Keyboard:InputKeyboard|CONTA_1MS[1]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[1]     ;
 ; Keyboard:InputKeyboard|CONTA_1MS[2]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[2]     ;
 ; Keyboard:InputKeyboard|CONTA_1MS[3]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[3]     ;
-; Total Number of Removed Registers = 320          ;                                                      ;
+; RGBMatrix:Matrix|gr[5,6]                         ; Merged with RGBMatrix:Matrix|gr[4]                   ;
+; Total Number of Removed Registers = 379          ;                                                      ;
 +--------------------------------------------------+------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                    ;
-+------------------------------------+---------------------------+-----------------------------------------------+
-; Register name                      ; Reason for Removal        ; Registers Removed due to This Register        ;
-+------------------------------------+---------------------------+-----------------------------------------------+
-; CPU:Calculator|Divider:Divi|tB[31] ; Stuck at GND              ; CPU:Calculator|Divider:Divi|bufferResult[31], ;
-;                                    ; due to stuck port data_in ; CPU:Calculator|Divider:Divi|bufferResult[30], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[28], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[27], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[26], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[25], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[24], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[23], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[22], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[21], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[20], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[19], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[18], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[17], ;
-;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[29]  ;
-+------------------------------------+---------------------------+-----------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                    ;
++------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                        ;
++------------------------------------+---------------------------+-------------------------------------------------------------------------------+
+; CPU:Calculator|Divider:Divi|tB[31] ; Stuck at GND              ; CPU:Calculator|Divider:Divi|bufferResult[31],                                 ;
+;                                    ; due to stuck port data_in ; CPU:Calculator|Divider:Divi|bufferResult[30],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[28],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[27],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[26],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[25],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[24],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[23],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[22],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[21],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[20],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[19],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[18],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[17],                                 ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[29]                                  ;
+; RGBMatrix:Matrix|bue[0]            ; Stuck at VCC              ; RGBMatrix:Matrix|Blue[3], RGBMatrix:Matrix|Blue[2], RGBMatrix:Matrix|Blue[1], ;
+;                                    ; due to stuck port data_in ; RGBMatrix:Matrix|Blue[0]                                                      ;
+; RGBMatrix:Matrix|gr[2]             ; Stuck at VCC              ; RGBMatrix:Matrix|Green[2]                                                     ;
+;                                    ; due to stuck port data_in ;                                                                               ;
+; RGBMatrix:Matrix|gr[3]             ; Stuck at VCC              ; RGBMatrix:Matrix|Green[3]                                                     ;
+;                                    ; due to stuck port data_in ;                                                                               ;
+; RGBMatrix:Matrix|rd[0]             ; Stuck at VCC              ; RGBMatrix:Matrix|Red[0]                                                       ;
+;                                    ; due to stuck port data_in ;                                                                               ;
+; RGBMatrix:Matrix|rd[1]             ; Stuck at VCC              ; RGBMatrix:Matrix|Red[1]                                                       ;
+;                                    ; due to stuck port data_in ;                                                                               ;
+; RGBMatrix:Matrix|rd[2]             ; Stuck at VCC              ; RGBMatrix:Matrix|Red[2]                                                       ;
+;                                    ; due to stuck port data_in ;                                                                               ;
+; RGBMatrix:Matrix|rd[3]             ; Stuck at VCC              ; RGBMatrix:Matrix|Red[3]                                                       ;
+;                                    ; due to stuck port data_in ;                                                                               ;
+; RGBMatrix:Matrix|bue[4]            ; Stuck at VCC              ; RGBMatrix:Matrix|Blue[4]                                                      ;
+;                                    ; due to stuck port data_in ;                                                                               ;
++------------------------------------+---------------------------+-------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -735,31 +797,47 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1731  ;
-; Number of registers using Synchronous Clear  ; 285   ;
+; Total registers                              ; 1837  ;
+; Number of registers using Synchronous Clear  ; 320   ;
 ; Number of registers using Synchronous Load   ; 112   ;
-; Number of registers using Asynchronous Clear ; 834   ;
+; Number of registers using Asynchronous Clear ; 866   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 980   ;
+; Number of registers using Clock Enable       ; 989   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; LCD:DisplayLCD|ptr[1]                  ; 57      ;
-; LCD:DisplayLCD|ptr[0]                  ; 38      ;
-; LCD:DisplayLCD|ptr[2]                  ; 54      ;
-; LCD:DisplayLCD|ptr[3]                  ; 34      ;
-; LCD:DisplayLCD|line                    ; 5       ;
-; resetCPU                               ; 895     ;
-; writeRAM1_Flag                         ; 188     ;
-; multiplier[0]                          ; 4       ;
-; Total number of inverted registers = 8 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; RGBMatrix:Matrix|gr[0]                  ; 2       ;
+; RGBMatrix:Matrix|gr[4]                  ; 3       ;
+; RGBMatrix:Matrix|gr[7]                  ; 1       ;
+; RGBMatrix:Matrix|rd[4]                  ; 1       ;
+; RGBMatrix:Matrix|rd[5]                  ; 1       ;
+; RGBMatrix:Matrix|rd[6]                  ; 1       ;
+; RGBMatrix:Matrix|rd[7]                  ; 1       ;
+; RGBMatrix:Matrix|bue[5]                 ; 3       ;
+; RGBMatrix:Matrix|cols[0]                ; 2       ;
+; RGBMatrix:Matrix|cols[1]                ; 2       ;
+; RGBMatrix:Matrix|cols[2]                ; 2       ;
+; RGBMatrix:Matrix|cols[3]                ; 2       ;
+; RGBMatrix:Matrix|cols[4]                ; 2       ;
+; RGBMatrix:Matrix|cols[5]                ; 2       ;
+; RGBMatrix:Matrix|cols[6]                ; 2       ;
+; RGBMatrix:Matrix|cols[7]                ; 1       ;
+; LCD:DisplayLCD|ptr[1]                   ; 57      ;
+; LCD:DisplayLCD|ptr[0]                   ; 38      ;
+; LCD:DisplayLCD|ptr[2]                   ; 54      ;
+; LCD:DisplayLCD|ptr[3]                   ; 34      ;
+; LCD:DisplayLCD|line                     ; 5       ;
+; writeRAM1_Flag                          ; 188     ;
+; resetCPU                                ; 895     ;
+; multiplier[0]                           ; 4       ;
+; Total number of inverted registers = 24 ;         ;
++-----------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -767,39 +845,43 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[11]                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[8]                                ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[35]                               ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[10]                               ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|inputA[14]                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[27]                               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|inputA[18]                              ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|inputB[13]                              ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|CPU:Calculator|Random:Rand|rand[1]      ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|bufferConvert[16]                       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line2[102]                              ;
-; 3:1                ; 38 bits   ; 76 LEs        ; 76 LEs               ; 0 LEs                  ; Yes        ; |Calculator|line2[2]                                ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Calculator|line2[16]                               ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|CPU:Calculator|Random:Rand|rand[14]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|bufferConvert[0]                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line2[78]                               ;
+; 3:1                ; 38 bits   ; 76 LEs        ; 76 LEs               ; 0 LEs                  ; Yes        ; |Calculator|line2[73]                               ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Calculator|line2[18]                               ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[24]                               ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[49]                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line1[40]                               ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[64]                               ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[28]                               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line1[52]                               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[51]                               ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[32]                               ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[44]                               ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[42]                               ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line2[56]                               ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line1[2]                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line2[57]                               ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line2[42]                               ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|CPU:Calculator|Random:Rand|tr[10]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Calculator|CPU:Calculator|Random:Rand|tr[30]       ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |Calculator|opCode[2]                               ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |Calculator|line1[48]                               ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |Calculator|opCode[0]                               ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 28 LEs               ; 16 LEs                 ; Yes        ; |Calculator|inputBuffer1[2]                         ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 28 LEs               ; 16 LEs                 ; Yes        ; |Calculator|inputBuffer1[3]                         ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |Calculator|line2[89]                               ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |Calculator|memoryDirection1[15]                    ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |Calculator|LCD:DisplayLCD|clk_count[16]            ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |Calculator|Keyboard:InputKeyboard|BOTON_PRES[3]    ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |Calculator|multiplier[18]                          ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |Calculator|RAM:RAM_1|dataOut[1]                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Calculator|Mux68                                   ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; No         ; |Calculator|CPU:Calculator|Mux63                    ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; No         ; |Calculator|CPU:Calculator|Mux87                    ;
-; 16:1               ; 17 bits   ; 170 LEs       ; 102 LEs              ; 68 LEs                 ; No         ; |Calculator|CPU:Calculator|Mux12                    ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |Calculator|memoryDirection1[9]                     ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |Calculator|LCD:DisplayLCD|clk_count[11]            ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |Calculator|Keyboard:InputKeyboard|BOTON_PRES[0]    ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |Calculator|multiplier[12]                          ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |Calculator|RAM:RAM_1|dataOut[0]                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Calculator|RGBMatrix:Matrix|gr[2]                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Calculator|RGBMatrix:Matrix|bue[7]                 ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |Calculator|RGBMatrix:Matrix|rd[7]                  ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |Calculator|RGBMatrix:Matrix|gr[6]                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Calculator|Mux69                                   ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; No         ; |Calculator|CPU:Calculator|Mux54                    ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; No         ; |Calculator|CPU:Calculator|Mux88                    ;
+; 16:1               ; 17 bits   ; 170 LEs       ; 102 LEs              ; 68 LEs                 ; No         ; |Calculator|CPU:Calculator|Mux19                    ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 12 LEs               ; 10 LEs                 ; No         ; |Calculator|CPU:Calculator|Mux1                     ;
 ; 32:1               ; 2 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |Calculator|CPU:Calculator|FullAdder:Substract|Mux0 ;
 ; 33:1               ; 2 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |Calculator|CPU:Calculator|FullAdder:Substract|Mux2 ;
@@ -1516,35 +1598,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 1731                        ;
-;     CLR               ; 243                         ;
+; boundary_port         ; 69                          ;
+; cycloneiii_ff         ; 1837                        ;
+;     CLR               ; 275                         ;
 ;     CLR SCLR          ; 64                          ;
-;     ENA               ; 356                         ;
+;     ENA               ; 365                         ;
 ;     ENA CLR           ; 379                         ;
 ;     ENA CLR SCLR      ; 148                         ;
 ;     ENA SCLR          ; 30                          ;
 ;     ENA SLD           ; 67                          ;
-;     SCLR              ; 5                           ;
+;     SCLR              ; 40                          ;
 ;     SCLR SLD          ; 38                          ;
 ;     SLD               ; 7                           ;
-;     plain             ; 394                         ;
-; cycloneiii_lcell_comb ; 7895                        ;
-;     arith             ; 2505                        ;
+;     plain             ; 424                         ;
+; cycloneiii_lcell_comb ; 8025                        ;
+;     arith             ; 2567                        ;
 ;         1 data inputs ; 55                          ;
-;         2 data inputs ; 716                         ;
+;         2 data inputs ; 778                         ;
 ;         3 data inputs ; 1734                        ;
-;     normal            ; 5390                        ;
+;     normal            ; 5458                        ;
 ;         0 data inputs ; 197                         ;
-;         1 data inputs ; 73                          ;
-;         2 data inputs ; 2270                        ;
-;         3 data inputs ; 608                         ;
-;         4 data inputs ; 2242                        ;
+;         1 data inputs ; 101                         ;
+;         2 data inputs ; 2278                        ;
+;         3 data inputs ; 611                         ;
+;         4 data inputs ; 2271                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 52.70                       ;
-; Average LUT depth     ; 21.35                       ;
+; Average LUT depth     ; 20.90                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1553,7 +1635,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:12     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -1563,7 +1645,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Mon Jan 15 19:12:00 2024
+    Info: Processing started: Tue Jan 16 10:48:16 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Calculator -c Calculator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1625,10 +1707,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file RGBMatr
     Info (12022): Found design unit 1: RGBMatrix-ArchRGB File: /mnt/External/Codigos/Calculator32bits/RGBMatrix.vhd Line: 9
     Info (12023): Found entity 1: RGBMatrix File: /mnt/External/Codigos/Calculator32bits/RGBMatrix.vhd Line: 3
 Info (12127): Elaborating entity "Calculator" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Calculator.vhd(8): used implicit default value for signal "leds" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
-Warning (10036): Verilog HDL or VHDL warning at Calculator.vhd(87): object "ramOut" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 87
-Warning (10036): Verilog HDL or VHDL warning at Calculator.vhd(88): object "enableRAM1_Flag" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 88
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Calculator" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 149
+Warning (10036): Verilog HDL or VHDL warning at Calculator.vhd(93): object "ramOut" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 93
+Warning (10036): Verilog HDL or VHDL warning at Calculator.vhd(94): object "enableRAM1_Flag" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 94
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Calculator" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
 Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(73): object "adderOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 73
 Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(73): object "subsOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 73
 Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(73): object "multiplierOverflow" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 73
@@ -1830,17 +1911,18 @@ Warning (10492): VHDL Process Statement warning at Factorial.vhd(41): signal "tA
 Warning (10492): VHDL Process Statement warning at Factorial.vhd(42): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Factorial.vhd Line: 42
 Info (12128): Elaborating entity "Random" for hierarchy "CPU:Calculator|Random:Rand" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 171
 Warning (10540): VHDL Signal Declaration warning at Random.vhd(15): used explicit default value for signal "empty" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/Random.vhd Line: 15
-Info (12128): Elaborating entity "Keyboard" for hierarchy "Keyboard:InputKeyboard" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 150
-Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM_1" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 151
+Info (12128): Elaborating entity "Keyboard" for hierarchy "Keyboard:InputKeyboard" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 156
+Info (12128): Elaborating entity "RGBMatrix" for hierarchy "RGBMatrix:Matrix" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 157
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM_1" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 363
 Warning (10492): VHDL Process Statement warning at RAM.vhd(18): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/RAM.vhd Line: 18
 Warning (10492): VHDL Process Statement warning at RAM.vhd(18): signal "resetLogic" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/RAM.vhd Line: 18
-Info (12128): Elaborating entity "LCD" for hierarchy "LCD:DisplayLCD" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 357
-Info (12128): Elaborating entity "Display" for hierarchy "Display:Display4Dig" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 358
+Info (12128): Elaborating entity "LCD" for hierarchy "LCD:DisplayLCD" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 364
+Info (12128): Elaborating entity "Display" for hierarchy "Display:Display4Dig" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 365
 Warning (10492): VHDL Process Statement warning at Display.vhd(54): signal "display_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Display.vhd Line: 54
-Info (12128): Elaborating entity "Converter" for hierarchy "Converter:ConverterRAM" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 359
-Info (12128): Elaborating entity "BinaryToBCD" for hierarchy "BinaryToBCD:BinaryBCD" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 361
+Info (12128): Elaborating entity "Converter" for hierarchy "Converter:ConverterRAM" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 366
+Info (12128): Elaborating entity "BinaryToBCD" for hierarchy "BinaryToBCD:BinaryBCD" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 368
 Warning (10492): VHDL Process Statement warning at BinaryToBCD.vhd(20): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 20
-Info (12128): Elaborating entity "BinaryToBCDLow" for hierarchy "BinaryToBCDLow:BinaryBCDA" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 362
+Info (12128): Elaborating entity "BinaryToBCDLow" for hierarchy "BinaryToBCDLow:BinaryBCDA" File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 369
 Warning (10492): VHDL Process Statement warning at BinaryToBCDLow.vhd(18): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/BinaryToBCDLow.vhd Line: 18
 Info (278001): Inferred 26 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinaryToBCD:BinaryBCD|Div4" File: /mnt/External/Codigos/Calculator32bits/BinaryToBCD.vhd Line: 31
@@ -2009,41 +2091,41 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mult
 Info (13014): Ignored 39 buffer(s)
     Info (13019): Ignored 39 SOFT buffer(s)
 Warning (13012): Latch CPU:Calculator|negative has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 10
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[0] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[0] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[3] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[4] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[10] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[14] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[7] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[17] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[18] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[15] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[11] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[8] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[5] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[19] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[6] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[12] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[16] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[9] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13012): Latch CPU:Calculator|result[13] has unsafe behavior File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 103
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 155
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opCode[3] File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 161
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
     Warning (13310): Register "CPU:Calculator|Factorial:Fact|tempA[1]" is converted into an equivalent circuit using register "CPU:Calculator|Factorial:Fact|tempA[1]~_emulated" and latch "CPU:Calculator|Factorial:Fact|tempA[1]~1" File: /mnt/External/Codigos/Calculator32bits/Factorial.vhd Line: 34
     Warning (13310): Register "CPU:Calculator|Factorial:Fact|tA[3]" is converted into an equivalent circuit using register "CPU:Calculator|Factorial:Fact|tA[3]~_emulated" and latch "CPU:Calculator|Factorial:Fact|tA[3]~1" File: /mnt/External/Codigos/Calculator32bits/Factorial.vhd Line: 34
@@ -2132,10 +2214,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "anodes[1]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
     Warning (13410): Pin "anodes[2]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
     Warning (13410): Pin "anodes[3]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
-    Warning (13410): Pin "leds[0]" is stuck at GND File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
-    Warning (13410): Pin "leds[1]" is stuck at GND File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
-    Warning (13410): Pin "leds[2]" is stuck at GND File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
-    Warning (13410): Pin "leds[3]" is stuck at GND File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
+    Warning (13410): Pin "gr[2]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "gr[3]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "rd[0]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "rd[1]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "rd[2]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "rd[3]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "bl[0]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "bl[1]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "bl[2]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "bl[3]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
+    Warning (13410): Pin "bl[4]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
     Warning (13410): Pin "segments[0]" is stuck at VCC File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 10
     Warning (13410): Pin "rw" is stuck at GND File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
@@ -2174,17 +2263,18 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_11_result_int[0]~24" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 42
     Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|op_3~0"
     Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|op_3~0"
+    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_9_result_int[0]~20" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 87
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 8456 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8624 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 8415 logic cells
+    Info (21059): Implemented 63 output pins
+    Info (21061): Implemented 8551 logic cells
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 195 warnings
-    Info: Peak virtual memory: 537 megabytes
-    Info: Processing ended: Mon Jan 15 19:12:22 2024
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 201 warnings
+    Info: Peak virtual memory: 534 megabytes
+    Info: Processing ended: Tue Jan 16 10:48:34 2024
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:25
 
 

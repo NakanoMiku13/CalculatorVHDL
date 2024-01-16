@@ -20,6 +20,106 @@
 					"strict" : false
 				},
 				{
+					"name" : "leds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "gr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "gr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "gr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "gr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "gr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "gr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[7]",
+					"strict" : false
+				},
+				{
+					"name" : "bl[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bl[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bl[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rowsM[7]",
+					"strict" : false
+				},
+				{
 					"name" : "lcdData[0]",
 					"strict" : false
 				},
@@ -96,15 +196,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "cols[3]",
-					"strict" : false
-				},
-				{
 					"name" : "cols[1]",
 					"strict" : false
 				},
 				{
 					"name" : "cols[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cols[3]",
 					"strict" : false
 				},
 				{

@@ -96,11 +96,6 @@ set_global_assignment -name VHDL_FILE Display.vhd
 set_global_assignment -name VHDL_FILE Converter.vhd
 set_global_assignment -name VHDL_FILE ConvertToLCD.vhd
 set_global_assignment -name VHDL_FILE BinaryToBCD.vhd
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name VHDL_FILE Divider.vhd
 set_global_assignment -name VHDL_FILE Comparison.vhd
 set_global_assignment -name VHDL_FILE Power.vhd
@@ -110,4 +105,39 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name VHDL_FILE Factorial.vhd
 set_global_assignment -name VHDL_FILE Random.vhd
 set_global_assignment -name VHDL_FILE RGBMatrix.vhd
+set_location_assignment PIN_106 -to rowsM[7]
+set_location_assignment PIN_105 -to rowsM[6]
+set_location_assignment PIN_104 -to rowsM[5]
+set_location_assignment PIN_103 -to rowsM[4]
+set_location_assignment PIN_100 -to rowsM[3]
+set_location_assignment PIN_99 -to rowsM[2]
+set_location_assignment PIN_98 -to rowsM[1]
+set_location_assignment PIN_83 -to rowsM[0]
+set_location_assignment PIN_113 -to rd[7]
+set_location_assignment PIN_112 -to rd[6]
+set_location_assignment PIN_10 -to rd[5]
+set_location_assignment PIN_7 -to rd[4]
+set_location_assignment PIN_3 -to rd[3]
+set_location_assignment PIN_2 -to rd[2]
+set_location_assignment PIN_1 -to rd[1]
+set_location_assignment PIN_144 -to rd[0]
+set_location_assignment PIN_143 -to bl[7]
+set_location_assignment PIN_142 -to bl[6]
+set_location_assignment PIN_141 -to bl[5]
+set_location_assignment PIN_138 -to bl[4]
+set_location_assignment PIN_120 -to bl[3]
+set_location_assignment PIN_119 -to bl[2]
+set_location_assignment PIN_115 -to bl[1]
+set_location_assignment PIN_114 -to bl[0]
+set_location_assignment PIN_68 -to gr[7]
+set_location_assignment PIN_69 -to gr[6]
+set_location_assignment PIN_70 -to gr[5]
+set_location_assignment PIN_71 -to gr[4]
+set_location_assignment PIN_72 -to gr[3]
+set_location_assignment PIN_73 -to gr[2]
+set_location_assignment PIN_74 -to gr[1]
+set_location_assignment PIN_75 -to gr[0]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

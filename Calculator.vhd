@@ -7,7 +7,7 @@ entity Calculator is
 		clock, reset : in std_logic;
 		rows,  anodes, leds : out std_logic_vector(3 downto 0);
 		cols : in std_logic_vector(3 downto 0);
-		lcdData, segments : out std_logic_vector(7 downto 0);
+		gr, rd, bl, rowsM, lcdData, segments : out std_logic_vector(7 downto 0);
 		rw, rs, e : out std_logic
 	);
 end Calculator;
@@ -83,6 +83,12 @@ architecture ArchCalculator of Calculator is
 			output : out  STD_LOGIC_VECTOR (15 downto 0)
 		);
 	end component;
+	component RGBMatrix is
+	Port(
+		Rowss, Green, Red, Blue : out std_logic_vector(7 downto 0);
+		clock, reset : in std_logic
+	);
+	end component;
 	-- Flags
 	signal inputBuffer1, dataOut, selector, opCode, operationSelector, ramOut : std_logic_vector(3 downto 0) := (others => '0');
 	signal buttonPressFlag, enableRAM1_Flag, getRAM1_Flag, readingRam, resetRAM, inputAComplete, inputBComplete, negativeCPU : std_logic := '0';
@@ -148,7 +154,7 @@ architecture ArchCalculator of Calculator is
 begin
 	Calculator : CPU Port Map(clock => clock, reset => resetCPU, opCode => opCode, A => A, B => B, result => resultCPU, negative => negativeCPU);
 	InputKeyboard : Keyboard Generic Map (FREQ_CLK => 50000000) Port Map (CLK => clock, COLUMNAS => cols, FILAS => rows, BOTON_PRES => selector, IND => buttonPressFlag);
-	RAM_1 : RAM Port Map(dataIn => inputBuffer1, direction => memoryDirection1, dataOut => dataOut, we => writeRAM1_Flag, clock => clock, reset => reset, resetLogic => resetRAM);
+	Matrix : RGBMatrix Port Map(clock => clock, reset => reset, Green => gr, Red => rd, Blue => bl, Rowss => rowsM);
 	process(clock, selector, buttonPressFlag, reset, writeRAM1_Flag)
 	begin
 		--leds <= not conv_std_logic_vector(memoryDirection1, 4);
@@ -307,6 +313,7 @@ begin
 				end if;
 			end if;
 			line1 <= PrintCurrentOp(opCode, operationSelector);
+			leds <= not opCode;
 			if opCode /= "1010" then
 				if opCode = "1001" then
 					if resultCPU(2 downto 2) = "1" then
@@ -353,7 +360,7 @@ begin
 			end if;
 		end if;
 	end process;
-	
+	RAM_1 : RAM Port Map(dataIn => inputBuffer1, direction => memoryDirection1, dataOut => dataOut, we => writeRAM1_Flag, clock => clock, reset => reset, resetLogic => resetRAM);
 	DisplayLCD : LCD Port Map (clk => clock, reset => reset, lcd_data => lcdData, line1_buffer => line1, line2_buffer => line2, rs => rs, rw => rw, e => e);
 	Display4Dig : Display Port Map(clk => clock, reset => reset, number => selector, segments => segments, anodes => anodes);
 	ConverterRAM : Converter Port Map(multiplier => multiplier, numberConvert => dataOut, preNumber => bufferConvert, result => bufferConvert2, clock => clock);

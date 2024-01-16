@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 entity RGBMatrix is
 	Port(
-		Rows, Green, Red, Blue : out std_logic_vector(7 downto 0);
+		Rowss, Green, Red, Blue : out std_logic_vector(7 downto 0);
 		clock, reset : in std_logic
 	);
 end RGBMatrix;
@@ -338,7 +338,7 @@ begin
 			Green <= gr;
 			Red <= rd;
 			Blue <= bue;
-			Rows <= cols;
+			Rowss <= cols;
 		end if;
 	end process;
 end ArchRGB;
