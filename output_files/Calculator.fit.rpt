@@ -1,5 +1,5 @@
 Fitter report for Calculator
-Sun Jan 14 23:14:00 2024
+Mon Jan 15 19:13:07 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -70,17 +70,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Jan 14 23:14:00 2024          ;
+; Fitter Status                      ; Successful - Mon Jan 15 19:13:07 2024          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Calculator                                     ;
 ; Top-level Entity Name              ; Calculator                                     ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE10E22C6                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 8,192 / 10,320 ( 79 % )                        ;
-;     Total combinational functions  ; 7,863 / 10,320 ( 76 % )                        ;
-;     Dedicated logic registers      ; 1,673 / 10,320 ( 16 % )                        ;
-; Total registers                    ; 1673                                           ;
+; Total logic elements               ; 8,254 / 10,320 ( 80 % )                        ;
+;     Total combinational functions  ; 7,903 / 10,320 ( 77 % )                        ;
+;     Dedicated logic registers      ; 1,730 / 10,320 ( 17 % )                        ;
+; Total registers                    ; 1730                                           ;
 ; Total pins                         ; 37 / 92 ( 40 % )                               ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                            ;
@@ -161,7 +161,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   5.0%      ;
+;     Processor 2            ;   4.9%      ;
 +----------------------------+-------------+
 
 
@@ -228,8 +228,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 9620 ) ; 0.00 % ( 0 / 9620 )        ; 0.00 % ( 0 / 9620 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 9620 ) ; 0.00 % ( 0 / 9620 )        ; 0.00 % ( 0 / 9620 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 9717 ) ; 0.00 % ( 0 / 9717 )        ; 0.00 % ( 0 / 9717 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 9717 ) ; 0.00 % ( 0 / 9717 )        ; 0.00 % ( 0 / 9717 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -252,7 +252,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 9610 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 9707 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -268,26 +268,26 @@ The pin-out file can be found in /mnt/External/Codigos/Calculator32bits/output_f
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 8,192 / 10,320 ( 79 % ) ;
-;     -- Combinational with no register       ; 6519                    ;
-;     -- Register only                        ; 329                     ;
-;     -- Combinational with a register        ; 1344                    ;
+; Total logic elements                        ; 8,254 / 10,320 ( 80 % ) ;
+;     -- Combinational with no register       ; 6524                    ;
+;     -- Register only                        ; 351                     ;
+;     -- Combinational with a register        ; 1379                    ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 2238                    ;
-;     -- 3 input functions                    ; 2308                    ;
-;     -- <=2 input functions                  ; 3317                    ;
-;     -- Register only                        ; 329                     ;
+;     -- 4 input functions                    ; 2242                    ;
+;     -- 3 input functions                    ; 2342                    ;
+;     -- <=2 input functions                  ; 3319                    ;
+;     -- Register only                        ; 351                     ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 5373                    ;
-;     -- arithmetic mode                      ; 2490                    ;
+;     -- normal mode                          ; 5398                    ;
+;     -- arithmetic mode                      ; 2505                    ;
 ;                                             ;                         ;
-; Total registers*                            ; 1,673 / 10,732 ( 16 % ) ;
-;     -- Dedicated logic registers            ; 1,673 / 10,320 ( 16 % ) ;
+; Total registers*                            ; 1,730 / 10,732 ( 16 % ) ;
+;     -- Dedicated logic registers            ; 1,730 / 10,320 ( 17 % ) ;
 ;     -- I/O registers                        ; 0 / 412 ( 0 % )         ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 583 / 645 ( 90 % )      ;
+; Total LABs:  partially or completely used   ; 588 / 645 ( 91 % )      ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 37 / 92 ( 40 % )        ;
 ;     -- Clock pins                           ; 2 / 3 ( 67 % )          ;
@@ -305,12 +305,12 @@ The pin-out file can be found in /mnt/External/Codigos/Calculator32bits/output_f
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 20.4% / 18.7% / 22.7%   ;
-; Peak interconnect usage (total/H/V)         ; 25.1% / 23.0% / 28.1%   ;
-; Maximum fan-out                             ; 1555                    ;
+; Average interconnect usage (total/H/V)      ; 19.3% / 18.2% / 20.8%   ;
+; Peak interconnect usage (total/H/V)         ; 21.8% / 21.1% / 22.9%   ;
+; Maximum fan-out                             ; 1612                    ;
 ; Highest non-global fan-out                  ; 188                     ;
-; Total fan-out                               ; 27929                   ;
-; Average fan-out                             ; 2.83                    ;
+; Total fan-out                               ; 28281                   ;
+; Average fan-out                             ; 2.82                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -323,26 +323,26 @@ The pin-out file can be found in /mnt/External/Codigos/Calculator32bits/output_f
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 8192 / 10320 ( 79 % ) ; 0 / 10320 ( 0 % )              ;
-;     -- Combinational with no register       ; 6519                  ; 0                              ;
-;     -- Register only                        ; 329                   ; 0                              ;
-;     -- Combinational with a register        ; 1344                  ; 0                              ;
+; Total logic elements                        ; 8254 / 10320 ( 80 % ) ; 0 / 10320 ( 0 % )              ;
+;     -- Combinational with no register       ; 6524                  ; 0                              ;
+;     -- Register only                        ; 351                   ; 0                              ;
+;     -- Combinational with a register        ; 1379                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 2238                  ; 0                              ;
-;     -- 3 input functions                    ; 2308                  ; 0                              ;
-;     -- <=2 input functions                  ; 3317                  ; 0                              ;
-;     -- Register only                        ; 329                   ; 0                              ;
+;     -- 4 input functions                    ; 2242                  ; 0                              ;
+;     -- 3 input functions                    ; 2342                  ; 0                              ;
+;     -- <=2 input functions                  ; 3319                  ; 0                              ;
+;     -- Register only                        ; 351                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 5373                  ; 0                              ;
-;     -- arithmetic mode                      ; 2490                  ; 0                              ;
+;     -- normal mode                          ; 5398                  ; 0                              ;
+;     -- arithmetic mode                      ; 2505                  ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 1673                  ; 0                              ;
-;     -- Dedicated logic registers            ; 1673 / 10320 ( 16 % ) ; 0 / 10320 ( 0 % )              ;
+; Total registers                             ; 1730                  ; 0                              ;
+;     -- Dedicated logic registers            ; 1730 / 10320 ( 17 % ) ; 0 / 10320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 583 / 645 ( 90 % )    ; 0 / 645 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 588 / 645 ( 91 % )    ; 0 / 645 ( 0 % )                ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 37                    ; 0                              ;
@@ -358,8 +358,8 @@ The pin-out file can be found in /mnt/External/Codigos/Calculator32bits/output_f
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 27994                 ; 5                              ;
-;     -- Registered Connections               ; 5133                  ; 0                              ;
+;     -- Total Connections                    ; 28346                 ; 5                              ;
+;     -- Registered Connections               ; 5248                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -391,7 +391,7 @@ The pin-out file can be found in /mnt/External/Codigos/Calculator32bits/output_f
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; clock   ; 23    ; 1        ; 0            ; 11           ; 7            ; 1559                  ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clock   ; 23    ; 1        ; 0            ; 11           ; 7            ; 1616                  ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; cols[0] ; 52    ; 3        ; 16           ; 0            ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; cols[1] ; 53    ; 3        ; 16           ; 0            ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; cols[2] ; 54    ; 4        ; 18           ; 0            ; 21           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -686,8 +686,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                   ; Entity Name         ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Calculator                               ; 8192 (609)  ; 1673 (360)                ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 37   ; 0            ; 6519 (268)   ; 329 (29)          ; 1344 (268)       ; |Calculator                                                                                                                           ; CPU                 ; work         ;
-;    |BinaryToBCD:BinaryBCD|                ; 3214 (24)   ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3174 (0)     ; 1 (1)             ; 39 (1)           ; |Calculator|BinaryToBCD:BinaryBCD                                                                                                     ; BinaryToBCD         ; work         ;
+; |Calculator                               ; 8254 (605)  ; 1730 (360)                ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 37   ; 0            ; 6524 (271)   ; 351 (28)          ; 1379 (265)       ; |Calculator                                                                                                                           ; CPU                 ; work         ;
+;    |BinaryToBCD:BinaryBCD|                ; 3214 (24)   ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3180 (0)     ; 0 (0)             ; 34 (2)           ; |Calculator|BinaryToBCD:BinaryBCD                                                                                                     ; BinaryToBCD         ; work         ;
 ;       |lpm_divide:Div0|                   ; 142 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 142 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
 ;          |lpm_divide_okm:auto_generated|  ; 142 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 142 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0|lpm_divide_okm:auto_generated                                                       ; lpm_divide_okm      ; work         ;
 ;             |sign_div_unsign_knh:divider| ; 142 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 142 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0|lpm_divide_okm:auto_generated|sign_div_unsign_knh:divider                           ; sign_div_unsign_knh ; work         ;
@@ -700,14 +700,14 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;          |lpm_divide_akm:auto_generated|  ; 309 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 309 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div2|lpm_divide_akm:auto_generated                                                       ; lpm_divide_akm      ; work         ;
 ;             |sign_div_unsign_2nh:divider| ; 309 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 309 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div2|lpm_divide_akm:auto_generated|sign_div_unsign_2nh:divider                           ; sign_div_unsign_2nh ; work         ;
 ;                |alt_u_div_o9f:divider|    ; 309 (309)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 309 (309)    ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div2|lpm_divide_akm:auto_generated|sign_div_unsign_2nh:divider|alt_u_div_o9f:divider     ; alt_u_div_o9f       ; work         ;
-;       |lpm_divide:Div3|                   ; 289 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 277 (0)      ; 0 (0)             ; 12 (0)           ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_6jm:auto_generated|  ; 289 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 277 (0)      ; 0 (0)             ; 12 (0)           ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated                                                       ; lpm_divide_6jm      ; work         ;
-;             |sign_div_unsign_ulh:divider| ; 289 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 277 (0)      ; 0 (0)             ; 12 (0)           ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated|sign_div_unsign_ulh:divider                           ; sign_div_unsign_ulh ; work         ;
-;                |alt_u_div_57f:divider|    ; 289 (289)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 277 (277)    ; 0 (0)             ; 12 (12)          ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_57f:divider     ; alt_u_div_57f       ; work         ;
-;       |lpm_divide:Div4|                   ; 212 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 210 (0)      ; 0 (0)             ; 2 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_tim:auto_generated|  ; 212 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 210 (0)      ; 0 (0)             ; 2 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated                                                       ; lpm_divide_tim      ; work         ;
-;             |sign_div_unsign_llh:divider| ; 212 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 210 (0)      ; 0 (0)             ; 2 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider                           ; sign_div_unsign_llh ; work         ;
-;                |alt_u_div_u6f:divider|    ; 212 (212)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 210 (210)    ; 0 (0)             ; 2 (2)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider     ; alt_u_div_u6f       ; work         ;
+;       |lpm_divide:Div3|                   ; 289 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 289 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_6jm:auto_generated|  ; 289 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 289 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated                                                       ; lpm_divide_6jm      ; work         ;
+;             |sign_div_unsign_ulh:divider| ; 289 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 289 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated|sign_div_unsign_ulh:divider                           ; sign_div_unsign_ulh ; work         ;
+;                |alt_u_div_57f:divider|    ; 289 (289)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 289 (289)    ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_57f:divider     ; alt_u_div_57f       ; work         ;
+;       |lpm_divide:Div4|                   ; 212 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 209 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_tim:auto_generated|  ; 212 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 209 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated                                                       ; lpm_divide_tim      ; work         ;
+;             |sign_div_unsign_llh:divider| ; 212 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 209 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider                           ; sign_div_unsign_llh ; work         ;
+;                |alt_u_div_u6f:divider|    ; 212 (212)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 209 (209)    ; 0 (0)             ; 3 (3)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider     ; alt_u_div_u6f       ; work         ;
 ;       |lpm_divide:Mod0|                   ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod0                                                                                     ; lpm_divide          ; work         ;
 ;          |lpm_divide_ecm:auto_generated|  ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
 ;             |sign_div_unsign_lnh:divider| ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod0|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
@@ -720,27 +720,27 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;          |lpm_divide_ecm:auto_generated|  ; 324 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 320 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod2|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
 ;             |sign_div_unsign_lnh:divider| ; 324 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 320 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
 ;                |alt_u_div_r9f:divider|    ; 324 (324)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 320 (320)    ; 0 (0)             ; 4 (4)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod2|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
-;       |lpm_divide:Mod3|                   ; 459 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 453 (0)      ; 0 (0)             ; 6 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_ecm:auto_generated|  ; 459 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 453 (0)      ; 0 (0)             ; 6 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
-;             |sign_div_unsign_lnh:divider| ; 459 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 453 (0)      ; 0 (0)             ; 6 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
-;                |alt_u_div_r9f:divider|    ; 459 (459)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 453 (453)    ; 0 (0)             ; 6 (6)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
+;       |lpm_divide:Mod3|                   ; 459 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 455 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_ecm:auto_generated|  ; 459 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 455 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
+;             |sign_div_unsign_lnh:divider| ; 459 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 455 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
+;                |alt_u_div_r9f:divider|    ; 459 (459)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 455 (455)    ; 0 (0)             ; 4 (4)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod3|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
 ;       |lpm_divide:Mod4|                   ; 527 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 524 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod4                                                                                     ; lpm_divide          ; work         ;
 ;          |lpm_divide_ecm:auto_generated|  ; 527 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 524 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod4|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
 ;             |sign_div_unsign_lnh:divider| ; 527 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 524 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod4|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
 ;                |alt_u_div_r9f:divider|    ; 527 (527)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 524 (524)    ; 0 (0)             ; 3 (3)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod4|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
-;       |lpm_divide:Mod5|                   ; 575 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 572 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_ecm:auto_generated|  ; 575 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 572 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
-;             |sign_div_unsign_lnh:divider| ; 575 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 572 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
-;                |alt_u_div_r9f:divider|    ; 575 (575)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 572 (572)    ; 0 (0)             ; 3 (3)            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
-;    |BinaryToBCDLow:BinaryBCDA|            ; 895 (16)    ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 878 (0)      ; 0 (0)             ; 17 (1)           ; |Calculator|BinaryToBCDLow:BinaryBCDA                                                                                                 ; BinaryToBCDLow      ; work         ;
+;       |lpm_divide:Mod5|                   ; 575 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 565 (0)      ; 0 (0)             ; 10 (0)           ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_ecm:auto_generated|  ; 575 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 565 (0)      ; 0 (0)             ; 10 (0)           ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
+;             |sign_div_unsign_lnh:divider| ; 575 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 565 (0)      ; 0 (0)             ; 10 (0)           ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
+;                |alt_u_div_r9f:divider|    ; 575 (575)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 565 (565)    ; 0 (0)             ; 10 (10)          ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
+;    |BinaryToBCDLow:BinaryBCDA|            ; 888 (16)    ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 868 (0)      ; 0 (0)             ; 20 (2)           ; |Calculator|BinaryToBCDLow:BinaryBCDA                                                                                                 ; BinaryToBCDLow      ; work         ;
 ;       |lpm_divide:Div0|                   ; 92 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (0)       ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_ckm:auto_generated|  ; 92 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (0)       ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0|lpm_divide_ckm:auto_generated                                                   ; lpm_divide_ckm      ; work         ;
 ;             |sign_div_unsign_4nh:divider| ; 92 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (0)       ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider                       ; sign_div_unsign_4nh ; work         ;
 ;                |alt_u_div_s9f:divider|    ; 92 (92)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (92)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_s9f:divider ; alt_u_div_s9f       ; work         ;
-;       |lpm_divide:Div1|                   ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_4jm:auto_generated|  ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1|lpm_divide_4jm:auto_generated                                                   ; lpm_divide_4jm      ; work         ;
-;             |sign_div_unsign_slh:divider| ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider                       ; sign_div_unsign_slh ; work         ;
-;                |alt_u_div_97f:divider|    ; 135 (135)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (135)    ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider|alt_u_div_97f:divider ; alt_u_div_97f       ; work         ;
+;       |lpm_divide:Div1|                   ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4jm:auto_generated|  ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1|lpm_divide_4jm:auto_generated                                                   ; lpm_divide_4jm      ; work         ;
+;             |sign_div_unsign_slh:divider| ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider                       ; sign_div_unsign_slh ; work         ;
+;                |alt_u_div_97f:divider|    ; 135 (135)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (134)    ; 0 (0)             ; 1 (1)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider|alt_u_div_97f:divider ; alt_u_div_97f       ; work         ;
 ;       |lpm_divide:Div2|                   ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_vim:auto_generated|  ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div2|lpm_divide_vim:auto_generated                                                   ; lpm_divide_vim      ; work         ;
 ;             |sign_div_unsign_nlh:divider| ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div2|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
@@ -753,27 +753,27 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;          |lpm_divide_icm:auto_generated|  ; 109 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 109 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 109 (109)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (105)    ; 0 (0)             ; 4 (4)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;       |lpm_divide:Mod2|                   ; 192 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 187 (0)      ; 0 (0)             ; 5 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 192 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 187 (0)      ; 0 (0)             ; 5 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_jnh:divider| ; 192 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 187 (0)      ; 0 (0)             ; 5 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
-;                |alt_u_div_5af:divider|    ; 192 (192)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 187 (187)    ; 0 (0)             ; 5 (5)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;       |lpm_divide:Mod3|                   ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 229 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 229 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_jnh:divider| ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 229 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
-;                |alt_u_div_5af:divider|    ; 232 (232)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 229 (229)    ; 0 (0)             ; 3 (3)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;    |BinaryToBCDLow:BinaryBCDB|            ; 889 (16)    ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 869 (0)      ; 0 (0)             ; 20 (2)           ; |Calculator|BinaryToBCDLow:BinaryBCDB                                                                                                 ; BinaryToBCDLow      ; work         ;
+;       |lpm_divide:Mod2|                   ; 184 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 184 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_jnh:divider| ; 184 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
+;                |alt_u_div_5af:divider|    ; 184 (184)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (181)    ; 0 (0)             ; 3 (3)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
+;       |lpm_divide:Mod3|                   ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 226 (0)      ; 0 (0)             ; 6 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 226 (0)      ; 0 (0)             ; 6 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_jnh:divider| ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 226 (0)      ; 0 (0)             ; 6 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
+;                |alt_u_div_5af:divider|    ; 232 (232)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 226 (226)    ; 0 (0)             ; 6 (6)            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
+;    |BinaryToBCDLow:BinaryBCDB|            ; 888 (16)    ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 863 (0)      ; 0 (0)             ; 25 (2)           ; |Calculator|BinaryToBCDLow:BinaryBCDB                                                                                                 ; BinaryToBCDLow      ; work         ;
 ;       |lpm_divide:Div0|                   ; 92 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (0)       ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_ckm:auto_generated|  ; 92 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (0)       ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0|lpm_divide_ckm:auto_generated                                                   ; lpm_divide_ckm      ; work         ;
 ;             |sign_div_unsign_4nh:divider| ; 92 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (0)       ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider                       ; sign_div_unsign_4nh ; work         ;
 ;                |alt_u_div_s9f:divider|    ; 92 (92)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (92)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider|alt_u_div_s9f:divider ; alt_u_div_s9f       ; work         ;
-;       |lpm_divide:Div1|                   ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_4jm:auto_generated|  ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1|lpm_divide_4jm:auto_generated                                                   ; lpm_divide_4jm      ; work         ;
-;             |sign_div_unsign_slh:divider| ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider                       ; sign_div_unsign_slh ; work         ;
-;                |alt_u_div_97f:divider|    ; 135 (135)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (134)    ; 0 (0)             ; 1 (1)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider|alt_u_div_97f:divider ; alt_u_div_97f       ; work         ;
-;       |lpm_divide:Div2|                   ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 120 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_vim:auto_generated|  ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 120 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2|lpm_divide_vim:auto_generated                                                   ; lpm_divide_vim      ; work         ;
-;             |sign_div_unsign_nlh:divider| ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 120 (0)      ; 0 (0)             ; 1 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
-;                |alt_u_div_27f:divider|    ; 121 (121)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 120 (120)    ; 0 (0)             ; 1 (1)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider ; alt_u_div_27f       ; work         ;
+;       |lpm_divide:Div1|                   ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_4jm:auto_generated|  ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1|lpm_divide_4jm:auto_generated                                                   ; lpm_divide_4jm      ; work         ;
+;             |sign_div_unsign_slh:divider| ; 135 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider                       ; sign_div_unsign_slh ; work         ;
+;                |alt_u_div_97f:divider|    ; 135 (135)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (135)    ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1|lpm_divide_4jm:auto_generated|sign_div_unsign_slh:divider|alt_u_div_97f:divider ; alt_u_div_97f       ; work         ;
+;       |lpm_divide:Div2|                   ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_vim:auto_generated|  ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2|lpm_divide_vim:auto_generated                                                   ; lpm_divide_vim      ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 121 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (0)      ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;                |alt_u_div_27f:divider|    ; 121 (121)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 121 (121)    ; 0 (0)             ; 0 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider ; alt_u_div_27f       ; work         ;
 ;       |lpm_divide:Mod0|                   ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_icm:auto_generated|  ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod0|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
@@ -782,29 +782,30 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;          |lpm_divide_icm:auto_generated|  ; 109 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 109 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (0)      ; 0 (0)             ; 4 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 109 (109)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 105 (105)    ; 0 (0)             ; 4 (4)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;       |lpm_divide:Mod2|                   ; 185 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 182 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 185 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 182 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_jnh:divider| ; 185 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 182 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
-;                |alt_u_div_5af:divider|    ; 185 (185)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 182 (182)    ; 0 (0)             ; 3 (3)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;       |lpm_divide:Mod3|                   ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 227 (0)      ; 0 (0)             ; 5 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 227 (0)      ; 0 (0)             ; 5 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_jnh:divider| ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 227 (0)      ; 0 (0)             ; 5 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
-;                |alt_u_div_5af:divider|    ; 232 (232)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 227 (227)    ; 0 (0)             ; 5 (5)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;    |CPU:Calculator|                       ; 1885 (210)  ; 869 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 991 (185)    ; 120 (0)           ; 774 (113)        ; |Calculator|CPU:Calculator                                                                                                            ; CPU                 ; work         ;
-;       |Comparison:Compare|                ; 71 (71)     ; 69 (69)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 1 (1)             ; 68 (68)          ; |Calculator|CPU:Calculator|Comparison:Compare                                                                                         ; Comparison          ; work         ;
-;       |Divider:Divi|                      ; 165 (165)   ; 88 (88)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 77 (77)      ; 5 (5)             ; 83 (83)          ; |Calculator|CPU:Calculator|Divider:Divi                                                                                               ; Divider             ; work         ;
-;       |Factorial:Fact|                    ; 325 (325)   ; 161 (161)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 163 (163)    ; 4 (4)             ; 158 (158)        ; |Calculator|CPU:Calculator|Factorial:Fact                                                                                             ; Factorial           ; work         ;
-;       |FullAdder:Adder|                   ; 146 (146)   ; 105 (105)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 41 (41)      ; 21 (21)           ; 84 (84)          ; |Calculator|CPU:Calculator|FullAdder:Adder                                                                                            ; FullAdder           ; work         ;
-;       |FullAdder:Substract|               ; 193 (193)   ; 73 (73)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 119 (119)    ; 15 (15)           ; 59 (59)          ; |Calculator|CPU:Calculator|FullAdder:Substract                                                                                        ; FullAdder           ; work         ;
-;       |Power:Pow|                         ; 301 (301)   ; 189 (189)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 112 (112)    ; 39 (39)           ; 150 (150)        ; |Calculator|CPU:Calculator|Power:Pow                                                                                                  ; Power               ; work         ;
+;       |lpm_divide:Mod2|                   ; 184 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 184 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_jnh:divider| ; 184 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (0)      ; 0 (0)             ; 3 (0)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
+;                |alt_u_div_5af:divider|    ; 184 (184)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 181 (181)    ; 0 (0)             ; 3 (3)            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
+;       |lpm_divide:Mod3|                   ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 220 (0)      ; 0 (0)             ; 12 (0)           ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 220 (0)      ; 0 (0)             ; 12 (0)           ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_jnh:divider| ; 232 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 220 (0)      ; 0 (0)             ; 12 (0)           ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
+;                |alt_u_div_5af:divider|    ; 232 (232)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 220 (220)    ; 0 (0)             ; 12 (12)          ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
+;    |CPU:Calculator|                       ; 1958 (179)  ; 926 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1004 (155)   ; 158 (0)           ; 796 (108)        ; |Calculator|CPU:Calculator                                                                                                            ; CPU                 ; work         ;
+;       |Comparison:Compare|                ; 70 (70)     ; 69 (69)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 2 (2)             ; 67 (67)          ; |Calculator|CPU:Calculator|Comparison:Compare                                                                                         ; Comparison          ; work         ;
+;       |Divider:Divi|                      ; 151 (151)   ; 73 (73)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 75 (75)      ; 5 (5)             ; 71 (71)          ; |Calculator|CPU:Calculator|Divider:Divi                                                                                               ; Divider             ; work         ;
+;       |Factorial:Fact|                    ; 322 (322)   ; 161 (161)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 160 (160)    ; 6 (6)             ; 156 (156)        ; |Calculator|CPU:Calculator|Factorial:Fact                                                                                             ; Factorial           ; work         ;
+;       |FullAdder:Adder|                   ; 146 (146)   ; 105 (105)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 41 (41)      ; 25 (25)           ; 80 (80)          ; |Calculator|CPU:Calculator|FullAdder:Adder                                                                                            ; FullAdder           ; work         ;
+;       |FullAdder:Substract|               ; 193 (193)   ; 73 (73)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 119 (119)    ; 26 (26)           ; 48 (48)          ; |Calculator|CPU:Calculator|FullAdder:Substract                                                                                        ; FullAdder           ; work         ;
+;       |Multiplier:Multi|                  ; 118 (118)   ; 72 (72)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 46 (46)      ; 1 (1)             ; 71 (71)          ; |Calculator|CPU:Calculator|Multiplier:Multi                                                                                           ; Multiplier          ; work         ;
+;       |Power:Pow|                         ; 307 (307)   ; 189 (189)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 118 (118)    ; 58 (58)           ; 131 (131)        ; |Calculator|CPU:Calculator|Power:Pow                                                                                                  ; Power               ; work         ;
 ;       |ROM:ROMAccess|                     ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |Calculator|CPU:Calculator|ROM:ROMAccess                                                                                              ; ROM                 ; work         ;
-;       |Random:Rand|                       ; 474 (474)   ; 184 (184)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 289 (289)    ; 35 (35)           ; 150 (150)        ; |Calculator|CPU:Calculator|Random:Rand                                                                                                ; Random              ; work         ;
-;    |Converter:ConverterRAM|               ; 106 (96)    ; 96 (96)                   ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 0    ; 0            ; 10 (0)       ; 49 (49)           ; 47 (47)          ; |Calculator|Converter:ConverterRAM                                                                                                    ; Converter           ; work         ;
+;       |Random:Rand|                       ; 474 (474)   ; 184 (184)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 286 (286)    ; 35 (35)           ; 153 (153)        ; |Calculator|CPU:Calculator|Random:Rand                                                                                                ; Random              ; work         ;
+;    |Converter:ConverterRAM|               ; 106 (96)    ; 96 (96)                   ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 0    ; 0            ; 10 (0)       ; 43 (43)           ; 53 (53)          ; |Calculator|Converter:ConverterRAM                                                                                                    ; Converter           ; work         ;
 ;       |lpm_mult:Mult0|                    ; 10 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 0 (0)            ; |Calculator|Converter:ConverterRAM|lpm_mult:Mult0                                                                                     ; lpm_mult            ; work         ;
 ;          |mult_k4t:auto_generated|        ; 10 (10)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 4            ; 0       ; 2         ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; |Calculator|Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated                                                             ; mult_k4t            ; work         ;
 ;    |Display:Display4Dig|                  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |Calculator|Display:Display4Dig                                                                                                       ; Display             ; work         ;
-;    |Keyboard:InputKeyboard|               ; 228 (228)   ; 170 (170)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 58 (58)      ; 98 (98)           ; 72 (72)          ; |Calculator|Keyboard:InputKeyboard                                                                                                    ; Keyboard            ; work         ;
-;    |LCD:DisplayLCD|                       ; 325 (325)   ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 235 (235)    ; 0 (0)             ; 90 (90)          ; |Calculator|LCD:DisplayLCD                                                                                                            ; LCD                 ; work         ;
+;    |Keyboard:InputKeyboard|               ; 226 (226)   ; 170 (170)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 56 (56)      ; 90 (90)           ; 80 (80)          ; |Calculator|Keyboard:InputKeyboard                                                                                                    ; Keyboard            ; work         ;
+;    |LCD:DisplayLCD|                       ; 325 (325)   ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 236 (236)    ; 0 (0)             ; 89 (89)          ; |Calculator|LCD:DisplayLCD                                                                                                            ; LCD                 ; work         ;
 ;    |RAM:RAM_1|                            ; 97 (97)     ; 68 (68)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (29)      ; 32 (32)           ; 36 (36)          ; |Calculator|RAM:RAM_1                                                                                                                 ; RAM                 ; work         ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -863,25 +864,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; clock                                           ;                   ;         ;
 ; reset                                           ;                   ;         ;
 ; cols[3]                                         ;                   ;         ;
+;      - Keyboard:InputKeyboard|REG_BAS[0]        ; 0                 ; 6       ;
+;      - Keyboard:InputKeyboard|REG_B1[0]         ; 0                 ; 6       ;
 ;      - Keyboard:InputKeyboard|REG_B4[0]~feeder  ; 0                 ; 6       ;
-;      - Keyboard:InputKeyboard|REG_B1[0]~feeder  ; 0                 ; 6       ;
 ;      - Keyboard:InputKeyboard|REG_B7[0]~feeder  ; 0                 ; 6       ;
-;      - Keyboard:InputKeyboard|REG_BAS[0]~feeder ; 0                 ; 6       ;
 ; cols[1]                                         ;                   ;         ;
 ;      - Keyboard:InputKeyboard|REG_B3[0]         ; 0                 ; 6       ;
-;      - Keyboard:InputKeyboard|REG_B9[0]         ; 0                 ; 6       ;
+;      - Keyboard:InputKeyboard|REG_B9[0]~feeder  ; 0                 ; 6       ;
 ;      - Keyboard:InputKeyboard|REG_BGA[0]~feeder ; 0                 ; 6       ;
 ;      - Keyboard:InputKeyboard|REG_B6[0]~feeder  ; 0                 ; 6       ;
 ; cols[2]                                         ;                   ;         ;
 ;      - Keyboard:InputKeyboard|REG_B0[0]         ; 0                 ; 6       ;
 ;      - Keyboard:InputKeyboard|REG_B2[0]         ; 0                 ; 6       ;
-;      - Keyboard:InputKeyboard|REG_B5[0]~feeder  ; 0                 ; 6       ;
 ;      - Keyboard:InputKeyboard|REG_B8[0]~feeder  ; 0                 ; 6       ;
+;      - Keyboard:InputKeyboard|REG_B5[0]~feeder  ; 0                 ; 6       ;
 ; cols[0]                                         ;                   ;         ;
-;      - Keyboard:InputKeyboard|REG_BA[0]~feeder  ; 1                 ; 6       ;
-;      - Keyboard:InputKeyboard|REG_BD[0]~feeder  ; 1                 ; 6       ;
-;      - Keyboard:InputKeyboard|REG_BC[0]~feeder  ; 1                 ; 6       ;
+;      - Keyboard:InputKeyboard|REG_BA[0]         ; 1                 ; 6       ;
+;      - Keyboard:InputKeyboard|REG_BC[0]         ; 1                 ; 6       ;
 ;      - Keyboard:InputKeyboard|REG_BB[0]~feeder  ; 1                 ; 6       ;
+;      - Keyboard:InputKeyboard|REG_BD[0]~feeder  ; 1                 ; 6       ;
 +-------------------------------------------------+-------------------+---------+
 
 
@@ -890,90 +891,92 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                            ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CPU:Calculator|Divider:Divi|LessThan0~37        ; LCCOMB_X12_Y11_N30 ; 52      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Divider:Divi|result[17]~0        ; LCCOMB_X13_Y14_N18 ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Factorial:Fact|LessThan2~62      ; LCCOMB_X3_Y10_N30  ; 53      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Factorial:Fact|bufferResult[1]~2 ; LCCOMB_X4_Y10_N4   ; 53      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Factorial:Fact|result[1]~0       ; LCCOMB_X9_Y10_N12  ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Factorial:Fact|tempA[1]~13       ; LCCOMB_X4_Y10_N30  ; 84      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~44  ; LCCOMB_X10_Y8_N2   ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~47  ; LCCOMB_X12_Y7_N22  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~48  ; LCCOMB_X10_Y8_N14  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~49  ; LCCOMB_X10_Y7_N22  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~50  ; LCCOMB_X10_Y7_N10  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~51  ; LCCOMB_X4_Y6_N24   ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~52  ; LCCOMB_X10_Y7_N12  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~53  ; LCCOMB_X9_Y10_N16  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~54  ; LCCOMB_X10_Y8_N20  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~55  ; LCCOMB_X10_Y8_N22  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~56  ; LCCOMB_X4_Y6_N10   ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~57  ; LCCOMB_X10_Y8_N16  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~58  ; LCCOMB_X4_Y17_N26  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~59  ; LCCOMB_X10_Y8_N30  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~60  ; LCCOMB_X10_Y7_N4   ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~61  ; LCCOMB_X9_Y10_N6   ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~62  ; LCCOMB_X12_Y7_N12  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~63  ; LCCOMB_X12_Y7_N10  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~64  ; LCCOMB_X4_Y7_N18   ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Decoder0~65  ; LCCOMB_X10_Y7_N30  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|Equal0~11    ; LCCOMB_X4_Y17_N10  ; 38      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|FullAdder:Substract|result[6]~0  ; LCCOMB_X4_Y17_N8   ; 40      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Mux34~0                          ; LCCOMB_X16_Y15_N26 ; 1       ; Latch enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Mux36~0                          ; LCCOMB_X16_Y15_N20 ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; CPU:Calculator|Mux3~0                           ; LCCOMB_X16_Y15_N22 ; 17      ; Latch enable               ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; CPU:Calculator|Mux69~0                          ; LCCOMB_X17_Y12_N12 ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; CPU:Calculator|Power:Pow|LessThan0~28           ; LCCOMB_X8_Y9_N30   ; 96      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Power:Pow|LessThan1~62           ; LCCOMB_X7_Y7_N30   ; 65      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Power:Pow|counter[5]~31          ; LCCOMB_X8_Y9_N8    ; 64      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Power:Pow|result[9]~0            ; LCCOMB_X8_Y9_N0    ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Random:Rand|Equal0~20            ; LCCOMB_X14_Y4_N20  ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Random:Rand|Equal1~20            ; LCCOMB_X18_Y17_N6  ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Random:Rand|Equal3~10            ; LCCOMB_X11_Y16_N2  ; 52      ; Clock enable, Sync. load   ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Random:Rand|flag                 ; FF_X11_Y15_N3      ; 66      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Random:Rand|fourthClock          ; FF_X9_Y3_N25       ; 52      ; Clock                      ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; CPU:Calculator|Random:Rand|rand[1]~38           ; LCCOMB_X11_Y15_N0  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; CPU:Calculator|Random:Rand|secondClock          ; FF_X14_Y7_N23      ; 33      ; Clock                      ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; CPU:Calculator|Random:Rand|thirdClock           ; FF_X18_Y17_N1      ; 32      ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; Keyboard:InputKeyboard|BOTON_PRES[2]            ; FF_X14_Y1_N21      ; 23      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; Keyboard:InputKeyboard|BOTON_PRES[3]~18         ; LCCOMB_X14_Y1_N26  ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Keyboard:InputKeyboard|REG_BA[0]~0              ; LCCOMB_X12_Y1_N30  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Keyboard:InputKeyboard|REG_BB[0]~0              ; LCCOMB_X12_Y1_N20  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Keyboard:InputKeyboard|REG_BC[0]~0              ; LCCOMB_X12_Y1_N22  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Keyboard:InputKeyboard|REG_BGA[0]~0             ; LCCOMB_X12_Y1_N16  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; LCD:DisplayLCD|Add1~5                           ; LCCOMB_X24_Y20_N6  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; Mux17~0                                         ; LCCOMB_X17_Y16_N4  ; 39      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~1                            ; LCCOMB_X28_Y1_N26  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~11                           ; LCCOMB_X29_Y1_N6   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~13                           ; LCCOMB_X29_Y1_N18  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~15                           ; LCCOMB_X28_Y1_N0   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~16                           ; LCCOMB_X28_Y1_N8   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~17                           ; LCCOMB_X28_Y1_N22  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~18                           ; LCCOMB_X28_Y1_N24  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~19                           ; LCCOMB_X29_Y1_N4   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~20                           ; LCCOMB_X28_Y1_N18  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~21                           ; LCCOMB_X26_Y1_N24  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~22                           ; LCCOMB_X29_Y1_N26  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~23                           ; LCCOMB_X24_Y1_N12  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~3                            ; LCCOMB_X26_Y1_N8   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~5                            ; LCCOMB_X26_Y1_N22  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~7                            ; LCCOMB_X29_Y1_N30  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|Decoder0~9                            ; LCCOMB_X26_Y1_N26  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; RAM:RAM_1|process_0~0                           ; LCCOMB_X28_Y1_N2   ; 69      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; bufferConvert[31]~1                             ; LCCOMB_X17_Y2_N12  ; 63      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; clock                                           ; PIN_23             ; 1555    ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; CPU:Calculator|Divider:Divi|LessThan0~32        ; LCCOMB_X21_Y12_N24 ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Divider:Divi|result[6]~0         ; LCCOMB_X21_Y12_N10 ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Factorial:Fact|LessThan2~62      ; LCCOMB_X7_Y9_N30   ; 53      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Factorial:Fact|bufferResult[1]~2 ; LCCOMB_X8_Y9_N18   ; 53      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Factorial:Fact|result[13]~0      ; LCCOMB_X8_Y9_N22   ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Factorial:Fact|tempA[1]~13       ; LCCOMB_X8_Y9_N0    ; 84      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~44  ; LCCOMB_X19_Y20_N24 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~47  ; LCCOMB_X19_Y21_N10 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~48  ; LCCOMB_X18_Y21_N20 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~49  ; LCCOMB_X18_Y20_N30 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~50  ; LCCOMB_X18_Y21_N30 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~51  ; LCCOMB_X19_Y22_N14 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~52  ; LCCOMB_X18_Y18_N12 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~53  ; LCCOMB_X19_Y22_N8  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~54  ; LCCOMB_X22_Y18_N12 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~55  ; LCCOMB_X19_Y18_N26 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~56  ; LCCOMB_X19_Y20_N30 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~57  ; LCCOMB_X22_Y18_N30 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~58  ; LCCOMB_X19_Y22_N10 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~59  ; LCCOMB_X18_Y21_N12 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~60  ; LCCOMB_X18_Y21_N26 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~61  ; LCCOMB_X19_Y21_N26 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~62  ; LCCOMB_X18_Y21_N16 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~63  ; LCCOMB_X18_Y21_N6  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~64  ; LCCOMB_X18_Y21_N28 ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Decoder0~65  ; LCCOMB_X18_Y21_N2  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|Equal0~11    ; LCCOMB_X19_Y22_N30 ; 38      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|FullAdder:Substract|result[7]~0  ; LCCOMB_X18_Y18_N16 ; 40      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Multiplier:Multi|LessThan0~37    ; LCCOMB_X21_Y16_N30 ; 52      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Multiplier:Multi|result[8]~0     ; LCCOMB_X19_Y16_N24 ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Mux32~0                          ; LCCOMB_X19_Y12_N28 ; 17      ; Latch enable               ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; CPU:Calculator|Mux34~0                          ; LCCOMB_X19_Y12_N24 ; 1       ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Mux36~0                          ; LCCOMB_X13_Y11_N26 ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK1            ; --                        ;
+; CPU:Calculator|Mux69~0                          ; LCCOMB_X19_Y12_N10 ; 32      ; Latch enable               ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; CPU:Calculator|Power:Pow|LessThan0~28           ; LCCOMB_X12_Y15_N20 ; 96      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Power:Pow|LessThan1~62           ; LCCOMB_X12_Y12_N30 ; 65      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Power:Pow|counter[26]~31         ; LCCOMB_X12_Y15_N30 ; 64      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Power:Pow|result[10]~0           ; LCCOMB_X12_Y15_N6  ; 20      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Random:Rand|Equal0~20            ; LCCOMB_X31_Y15_N12 ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Random:Rand|Equal1~20            ; LCCOMB_X30_Y13_N28 ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Random:Rand|Equal3~10            ; LCCOMB_X24_Y11_N2  ; 52      ; Clock enable, Sync. load   ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Random:Rand|flag                 ; FF_X25_Y12_N5      ; 66      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Random:Rand|fourthClock          ; FF_X1_Y11_N15      ; 52      ; Clock                      ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; CPU:Calculator|Random:Rand|rand[1]~38           ; LCCOMB_X25_Y12_N20 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; CPU:Calculator|Random:Rand|secondClock          ; FF_X31_Y15_N21     ; 33      ; Clock                      ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; CPU:Calculator|Random:Rand|thirdClock           ; FF_X33_Y13_N31     ; 32      ; Clock                      ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; Keyboard:InputKeyboard|BOTON_PRES[2]            ; FF_X13_Y1_N5       ; 23      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; Keyboard:InputKeyboard|BOTON_PRES[3]~18         ; LCCOMB_X13_Y1_N30  ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Keyboard:InputKeyboard|REG_BA[0]~0              ; LCCOMB_X12_Y2_N4   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Keyboard:InputKeyboard|REG_BB[0]~0              ; LCCOMB_X12_Y2_N18  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Keyboard:InputKeyboard|REG_BC[0]~0              ; LCCOMB_X12_Y2_N0   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Keyboard:InputKeyboard|REG_BGA[0]~0             ; LCCOMB_X12_Y2_N30  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; LCD:DisplayLCD|Add1~5                           ; LCCOMB_X1_Y7_N22   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; Mux17~0                                         ; LCCOMB_X13_Y11_N8  ; 39      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~1                            ; LCCOMB_X32_Y9_N2   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~11                           ; LCCOMB_X32_Y9_N20  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~13                           ; LCCOMB_X32_Y9_N12  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~15                           ; LCCOMB_X33_Y9_N20  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~16                           ; LCCOMB_X33_Y9_N22  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~17                           ; LCCOMB_X31_Y10_N16 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~18                           ; LCCOMB_X31_Y10_N10 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~19                           ; LCCOMB_X29_Y9_N2   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~20                           ; LCCOMB_X32_Y9_N22  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~21                           ; LCCOMB_X31_Y9_N6   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~22                           ; LCCOMB_X31_Y9_N24  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~23                           ; LCCOMB_X33_Y9_N12  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~3                            ; LCCOMB_X31_Y10_N2  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~5                            ; LCCOMB_X31_Y10_N26 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~7                            ; LCCOMB_X29_Y9_N20  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|Decoder0~9                            ; LCCOMB_X32_Y9_N26  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; RAM:RAM_1|process_0~0                           ; LCCOMB_X31_Y9_N22  ; 69      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
+; bufferConvert[31]~1                             ; LCCOMB_X30_Y7_N22  ; 63      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 ; clock                                           ; PIN_23             ; 5       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; inputA[14]~1                                    ; LCCOMB_X22_Y5_N2   ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; inputB[13]~1                                    ; LCCOMB_X22_Y5_N16  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; inputBuffer1[3]~4                               ; LCCOMB_X21_Y8_N0   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; memoryDirection1[15]~7                          ; LCCOMB_X22_Y5_N10  ; 31      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; opCode[2]~20                                    ; LCCOMB_X21_Y8_N2   ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; operationSelector[0]                            ; FF_X18_Y16_N15     ; 54      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; operationSelector[0]~0                          ; LCCOMB_X19_Y12_N14 ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; operationSelector[2]                            ; FF_X18_Y16_N17     ; 45      ; Sync. clear, Sync. load    ; no     ; --                   ; --               ; --                        ;
-; readingRam                                      ; FF_X22_Y5_N1       ; 106     ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; resetCPU                                        ; FF_X1_Y11_N13      ; 772     ; Async. clear, Latch enable ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; resetCPU                                        ; FF_X1_Y11_N13      ; 86      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; writeRAM1_Flag                                  ; FF_X22_Y5_N27      ; 188     ; Clock enable, Sync. load   ; no     ; --                   ; --               ; --                        ;
+; clock                                           ; PIN_23             ; 1612    ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; inputA[14]~1                                    ; LCCOMB_X31_Y9_N12  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; inputB[13]~1                                    ; LCCOMB_X31_Y9_N18  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; inputBuffer1[3]~4                               ; LCCOMB_X16_Y8_N14  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; memoryDirection1[15]~7                          ; LCCOMB_X30_Y7_N0   ; 31      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; opCode[2]~20                                    ; LCCOMB_X17_Y13_N2  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; operationSelector[0]                            ; FF_X12_Y10_N17     ; 54      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; operationSelector[0]~0                          ; LCCOMB_X16_Y8_N12  ; 3       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; operationSelector[2]                            ; FF_X12_Y10_N3      ; 45      ; Sync. clear, Sync. load    ; no     ; --                   ; --               ; --                        ;
+; readingRam                                      ; FF_X30_Y7_N13      ; 106     ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; resetCPU                                        ; FF_X6_Y11_N5       ; 87      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; resetCPU                                        ; FF_X6_Y11_N5       ; 809     ; Async. clear, Latch enable ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; writeRAM1_Flag                                  ; FF_X30_Y7_N11      ; 188     ; Clock enable, Sync. load   ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -982,14 +985,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                   ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CPU:Calculator|Mux36~0                 ; LCCOMB_X16_Y15_N20 ; 32      ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
-; CPU:Calculator|Mux3~0                  ; LCCOMB_X16_Y15_N22 ; 17      ; 0                                    ; Global Clock         ; GCLK6            ; --                        ;
-; CPU:Calculator|Mux69~0                 ; LCCOMB_X17_Y12_N12 ; 32      ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
-; CPU:Calculator|Random:Rand|fourthClock ; FF_X9_Y3_N25       ; 52      ; 20                                   ; Global Clock         ; GCLK3            ; --                        ;
-; CPU:Calculator|Random:Rand|secondClock ; FF_X14_Y7_N23      ; 33      ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
-; CPU:Calculator|Random:Rand|thirdClock  ; FF_X18_Y17_N1      ; 32      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
-; clock                                  ; PIN_23             ; 1555    ; 91                                   ; Global Clock         ; GCLK2            ; --                        ;
-; resetCPU                               ; FF_X1_Y11_N13      ; 772     ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
+; CPU:Calculator|Mux32~0                 ; LCCOMB_X19_Y12_N28 ; 17      ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; CPU:Calculator|Mux36~0                 ; LCCOMB_X13_Y11_N26 ; 32      ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
+; CPU:Calculator|Mux69~0                 ; LCCOMB_X19_Y12_N10 ; 32      ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
+; CPU:Calculator|Random:Rand|fourthClock ; FF_X1_Y11_N15      ; 52      ; 19                                   ; Global Clock         ; GCLK0            ; --                        ;
+; CPU:Calculator|Random:Rand|secondClock ; FF_X31_Y15_N21     ; 33      ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
+; CPU:Calculator|Random:Rand|thirdClock  ; FF_X33_Y13_N31     ; 32      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
+; clock                                  ; PIN_23             ; 1612    ; 104                                  ; Global Clock         ; GCLK2            ; --                        ;
+; resetCPU                               ; FF_X6_Y11_N5       ; 809     ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
 +----------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1015,10 +1018,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+----------------------------+-------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 ; Name                                                                       ; Mode                       ; Location          ; Sign Representation ; Has Input Shift Register Chain ; Data A Input Register ; Data B Input Register ; Pipeline Register ; Output Register ;
 +----------------------------------------------------------------------------+----------------------------+-------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
-; Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y1_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_mult3 ;                            ; DSPMULT_X20_Y1_N0 ; Signed              ;                                ; yes                   ; no                    ; no                ;                 ;
-; Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|w236w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y2_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
-;    Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_mult1 ;                            ; DSPMULT_X20_Y2_N0 ; Mixed               ;                                ; no                    ; yes                   ; no                ;                 ;
+; Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_out4     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y9_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_mult3 ;                            ; DSPMULT_X20_Y9_N0 ; Signed              ;                                ; yes                   ; no                    ; no                ;                 ;
+; Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|w236w[0]     ; Simple Multiplier (18-bit) ; DSPOUT_X20_Y8_N2  ;                     ; No                             ;                       ;                       ;                   ; no              ;
+;    Converter:ConverterRAM|lpm_mult:Mult0|mult_k4t:auto_generated|mac_mult1 ;                            ; DSPMULT_X20_Y8_N0 ; Mixed               ;                                ; no                    ; yes                   ; no                ;                 ;
 +----------------------------------------------------------------------------+----------------------------+-------------------+---------------------+--------------------------------+-----------------------+-----------------------+-------------------+-----------------+
 
 
@@ -1027,178 +1030,182 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+--------------------------+
 ; Routing Resource Type ; Usage                    ;
 +-----------------------+--------------------------+
-; Block interconnects   ; 10,264 / 32,401 ( 32 % ) ;
-; C16 interconnects     ; 76 / 1,326 ( 6 % )       ;
-; C4 interconnects      ; 4,982 / 21,816 ( 23 % )  ;
-; Direct links          ; 2,545 / 32,401 ( 8 % )   ;
+; Block interconnects   ; 10,172 / 32,401 ( 31 % ) ;
+; C16 interconnects     ; 62 / 1,326 ( 5 % )       ;
+; C4 interconnects      ; 4,607 / 21,816 ( 21 % )  ;
+; Direct links          ; 2,592 / 32,401 ( 8 % )   ;
 ; Global clocks         ; 8 / 10 ( 80 % )          ;
-; Local interconnects   ; 3,354 / 10,320 ( 33 % )  ;
-; R24 interconnects     ; 83 / 1,289 ( 6 % )       ;
-; R4 interconnects      ; 5,348 / 28,186 ( 19 % )  ;
+; Local interconnects   ; 3,424 / 10,320 ( 33 % )  ;
+; R24 interconnects     ; 87 / 1,289 ( 7 % )       ;
+; R4 interconnects      ; 5,178 / 28,186 ( 18 % )  ;
 +-----------------------+--------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 14.05) ; Number of LABs  (Total = 583) ;
+; Number of Logic Elements  (Average = 14.04) ; Number of LABs  (Total = 588) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 5                             ;
-; 2                                           ; 6                             ;
-; 3                                           ; 7                             ;
-; 4                                           ; 12                            ;
-; 5                                           ; 4                             ;
-; 6                                           ; 8                             ;
-; 7                                           ; 6                             ;
-; 8                                           ; 14                            ;
-; 9                                           ; 17                            ;
-; 10                                          ; 11                            ;
-; 11                                          ; 13                            ;
-; 12                                          ; 19                            ;
-; 13                                          ; 14                            ;
-; 14                                          ; 28                            ;
-; 15                                          ; 28                            ;
-; 16                                          ; 391                           ;
+; 1                                           ; 6                             ;
+; 2                                           ; 11                            ;
+; 3                                           ; 10                            ;
+; 4                                           ; 6                             ;
+; 5                                           ; 6                             ;
+; 6                                           ; 11                            ;
+; 7                                           ; 7                             ;
+; 8                                           ; 12                            ;
+; 9                                           ; 10                            ;
+; 10                                          ; 10                            ;
+; 11                                          ; 7                             ;
+; 12                                          ; 13                            ;
+; 13                                          ; 20                            ;
+; 14                                          ; 29                            ;
+; 15                                          ; 38                            ;
+; 16                                          ; 392                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.84) ; Number of LABs  (Total = 583) ;
+; LAB-wide Signals  (Average = 0.89) ; Number of LABs  (Total = 588) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 101                           ;
-; 1 Clock                            ; 223                           ;
-; 1 Clock enable                     ; 77                            ;
-; 1 Sync. clear                      ; 26                            ;
-; 1 Sync. load                       ; 12                            ;
-; 2 Clock enables                    ; 44                            ;
-; 2 Clocks                           ; 9                             ;
+; 1 Async. clear                     ; 110                           ;
+; 1 Clock                            ; 233                           ;
+; 1 Clock enable                     ; 82                            ;
+; 1 Sync. clear                      ; 29                            ;
+; 1 Sync. load                       ; 17                            ;
+; 2 Clock enables                    ; 42                            ;
+; 2 Clocks                           ; 10                            ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 16.03) ; Number of LABs  (Total = 583) ;
+; Number of Signals Sourced  (Average = 16.10) ; Number of LABs  (Total = 588) ;
 +----------------------------------------------+-------------------------------+
-; 0                                            ; 2                             ;
-; 1                                            ; 6                             ;
+; 0                                            ; 0                             ;
+; 1                                            ; 10                            ;
 ; 2                                            ; 5                             ;
-; 3                                            ; 7                             ;
-; 4                                            ; 9                             ;
-; 5                                            ; 7                             ;
-; 6                                            ; 6                             ;
-; 7                                            ; 8                             ;
+; 3                                            ; 9                             ;
+; 4                                            ; 5                             ;
+; 5                                            ; 8                             ;
+; 6                                            ; 8                             ;
+; 7                                            ; 4                             ;
 ; 8                                            ; 15                            ;
-; 9                                            ; 12                            ;
-; 10                                           ; 23                            ;
-; 11                                           ; 17                            ;
-; 12                                           ; 13                            ;
-; 13                                           ; 12                            ;
-; 14                                           ; 25                            ;
-; 15                                           ; 66                            ;
-; 16                                           ; 190                           ;
-; 17                                           ; 14                            ;
-; 18                                           ; 13                            ;
-; 19                                           ; 6                             ;
-; 20                                           ; 17                            ;
-; 21                                           ; 11                            ;
-; 22                                           ; 12                            ;
-; 23                                           ; 10                            ;
+; 9                                            ; 11                            ;
+; 10                                           ; 28                            ;
+; 11                                           ; 13                            ;
+; 12                                           ; 11                            ;
+; 13                                           ; 18                            ;
+; 14                                           ; 20                            ;
+; 15                                           ; 78                            ;
+; 16                                           ; 181                           ;
+; 17                                           ; 10                            ;
+; 18                                           ; 8                             ;
+; 19                                           ; 13                            ;
+; 20                                           ; 20                            ;
+; 21                                           ; 14                            ;
+; 22                                           ; 10                            ;
+; 23                                           ; 13                            ;
 ; 24                                           ; 10                            ;
-; 25                                           ; 13                            ;
-; 26                                           ; 9                             ;
-; 27                                           ; 10                            ;
-; 28                                           ; 4                             ;
-; 29                                           ; 4                             ;
-; 30                                           ; 0                             ;
-; 31                                           ; 3                             ;
-; 32                                           ; 24                            ;
+; 25                                           ; 7                             ;
+; 26                                           ; 14                            ;
+; 27                                           ; 5                             ;
+; 28                                           ; 3                             ;
+; 29                                           ; 3                             ;
+; 30                                           ; 6                             ;
+; 31                                           ; 7                             ;
+; 32                                           ; 21                            ;
 +----------------------------------------------+-------------------------------+
 
 
 +----------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                          ;
 +--------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 10.33) ; Number of LABs  (Total = 583) ;
+; Number of Signals Sourced Out  (Average = 10.19) ; Number of LABs  (Total = 588) ;
 +--------------------------------------------------+-------------------------------+
-; 0                                                ; 2                             ;
-; 1                                                ; 26                            ;
-; 2                                                ; 14                            ;
-; 3                                                ; 22                            ;
-; 4                                                ; 32                            ;
-; 5                                                ; 22                            ;
-; 6                                                ; 23                            ;
-; 7                                                ; 22                            ;
-; 8                                                ; 32                            ;
-; 9                                                ; 39                            ;
-; 10                                               ; 39                            ;
-; 11                                               ; 44                            ;
-; 12                                               ; 34                            ;
-; 13                                               ; 48                            ;
-; 14                                               ; 46                            ;
-; 15                                               ; 30                            ;
-; 16                                               ; 92                            ;
-; 17                                               ; 8                             ;
-; 18                                               ; 5                             ;
+; 0                                                ; 0                             ;
+; 1                                                ; 23                            ;
+; 2                                                ; 22                            ;
+; 3                                                ; 27                            ;
+; 4                                                ; 25                            ;
+; 5                                                ; 24                            ;
+; 6                                                ; 33                            ;
+; 7                                                ; 26                            ;
+; 8                                                ; 28                            ;
+; 9                                                ; 34                            ;
+; 10                                               ; 45                            ;
+; 11                                               ; 33                            ;
+; 12                                               ; 44                            ;
+; 13                                               ; 39                            ;
+; 14                                               ; 48                            ;
+; 15                                               ; 32                            ;
+; 16                                               ; 97                            ;
+; 17                                               ; 3                             ;
+; 18                                               ; 1                             ;
 ; 19                                               ; 1                             ;
 ; 20                                               ; 0                             ;
 ; 21                                               ; 0                             ;
-; 22                                               ; 1                             ;
+; 22                                               ; 2                             ;
 ; 23                                               ; 0                             ;
 ; 24                                               ; 0                             ;
 ; 25                                               ; 0                             ;
 ; 26                                               ; 0                             ;
-; 27                                               ; 1                             ;
+; 27                                               ; 0                             ;
+; 28                                               ; 0                             ;
+; 29                                               ; 0                             ;
+; 30                                               ; 0                             ;
+; 31                                               ; 0                             ;
+; 32                                               ; 1                             ;
 +--------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 16.75) ; Number of LABs  (Total = 583) ;
+; Number of Distinct Inputs  (Average = 16.50) ; Number of LABs  (Total = 588) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 8                             ;
-; 3                                            ; 9                             ;
-; 4                                            ; 26                            ;
-; 5                                            ; 11                            ;
-; 6                                            ; 14                            ;
-; 7                                            ; 7                             ;
-; 8                                            ; 14                            ;
-; 9                                            ; 11                            ;
-; 10                                           ; 16                            ;
-; 11                                           ; 27                            ;
-; 12                                           ; 26                            ;
-; 13                                           ; 23                            ;
-; 14                                           ; 26                            ;
-; 15                                           ; 25                            ;
-; 16                                           ; 39                            ;
-; 17                                           ; 44                            ;
-; 18                                           ; 32                            ;
-; 19                                           ; 22                            ;
-; 20                                           ; 40                            ;
-; 21                                           ; 21                            ;
-; 22                                           ; 19                            ;
-; 23                                           ; 19                            ;
-; 24                                           ; 17                            ;
-; 25                                           ; 12                            ;
-; 26                                           ; 16                            ;
-; 27                                           ; 12                            ;
-; 28                                           ; 4                             ;
+; 2                                            ; 3                             ;
+; 3                                            ; 15                            ;
+; 4                                            ; 24                            ;
+; 5                                            ; 13                            ;
+; 6                                            ; 18                            ;
+; 7                                            ; 13                            ;
+; 8                                            ; 11                            ;
+; 9                                            ; 16                            ;
+; 10                                           ; 9                             ;
+; 11                                           ; 22                            ;
+; 12                                           ; 31                            ;
+; 13                                           ; 20                            ;
+; 14                                           ; 27                            ;
+; 15                                           ; 32                            ;
+; 16                                           ; 40                            ;
+; 17                                           ; 39                            ;
+; 18                                           ; 36                            ;
+; 19                                           ; 32                            ;
+; 20                                           ; 29                            ;
+; 21                                           ; 19                            ;
+; 22                                           ; 30                            ;
+; 23                                           ; 22                            ;
+; 24                                           ; 7                             ;
+; 25                                           ; 9                             ;
+; 26                                           ; 13                            ;
+; 27                                           ; 9                             ;
+; 28                                           ; 6                             ;
 ; 29                                           ; 8                             ;
-; 30                                           ; 4                             ;
-; 31                                           ; 3                             ;
-; 32                                           ; 10                            ;
-; 33                                           ; 6                             ;
-; 34                                           ; 3                             ;
-; 35                                           ; 2                             ;
+; 30                                           ; 8                             ;
+; 31                                           ; 2                             ;
+; 32                                           ; 4                             ;
+; 33                                           ; 7                             ;
+; 34                                           ; 4                             ;
+; 35                                           ; 1                             ;
 ; 36                                           ; 6                             ;
-; 37                                           ; 0                             ;
-; 38                                           ; 0                             ;
-; 39                                           ; 1                             ;
+; 37                                           ; 1                             ;
+; 38                                           ; 2                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -1344,10 +1351,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+----------------------+-------------------+
 ; Source Clock(s)                              ; Destination Clock(s) ; Delay Added in ns ;
 +----------------------------------------------+----------------------+-------------------+
-; clock                                        ; opCode[0]            ; 229.2             ;
-; clock                                        ; clock                ; 67.1              ;
-; clock,resetCPU,opCode[0]                     ; clock                ; 32.7              ;
-; clock,CPU:Calculator|Random:Rand|fourthClock ; opCode[0]            ; 25.0              ;
+; clock                                        ; opCode[0]            ; 98.2              ;
+; clock                                        ; clock                ; 88.8              ;
+; clock,opCode[0],resetCPU                     ; clock                ; 30.1              ;
+; clock,CPU:Calculator|Random:Rand|fourthClock ; opCode[0]            ; 15.5              ;
+; clock                                        ; clock,opCode[0]      ; 3.0               ;
+; clock,opCode[0]                              ; clock                ; 2.6               ;
 +----------------------------------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1358,106 +1367,106 @@ This will disable optimization of problematic paths and expose them for further 
 +--------------------------------------------------+-----------------------------------------------+-------------------+
 ; Source Register                                  ; Destination Register                          ; Delay Added in ns ;
 +--------------------------------------------------+-----------------------------------------------+-------------------+
-; resetCPU                                         ; CPU:Calculator|Factorial:Fact|bufferResult[4] ; 3.941             ;
-; opCode[0]                                        ; CPU:Calculator|result[7]                      ; 3.398             ;
-; opCode[1]                                        ; CPU:Calculator|result[7]                      ; 3.398             ;
-; opCode[2]                                        ; CPU:Calculator|result[7]                      ; 3.398             ;
-; opCode[3]                                        ; CPU:Calculator|result[7]                      ; 3.398             ;
-; CPU:Calculator|Random:Rand|fourthClock           ; CPU:Calculator|Random:Rand|fourthClock        ; 2.799             ;
+; opCode[0]                                        ; line1[51]                                     ; 4.000             ;
+; resetCPU                                         ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 3.848             ;
+; CPU:Calculator|Random:Rand|secondClock           ; CPU:Calculator|Random:Rand|secondClock        ; 2.613             ;
 ; CPU:Calculator|Random:Rand|thirdClock            ; CPU:Calculator|Random:Rand|thirdClock         ; 2.613             ;
-; A[21]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[25]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[17]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[29]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[26]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[22]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[18]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[30]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[24]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[20]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[16]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[28]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[23]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[27]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[19]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[31]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[6]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[5]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[4]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[7]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[9]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[10]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[8]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[11]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[1]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[2]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[0]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[3]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[14]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[13]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[12]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; A[15]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[22]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[26]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[18]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[30]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[25]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[21]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[17]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[29]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[20]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[24]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[16]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[28]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[27]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[23]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[19]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[31]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[10]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[9]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[8]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[11]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[5]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[6]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[4]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[7]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[2]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[1]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[0]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[3]                                             ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[13]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[14]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[12]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; B[15]                                            ; CPU:Calculator|result[8]                      ; 2.567             ;
-; CPU:Calculator|FullAdder:Substract|result[3]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|FullAdder:Substract|result[4]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|FullAdder:Substract|result[5]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|FullAdder:Substract|result[6]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|FullAdder:Substract|result[7]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|FullAdder:Substract|result[2]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|FullAdder:Substract|result[1]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|FullAdder:Substract|result[0]     ; CPU:Calculator|result[7]                      ; 2.381             ;
-; CPU:Calculator|Random:Rand|secondClock           ; CPU:Calculator|Random:Rand|secondClock        ; 2.360             ;
-; CPU:Calculator|Divider:Divi|result[18]           ; CPU:Calculator|result[18]                     ; 2.323             ;
-; CPU:Calculator|Factorial:Fact|tempA[0]~_emulated ; CPU:Calculator|Factorial:Fact|result[0]       ; 2.253             ;
-; CPU:Calculator|setA[0]                           ; CPU:Calculator|Factorial:Fact|result[0]       ; 2.253             ;
-; CPU:Calculator|Power:Pow|tempA[0]                ; CPU:Calculator|Factorial:Fact|result[0]       ; 2.253             ;
-; CPU:Calculator|Factorial:Fact|tempA[2]~_emulated ; CPU:Calculator|Factorial:Fact|result[2]       ; 2.241             ;
-; CPU:Calculator|setA[2]                           ; CPU:Calculator|Factorial:Fact|result[2]       ; 2.241             ;
-; CPU:Calculator|Power:Pow|tempA[2]                ; CPU:Calculator|Factorial:Fact|result[2]       ; 2.241             ;
-; CPU:Calculator|FullAdder:Adder|result[7]         ; CPU:Calculator|result[7]                      ; 2.220             ;
-; CPU:Calculator|Divider:Divi|result[7]            ; CPU:Calculator|result[7]                      ; 2.220             ;
-; CPU:Calculator|Power:Pow|result[9]               ; CPU:Calculator|result[9]                      ; 2.219             ;
-; CPU:Calculator|Factorial:Fact|result[9]          ; CPU:Calculator|result[9]                      ; 2.133             ;
-; CPU:Calculator|Power:Pow|result[3]               ; CPU:Calculator|result[3]                      ; 2.131             ;
-; CPU:Calculator|Power:Pow|result[7]               ; CPU:Calculator|result[7]                      ; 2.090             ;
-; CPU:Calculator|Factorial:Fact|result[7]          ; CPU:Calculator|result[7]                      ; 2.040             ;
-; CPU:Calculator|Factorial:Fact|result[3]          ; CPU:Calculator|result[3]                      ; 2.019             ;
-; CPU:Calculator|FullAdder:Substract|result[8]     ; CPU:Calculator|result[9]                      ; 2.009             ;
-; CPU:Calculator|FullAdder:Substract|result[9]     ; CPU:Calculator|result[9]                      ; 2.009             ;
-; CPU:Calculator|FullAdder:Adder|result[3]         ; CPU:Calculator|result[3]                      ; 2.000             ;
-; CPU:Calculator|Divider:Divi|result[3]            ; CPU:Calculator|result[3]                      ; 2.000             ;
-; CPU:Calculator|Factorial:Fact|result[5]          ; CPU:Calculator|result[5]                      ; 1.980             ;
+; opCode[2]                                        ; CPU:Calculator|result[14]                     ; 2.594             ;
+; opCode[3]                                        ; CPU:Calculator|result[14]                     ; 2.594             ;
+; opCode[1]                                        ; CPU:Calculator|result[14]                     ; 2.589             ;
+; CPU:Calculator|Random:Rand|fourthClock           ; CPU:Calculator|Random:Rand|fourthClock        ; 2.396             ;
+; CPU:Calculator|Factorial:Fact|tempA[1]~_emulated ; CPU:Calculator|Factorial:Fact|bufferResult[1] ; 2.299             ;
+; CPU:Calculator|Power:Pow|tempA[1]                ; CPU:Calculator|Factorial:Fact|bufferResult[1] ; 2.299             ;
+; CPU:Calculator|setA[1]                           ; CPU:Calculator|Factorial:Fact|bufferResult[1] ; 2.299             ;
+; CPU:Calculator|Factorial:Fact|tB[0]~73           ; CPU:Calculator|Factorial:Fact|tB[0]~_emulated ; 1.834             ;
+; CPU:Calculator|setA[0]                           ; CPU:Calculator|Factorial:Fact|tB[0]~_emulated ; 1.834             ;
+; CPU:Calculator|Power:Pow|tempA[0]                ; CPU:Calculator|Factorial:Fact|tB[0]~_emulated ; 1.834             ;
+; CPU:Calculator|Factorial:Fact|tB[0]~_emulated    ; CPU:Calculator|Factorial:Fact|tB[0]~_emulated ; 1.834             ;
+; CPU:Calculator|Factorial:Fact|tA[0]~_emulated    ; CPU:Calculator|Factorial:Fact|tB[0]~_emulated ; 1.834             ;
+; B[26]                                            ; CPU:Calculator|setB[26]                       ; 1.831             ;
+; B[24]                                            ; CPU:Calculator|setB[24]                       ; 1.831             ;
+; B[16]                                            ; CPU:Calculator|setB[16]                       ; 1.831             ;
+; B[31]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[30]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[29]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[28]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[27]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[25]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[23]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[22]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[21]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[20]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[19]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[18]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[17]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[15]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[14]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[13]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[12]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[11]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[10]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[9]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[8]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[31]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[30]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[29]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[28]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[27]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[26]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[25]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[24]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[23]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[22]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[21]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[20]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[19]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[18]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[17]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[16]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[15]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[14]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[13]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[12]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[11]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[10]                                            ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[9]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[8]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[7]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[6]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[5]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[4]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[7]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[6]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[5]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[4]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[3]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[2]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[1]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; B[0]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[3]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[2]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[1]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; A[0]                                             ; CPU:Calculator|result[4]                      ; 1.787             ;
+; CPU:Calculator|Multiplier:Multi|result[6]        ; CPU:Calculator|result[6]                      ; 1.750             ;
+; CPU:Calculator|Multiplier:Multi|result[14]       ; CPU:Calculator|result[14]                     ; 1.702             ;
+; CPU:Calculator|Factorial:Fact|tempA[2]~_emulated ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 1.466             ;
+; CPU:Calculator|Factorial:Fact|bufferResult[1]    ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 1.466             ;
+; CPU:Calculator|Power:Pow|tempA[2]                ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 1.466             ;
+; CPU:Calculator|setA[2]                           ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 1.466             ;
+; CPU:Calculator|Factorial:Fact|bufferResult[0]    ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 1.466             ;
+; CPU:Calculator|Factorial:Fact|tempA[0]~_emulated ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 1.466             ;
+; CPU:Calculator|Factorial:Fact|bufferResult[2]    ; CPU:Calculator|Factorial:Fact|bufferResult[3] ; 1.332             ;
+; CPU:Calculator|setB[15]                          ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[14]                          ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[13]                          ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[12]                          ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[11]                          ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[10]                          ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[9]                           ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[8]                           ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|setB[7]                           ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|Random:Rand|counter[30]           ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
+; CPU:Calculator|Random:Rand|counter[29]           ; CPU:Calculator|Random:Rand|secondClock        ; 1.307             ;
 +--------------------------------------------------+-----------------------------------------------+-------------------+
 Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
@@ -1509,13 +1518,13 @@ Info (176353): Automatically promoted node resetCPU  File: /mnt/External/Codigos
         Info (176357): Destination node CPU:Calculator|Comparison:Compare|Equal File: /mnt/External/Codigos/Calculator32bits/Comparison.vhd Line: 6
         Info (176357): Destination node CPU:Calculator|Comparison:Compare|Higher File: /mnt/External/Codigos/Calculator32bits/Comparison.vhd Line: 6
         Info (176357): Destination node CPU:Calculator|Comparison:Compare|Lower File: /mnt/External/Codigos/Calculator32bits/Comparison.vhd Line: 6
-        Info (176357): Destination node CPU:Calculator|Factorial:Fact|result[1]~0 File: /mnt/External/Codigos/Calculator32bits/Factorial.vhd Line: 34
-        Info (176357): Destination node CPU:Calculator|Power:Pow|result[9]~0 File: /mnt/External/Codigos/Calculator32bits/Power.vhd Line: 33
-        Info (176357): Destination node CPU:Calculator|FullAdder:Substract|result[6]~0 File: /mnt/External/Codigos/Calculator32bits/FullAdder.vhd Line: 19
-        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[15]~2 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[14]~6 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[13]~10 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[12]~14 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
+        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[15]~2 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[14]~6 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[13]~10 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[12]~14 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[11]~18 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[10]~22 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+        Info (176357): Destination node CPU:Calculator|Divider:Divi|tB[9]~26 File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
         Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176353): Automatically promoted node CPU:Calculator|Random:Rand|secondClock  File: /mnt/External/Codigos/Calculator32bits/Random.vhd Line: 13
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
@@ -1531,40 +1540,48 @@ Info (176353): Automatically promoted node CPU:Calculator|Random:Rand|thirdClock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node CPU:Calculator|Random:Rand|flag~0 File: /mnt/External/Codigos/Calculator32bits/Random.vhd Line: 17
         Info (176357): Destination node CPU:Calculator|Random:Rand|thirdClock~0 File: /mnt/External/Codigos/Calculator32bits/Random.vhd Line: 13
-Info (176353): Automatically promoted node CPU:Calculator|Mux3~0  File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 109
+Info (176353): Automatically promoted node CPU:Calculator|Mux32~0  File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 109
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node CPU:Calculator|Mux1~15 File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 109
-        Info (176357): Destination node CPU:Calculator|Mux2~4 File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 109
-        Info (176357): Destination node CPU:Calculator|Mux3~5 File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 109
+        Info (176357): Destination node CPU:Calculator|Mux2~5 File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 109
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|StageOut[85]~251 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_u6f.tdf Line: 139
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|StageOut[85]~252 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_u6f.tdf Line: 139
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|StageOut[91]~254 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_u6f.tdf Line: 139
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|StageOut[90]~255 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_u6f.tdf Line: 139
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div4|lpm_divide_tim:auto_generated|sign_div_unsign_llh:divider|alt_u_div_u6f:divider|StageOut[90]~256 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_u6f.tdf Line: 139
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_57f:divider|StageOut[145]~381 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_57f.tdf Line: 139
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_57f:divider|StageOut[136]~382 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_57f.tdf Line: 139
+        Info (176357): Destination node BinaryToBCD:BinaryBCD|lpm_divide:Div3|lpm_divide_6jm:auto_generated|sign_div_unsign_ulh:divider|alt_u_div_57f:divider|StageOut[136]~383 File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_57f.tdf Line: 139
+        Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176218): Packed 18 registers into blocks of type Embedded multiplier block
     Extra Info (176220): Created 17 register duplicates
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:14
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:19
 Info (170193): Fitter routing operations beginning
-Info (170089): 4e+02 ns of routing delay (approximately 1.7% of available device routing delay) has been added to meet hold timing. For more information, refer to the Estimated Delay Added for Hold Timing section in the Fitter report.
+Info (170089): 2e+02 ns of routing delay (approximately 1.2% of available device routing delay) has been added to meet hold timing. For more information, refer to the Estimated Delay Added for Hold Timing section in the Fitter report.
 Info (170195): Router estimated average interconnect usage is 16% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 20% of the available device resources in the region that extends from location X11_Y12 to location X22_Y24
+    Info (170196): Router estimated peak interconnect usage is 18% of the available device resources in the region that extends from location X0_Y0 to location X10_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:10
-Info (11888): Total time spent on timing analysis during the Fitter is 5.00 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:13
+Info (11888): Total time spent on timing analysis during the Fitter is 6.20 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 781 megabytes
-    Info: Processing ended: Sun Jan 14 23:14:00 2024
-    Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Peak virtual memory: 790 megabytes
+    Info: Processing ended: Mon Jan 15 19:13:08 2024
+    Info: Elapsed time: 00:00:46
+    Info: Total CPU time (on all processors): 00:01:04
 
 

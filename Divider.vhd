@@ -10,7 +10,7 @@ entity Divider is
 	);
 end Divider;
 architecture ArchMultiplier of Divider is
-	signal tempResult, bufferResult : std_logic_vector(31 downto 0) := (others => '0');
+	signal tempResult, bufferResult, temp : std_logic_vector(31 downto 0) := (others => '0');
 	signal tempA : std_logic_vector(31 downto 0) := "0000000000000000" & A;
 	signal tB, counter : integer := 0;
 	function Adder (A : std_logic_vector(31 downto 0); B : std_logic_vector(31 downto 0)) return std_logic_vector is
@@ -30,6 +30,7 @@ architecture ArchMultiplier of Divider is
 begin
 	process(clock, reset, bufferResult, tempResult, tempA)
 	begin
+		temp(0 downto 0) <= "1";
 		if reset = '0' then
 			tempResult <= (others => '0');
 			bufferResult <= (others => '0');
@@ -37,14 +38,12 @@ begin
 			tB <= conv_integer(B);
 		elsif rising_edge(clock) then
 			tB <= conv_integer(B);
-			if counter < tB then
-				tempResult <= bufferResult;
+			if bufferResult < tB then
 				bufferResult <= Adder(tempA, bufferResult);
-				--tempResult <= Adder(tempA, bufferResult);
-				counter <= counter + 1;
+				tempResult <= Adder(tempResult, temp);
 			else
 				--result <= conv_std_logic_vector(counter, 32);
-				result <= bufferResult;
+				result <= tempResult;
 			end if;
 		end if;
 	end process;

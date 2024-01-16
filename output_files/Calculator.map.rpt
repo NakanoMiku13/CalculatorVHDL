@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Calculator
-Sun Jan 14 23:13:25 2024
+Mon Jan 15 19:12:21 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -17,46 +17,47 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   9. State Machine - |Calculator|LCD:DisplayLCD|state
  10. User-Specified and Inferred Latches
  11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: Keyboard:InputKeyboard
- 16. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div4
- 17. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod4
- 18. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div2
- 19. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod2
- 20. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div1
- 21. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod1
- 22. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod5
- 23. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div3
- 24. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod3
- 25. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div0
- 26. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod0
- 27. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3
- 28. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1
- 29. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1
- 30. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3
- 31. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1
- 32. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1
- 33. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2
- 34. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2
- 35. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0
- 36. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod0
- 37. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Div2
- 38. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2
- 39. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0
- 40. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod0
- 41. Parameter Settings for Inferred Entity Instance: Converter:ConverterRAM|lpm_mult:Mult0
- 42. lpm_mult Parameter Settings by Entity Instance
- 43. Port Connectivity Checks: "CPU:Calculator|Multiplier:Multi"
- 44. Port Connectivity Checks: "CPU:Calculator|FullAdder:Substract"
- 45. Port Connectivity Checks: "CPU:Calculator|FullAdder:Adder"
- 46. Port Connectivity Checks: "CPU:Calculator|FullAdder:AdderPC"
- 47. Port Connectivity Checks: "CPU:Calculator|ROM:ROMAccess"
- 48. Port Connectivity Checks: "CPU:Calculator"
- 49. Post-Synthesis Netlist Statistics for Top Partition
- 50. Elapsed Time Per Partition
- 51. Analysis & Synthesis Messages
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: Keyboard:InputKeyboard
+ 17. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div4
+ 18. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod4
+ 19. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div2
+ 20. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod2
+ 21. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div1
+ 22. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod1
+ 23. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod5
+ 24. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div3
+ 25. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod3
+ 26. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Div0
+ 27. Parameter Settings for Inferred Entity Instance: BinaryToBCD:BinaryBCD|lpm_divide:Mod0
+ 28. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3
+ 29. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Div1
+ 30. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1
+ 31. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3
+ 32. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Div1
+ 33. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1
+ 34. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Div2
+ 35. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2
+ 36. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0
+ 37. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod0
+ 38. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Div2
+ 39. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2
+ 40. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0
+ 41. Parameter Settings for Inferred Entity Instance: BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod0
+ 42. Parameter Settings for Inferred Entity Instance: Converter:ConverterRAM|lpm_mult:Mult0
+ 43. lpm_mult Parameter Settings by Entity Instance
+ 44. Port Connectivity Checks: "CPU:Calculator|Multiplier:Multi"
+ 45. Port Connectivity Checks: "CPU:Calculator|FullAdder:Substract"
+ 46. Port Connectivity Checks: "CPU:Calculator|FullAdder:Adder"
+ 47. Port Connectivity Checks: "CPU:Calculator|FullAdder:AdderPC"
+ 48. Port Connectivity Checks: "CPU:Calculator|ROM:ROMAccess"
+ 49. Port Connectivity Checks: "CPU:Calculator"
+ 50. Post-Synthesis Netlist Statistics for Top Partition
+ 51. Elapsed Time Per Partition
+ 52. Analysis & Synthesis Messages
 
 
 
@@ -83,15 +84,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jan 14 23:13:25 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 15 19:12:21 2024          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; Calculator                                     ;
 ; Top-level Entity Name              ; Calculator                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 8,323                                          ;
-;     Total combinational functions  ; 7,849                                          ;
-;     Dedicated logic registers      ; 1,674                                          ;
-; Total registers                    ; 1674                                           ;
+; Total logic elements               ; 8,383                                          ;
+;     Total combinational functions  ; 7,889                                          ;
+;     Dedicated logic registers      ; 1,731                                          ;
+; Total registers                    ; 1731                                           ;
 ; Total pins                         ; 37                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -275,20 +276,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 8,323       ;
+; Estimated Total logic elements              ; 8,383       ;
 ;                                             ;             ;
-; Total combinational functions               ; 7849        ;
+; Total combinational functions               ; 7889        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 2238        ;
-;     -- 3 input functions                    ; 2308        ;
-;     -- <=2 input functions                  ; 3303        ;
+;     -- 4 input functions                    ; 2242        ;
+;     -- 3 input functions                    ; 2342        ;
+;     -- <=2 input functions                  ; 3305        ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 5359        ;
-;     -- arithmetic mode                      ; 2490        ;
+;     -- normal mode                          ; 5384        ;
+;     -- arithmetic mode                      ; 2505        ;
 ;                                             ;             ;
-; Total registers                             ; 1674        ;
-;     -- Dedicated logic registers            ; 1674        ;
+; Total registers                             ; 1731        ;
+;     -- Dedicated logic registers            ; 1731        ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 37          ;
@@ -296,8 +297,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 4           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 1558        ;
-; Total fan-out                               ; 27655       ;
+; Maximum fan-out                             ; 1615        ;
+; Total fan-out                               ; 27970       ;
 ; Average fan-out                             ; 2.88        ;
 +---------------------------------------------+-------------+
 
@@ -307,7 +308,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Calculator                               ; 7849 (522)          ; 1674 (361)                ; 0           ; 4            ; 0       ; 2         ; 37   ; 0            ; |Calculator                                                                                                                           ; CPU                 ; work         ;
+; |Calculator                               ; 7889 (522)          ; 1731 (361)                ; 0           ; 4            ; 0       ; 2         ; 37   ; 0            ; |Calculator                                                                                                                           ; CPU                 ; work         ;
 ;    |BinaryToBCD:BinaryBCD|                ; 3213 (1)            ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD                                                                                                     ; BinaryToBCD         ; work         ;
 ;       |lpm_divide:Div0|                   ; 142 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
 ;          |lpm_divide_okm:auto_generated|  ; 142 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Div0|lpm_divide_okm:auto_generated                                                       ; lpm_divide_okm      ; work         ;
@@ -353,7 +354,7 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_ecm:auto_generated|  ; 575 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated                                                       ; lpm_divide_ecm      ; work         ;
 ;             |sign_div_unsign_lnh:divider| ; 575 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider                           ; sign_div_unsign_lnh ; work         ;
 ;                |alt_u_div_r9f:divider|    ; 575 (575)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCD:BinaryBCD|lpm_divide:Mod5|lpm_divide_ecm:auto_generated|sign_div_unsign_lnh:divider|alt_u_div_r9f:divider     ; alt_u_div_r9f       ; work         ;
-;    |BinaryToBCDLow:BinaryBCDA|            ; 894 (0)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA                                                                                                 ; BinaryToBCDLow      ; work         ;
+;    |BinaryToBCDLow:BinaryBCDA|            ; 887 (1)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA                                                                                                 ; BinaryToBCDLow      ; work         ;
 ;       |lpm_divide:Div0|                   ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_ckm:auto_generated|  ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0|lpm_divide_ckm:auto_generated                                                   ; lpm_divide_ckm      ; work         ;
 ;             |sign_div_unsign_4nh:divider| ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider                       ; sign_div_unsign_4nh ; work         ;
@@ -374,15 +375,15 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_icm:auto_generated|  ; 109 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 109 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 109 (109)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;       |lpm_divide:Mod2|                   ; 192 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 192 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_jnh:divider| ; 192 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
-;                |alt_u_div_5af:divider|    ; 192 (192)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
+;       |lpm_divide:Mod2|                   ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_jnh:divider| ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
+;                |alt_u_div_5af:divider|    ; 184 (184)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
 ;       |lpm_divide:Mod3|                   ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_icm:auto_generated|  ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 232 (232)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;    |BinaryToBCDLow:BinaryBCDB|            ; 888 (1)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB                                                                                                 ; BinaryToBCDLow      ; work         ;
+;    |BinaryToBCDLow:BinaryBCDB|            ; 887 (1)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB                                                                                                 ; BinaryToBCDLow      ; work         ;
 ;       |lpm_divide:Div0|                   ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_ckm:auto_generated|  ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0|lpm_divide_ckm:auto_generated                                                   ; lpm_divide_ckm      ; work         ;
 ;             |sign_div_unsign_4nh:divider| ; 92 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Div0|lpm_divide_ckm:auto_generated|sign_div_unsign_4nh:divider                       ; sign_div_unsign_4nh ; work         ;
@@ -403,20 +404,21 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_icm:auto_generated|  ; 109 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 109 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 109 (109)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;       |lpm_divide:Mod2|                   ; 185 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 185 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_jnh:divider| ; 185 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
-;                |alt_u_div_5af:divider|    ; 185 (185)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
+;       |lpm_divide:Mod2|                   ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_jnh:divider| ; 184 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
+;                |alt_u_div_5af:divider|    ; 184 (184)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
 ;       |lpm_divide:Mod3|                   ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_icm:auto_generated|  ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_jnh:divider| ; 232 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider                       ; sign_div_unsign_jnh ; work         ;
 ;                |alt_u_div_5af:divider|    ; 232 (232)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider ; alt_u_div_5af       ; work         ;
-;    |CPU:Calculator|                       ; 1749 (298)          ; 869 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator                                                                                                            ; CPU                 ; work         ;
+;    |CPU:Calculator|                       ; 1797 (263)          ; 926 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator                                                                                                            ; CPU                 ; work         ;
 ;       |Comparison:Compare|                ; 67 (67)             ; 69 (69)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Comparison:Compare                                                                                         ; Comparison          ; work         ;
-;       |Divider:Divi|                      ; 146 (146)           ; 88 (88)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Divider:Divi                                                                                               ; Divider             ; work         ;
+;       |Divider:Divi|                      ; 131 (131)           ; 73 (73)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Divider:Divi                                                                                               ; Divider             ; work         ;
 ;       |Factorial:Fact|                    ; 306 (306)           ; 161 (161)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Factorial:Fact                                                                                             ; Factorial           ; work         ;
 ;       |FullAdder:Adder|                   ; 107 (107)           ; 105 (105)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|FullAdder:Adder                                                                                            ; FullAdder           ; work         ;
 ;       |FullAdder:Substract|               ; 156 (156)           ; 73 (73)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|FullAdder:Substract                                                                                        ; FullAdder           ; work         ;
+;       |Multiplier:Multi|                  ; 98 (98)             ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Multiplier:Multi                                                                                           ; Multiplier          ; work         ;
 ;       |Power:Pow|                         ; 247 (247)           ; 189 (189)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Power:Pow                                                                                                  ; Power               ; work         ;
 ;       |ROM:ROMAccess|                     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|ROM:ROMAccess                                                                                              ; ROM                 ; work         ;
 ;       |Random:Rand|                       ; 419 (419)           ; 184 (184)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Calculator|CPU:Calculator|Random:Rand                                                                                                ; Random              ; work         ;
@@ -564,214 +566,168 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                          ;
-+--------------------------------------------------+----------------------------------------------------------+
-; Register name                                    ; Reason for Removal                                       ;
-+--------------------------------------------------+----------------------------------------------------------+
-; line2[126,127]                                   ; Stuck at GND due to stuck port data_in                   ;
-; line2[125]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line2[111,119]                                   ; Stuck at GND due to stuck port data_in                   ;
-; line2[109]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line2[103]                                       ; Stuck at GND due to stuck port data_in                   ;
-; line2[101]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line2[87,95]                                     ; Stuck at GND due to stuck port data_in                   ;
-; line2[85]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[71,79]                                     ; Stuck at GND due to stuck port data_in                   ;
-; line2[69]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[63]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line2[61]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[55]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line2[53]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[39,47,49]                                  ; Stuck at GND due to stuck port data_in                   ;
-; line2[37]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[31]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line2[29]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[23]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line2[21]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[15]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line2[13]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line2[6,7]                                       ; Stuck at GND due to stuck port data_in                   ;
-; line2[5]                                         ; Stuck at VCC due to stuck port data_in                   ;
-; line1[127]                                       ; Stuck at GND due to stuck port data_in                   ;
-; line1[120]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line1[119]                                       ; Stuck at GND due to stuck port data_in                   ;
-; line1[117]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line1[116]                                       ; Stuck at GND due to stuck port data_in                   ;
-; line1[114]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line1[113]                                       ; Stuck at GND due to stuck port data_in                   ;
-; line1[112]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line1[111]                                       ; Stuck at GND due to stuck port data_in                   ;
-; line1[109]                                       ; Stuck at VCC due to stuck port data_in                   ;
-; line1[95,96,100,103..105,108]                    ; Stuck at GND due to stuck port data_in                   ;
-; line1[94]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[86,87,92]                                  ; Stuck at GND due to stuck port data_in                   ;
-; line1[85]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[79,80,82]                                  ; Stuck at GND due to stuck port data_in                   ;
-; line1[77]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[71,72,75]                                  ; Stuck at GND due to stuck port data_in                   ;
-; line1[70]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[63]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line1[62]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[47,55]                                     ; Stuck at GND due to stuck port data_in                   ;
-; line1[45]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[39]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line1[37]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[31]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line1[29]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[23]                                        ; Stuck at GND due to stuck port data_in                   ;
-; line1[21]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[15,20]                                     ; Stuck at GND due to stuck port data_in                   ;
-; line1[13]                                        ; Stuck at VCC due to stuck port data_in                   ;
-; line1[7,12]                                      ; Stuck at GND due to stuck port data_in                   ;
-; line1[5]                                         ; Stuck at VCC due to stuck port data_in                   ;
-; line1[4]                                         ; Stuck at GND due to stuck port data_in                   ;
-; CPU:Calculator|Divider:Divi|tB[16..31]           ; Stuck at GND due to stuck port data_in                   ;
-; CPU:Calculator|Multiplier:Multi|tB[16..31]       ; Stuck at GND due to stuck port data_in                   ;
-; operationSelector[3]                             ; Stuck at GND due to stuck port data_in                   ;
-; counter[1..30]                                   ; Merged with counter[31]                                  ;
-; line1[56,81,83,84,101,106,107,110,118,121,124]   ; Merged with line1[126]                                   ;
-; line1[73,74,76,78,91,93,97..99,102,115,122,123]  ; Merged with line1[125]                                   ;
-; line1[1,41]                                      ; Merged with line1[0]                                     ;
-; line2[4,12,20,36,48,51,68,76,124]                ; Merged with line2[116]                                   ;
-; line1[9,36,43]                                   ; Merged with line1[17]                                    ;
-; line1[3,6]                                       ; Merged with line1[2]                                     ;
-; line2[28,50,52,84,108]                           ; Merged with line2[100]                                   ;
-; line1[61]                                        ; Merged with line1[53]                                    ;
-; line2[77]                                        ; Merged with line2[45]                                    ;
-; line2[14,22,30,38,54,62,70,86,110,118]           ; Merged with line2[102]                                   ;
-; CPU:Calculator|Multiplier:Multi|result[1]        ; Merged with CPU:Calculator|Divider:Divi|result[1]        ;
-; CPU:Calculator|Multiplier:Multi|result[0]        ; Merged with CPU:Calculator|Divider:Divi|result[0]        ;
-; CPU:Calculator|Multiplier:Multi|result[2]        ; Merged with CPU:Calculator|Divider:Divi|result[2]        ;
-; CPU:Calculator|FullAdder:Substract|count[31]     ; Merged with CPU:Calculator|FullAdder:Adder|count[31]     ;
-; CPU:Calculator|FullAdder:Substract|count[30]     ; Merged with CPU:Calculator|FullAdder:Adder|count[30]     ;
-; CPU:Calculator|FullAdder:Substract|count[29]     ; Merged with CPU:Calculator|FullAdder:Adder|count[29]     ;
-; CPU:Calculator|FullAdder:Substract|count[28]     ; Merged with CPU:Calculator|FullAdder:Adder|count[28]     ;
-; CPU:Calculator|FullAdder:Substract|count[27]     ; Merged with CPU:Calculator|FullAdder:Adder|count[27]     ;
-; CPU:Calculator|FullAdder:Substract|count[26]     ; Merged with CPU:Calculator|FullAdder:Adder|count[26]     ;
-; CPU:Calculator|FullAdder:Substract|count[25]     ; Merged with CPU:Calculator|FullAdder:Adder|count[25]     ;
-; CPU:Calculator|FullAdder:Substract|count[24]     ; Merged with CPU:Calculator|FullAdder:Adder|count[24]     ;
-; CPU:Calculator|FullAdder:Substract|count[23]     ; Merged with CPU:Calculator|FullAdder:Adder|count[23]     ;
-; CPU:Calculator|FullAdder:Substract|count[22]     ; Merged with CPU:Calculator|FullAdder:Adder|count[22]     ;
-; CPU:Calculator|FullAdder:Substract|count[21]     ; Merged with CPU:Calculator|FullAdder:Adder|count[21]     ;
-; CPU:Calculator|FullAdder:Substract|count[20]     ; Merged with CPU:Calculator|FullAdder:Adder|count[20]     ;
-; CPU:Calculator|FullAdder:Substract|count[19]     ; Merged with CPU:Calculator|FullAdder:Adder|count[19]     ;
-; CPU:Calculator|FullAdder:Substract|count[18]     ; Merged with CPU:Calculator|FullAdder:Adder|count[18]     ;
-; CPU:Calculator|FullAdder:Substract|count[17]     ; Merged with CPU:Calculator|FullAdder:Adder|count[17]     ;
-; CPU:Calculator|FullAdder:Substract|count[16]     ; Merged with CPU:Calculator|FullAdder:Adder|count[16]     ;
-; CPU:Calculator|FullAdder:Substract|count[15]     ; Merged with CPU:Calculator|FullAdder:Adder|count[15]     ;
-; CPU:Calculator|FullAdder:Substract|count[14]     ; Merged with CPU:Calculator|FullAdder:Adder|count[14]     ;
-; CPU:Calculator|FullAdder:Substract|count[13]     ; Merged with CPU:Calculator|FullAdder:Adder|count[13]     ;
-; CPU:Calculator|FullAdder:Substract|count[12]     ; Merged with CPU:Calculator|FullAdder:Adder|count[12]     ;
-; CPU:Calculator|FullAdder:Substract|count[11]     ; Merged with CPU:Calculator|FullAdder:Adder|count[11]     ;
-; CPU:Calculator|FullAdder:Substract|count[10]     ; Merged with CPU:Calculator|FullAdder:Adder|count[10]     ;
-; CPU:Calculator|FullAdder:Substract|count[9]      ; Merged with CPU:Calculator|FullAdder:Adder|count[9]      ;
-; CPU:Calculator|FullAdder:Substract|count[8]      ; Merged with CPU:Calculator|FullAdder:Adder|count[8]      ;
-; CPU:Calculator|FullAdder:Substract|count[7]      ; Merged with CPU:Calculator|FullAdder:Adder|count[7]      ;
-; CPU:Calculator|FullAdder:Substract|count[6]      ; Merged with CPU:Calculator|FullAdder:Adder|count[6]      ;
-; CPU:Calculator|FullAdder:Substract|count[4]      ; Merged with CPU:Calculator|FullAdder:Adder|count[4]      ;
-; CPU:Calculator|FullAdder:Substract|count[3]      ; Merged with CPU:Calculator|FullAdder:Adder|count[3]      ;
-; CPU:Calculator|FullAdder:Substract|count[2]      ; Merged with CPU:Calculator|FullAdder:Adder|count[2]      ;
-; CPU:Calculator|FullAdder:Substract|count[1]      ; Merged with CPU:Calculator|FullAdder:Adder|count[1]      ;
-; CPU:Calculator|FullAdder:Substract|count[0]      ; Merged with CPU:Calculator|FullAdder:Adder|count[0]      ;
-; CPU:Calculator|FullAdder:Substract|count[5]      ; Merged with CPU:Calculator|FullAdder:Adder|count[5]      ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[1]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[1]  ;
-; CPU:Calculator|Multiplier:Multi|tB[15]           ; Merged with CPU:Calculator|Divider:Divi|tB[15]           ;
-; CPU:Calculator|Multiplier:Multi|tB[14]           ; Merged with CPU:Calculator|Divider:Divi|tB[14]           ;
-; CPU:Calculator|Multiplier:Multi|tB[13]           ; Merged with CPU:Calculator|Divider:Divi|tB[13]           ;
-; CPU:Calculator|Multiplier:Multi|tB[12]           ; Merged with CPU:Calculator|Divider:Divi|tB[12]           ;
-; CPU:Calculator|Multiplier:Multi|tB[11]           ; Merged with CPU:Calculator|Divider:Divi|tB[11]           ;
-; CPU:Calculator|Multiplier:Multi|tB[10]           ; Merged with CPU:Calculator|Divider:Divi|tB[10]           ;
-; CPU:Calculator|Multiplier:Multi|tB[9]            ; Merged with CPU:Calculator|Divider:Divi|tB[9]            ;
-; CPU:Calculator|Multiplier:Multi|tB[8]            ; Merged with CPU:Calculator|Divider:Divi|tB[8]            ;
-; CPU:Calculator|Multiplier:Multi|tB[7]            ; Merged with CPU:Calculator|Divider:Divi|tB[7]            ;
-; CPU:Calculator|Multiplier:Multi|tB[6]            ; Merged with CPU:Calculator|Divider:Divi|tB[6]            ;
-; CPU:Calculator|Multiplier:Multi|tB[5]            ; Merged with CPU:Calculator|Divider:Divi|tB[5]            ;
-; CPU:Calculator|Multiplier:Multi|tB[4]            ; Merged with CPU:Calculator|Divider:Divi|tB[4]            ;
-; CPU:Calculator|Multiplier:Multi|tB[3]            ; Merged with CPU:Calculator|Divider:Divi|tB[3]            ;
-; CPU:Calculator|Multiplier:Multi|tB[2]            ; Merged with CPU:Calculator|Divider:Divi|tB[2]            ;
-; CPU:Calculator|Multiplier:Multi|tB[1]            ; Merged with CPU:Calculator|Divider:Divi|tB[1]            ;
-; CPU:Calculator|Multiplier:Multi|tB[0]            ; Merged with CPU:Calculator|Divider:Divi|tB[0]            ;
-; CPU:Calculator|Multiplier:Multi|counter[31]      ; Merged with CPU:Calculator|Divider:Divi|counter[31]      ;
-; CPU:Calculator|Multiplier:Multi|counter[30]      ; Merged with CPU:Calculator|Divider:Divi|counter[30]      ;
-; CPU:Calculator|Multiplier:Multi|counter[29]      ; Merged with CPU:Calculator|Divider:Divi|counter[29]      ;
-; CPU:Calculator|Multiplier:Multi|counter[28]      ; Merged with CPU:Calculator|Divider:Divi|counter[28]      ;
-; CPU:Calculator|Multiplier:Multi|counter[27]      ; Merged with CPU:Calculator|Divider:Divi|counter[27]      ;
-; CPU:Calculator|Multiplier:Multi|counter[26]      ; Merged with CPU:Calculator|Divider:Divi|counter[26]      ;
-; CPU:Calculator|Multiplier:Multi|counter[25]      ; Merged with CPU:Calculator|Divider:Divi|counter[25]      ;
-; CPU:Calculator|Multiplier:Multi|counter[24]      ; Merged with CPU:Calculator|Divider:Divi|counter[24]      ;
-; CPU:Calculator|Multiplier:Multi|counter[23]      ; Merged with CPU:Calculator|Divider:Divi|counter[23]      ;
-; CPU:Calculator|Multiplier:Multi|counter[22]      ; Merged with CPU:Calculator|Divider:Divi|counter[22]      ;
-; CPU:Calculator|Multiplier:Multi|counter[21]      ; Merged with CPU:Calculator|Divider:Divi|counter[21]      ;
-; CPU:Calculator|Multiplier:Multi|counter[20]      ; Merged with CPU:Calculator|Divider:Divi|counter[20]      ;
-; CPU:Calculator|Multiplier:Multi|counter[19]      ; Merged with CPU:Calculator|Divider:Divi|counter[19]      ;
-; CPU:Calculator|Multiplier:Multi|counter[18]      ; Merged with CPU:Calculator|Divider:Divi|counter[18]      ;
-; CPU:Calculator|Multiplier:Multi|counter[17]      ; Merged with CPU:Calculator|Divider:Divi|counter[17]      ;
-; CPU:Calculator|Multiplier:Multi|counter[16]      ; Merged with CPU:Calculator|Divider:Divi|counter[16]      ;
-; CPU:Calculator|Multiplier:Multi|counter[15]      ; Merged with CPU:Calculator|Divider:Divi|counter[15]      ;
-; CPU:Calculator|Multiplier:Multi|counter[14]      ; Merged with CPU:Calculator|Divider:Divi|counter[14]      ;
-; CPU:Calculator|Multiplier:Multi|counter[13]      ; Merged with CPU:Calculator|Divider:Divi|counter[13]      ;
-; CPU:Calculator|Multiplier:Multi|counter[12]      ; Merged with CPU:Calculator|Divider:Divi|counter[12]      ;
-; CPU:Calculator|Multiplier:Multi|counter[11]      ; Merged with CPU:Calculator|Divider:Divi|counter[11]      ;
-; CPU:Calculator|Multiplier:Multi|counter[10]      ; Merged with CPU:Calculator|Divider:Divi|counter[10]      ;
-; CPU:Calculator|Multiplier:Multi|counter[9]       ; Merged with CPU:Calculator|Divider:Divi|counter[9]       ;
-; CPU:Calculator|Multiplier:Multi|counter[8]       ; Merged with CPU:Calculator|Divider:Divi|counter[8]       ;
-; CPU:Calculator|Multiplier:Multi|counter[7]       ; Merged with CPU:Calculator|Divider:Divi|counter[7]       ;
-; CPU:Calculator|Multiplier:Multi|counter[6]       ; Merged with CPU:Calculator|Divider:Divi|counter[6]       ;
-; CPU:Calculator|Multiplier:Multi|counter[5]       ; Merged with CPU:Calculator|Divider:Divi|counter[5]       ;
-; CPU:Calculator|Multiplier:Multi|counter[4]       ; Merged with CPU:Calculator|Divider:Divi|counter[4]       ;
-; CPU:Calculator|Multiplier:Multi|counter[3]       ; Merged with CPU:Calculator|Divider:Divi|counter[3]       ;
-; CPU:Calculator|Multiplier:Multi|counter[2]       ; Merged with CPU:Calculator|Divider:Divi|counter[2]       ;
-; CPU:Calculator|Multiplier:Multi|counter[1]       ; Merged with CPU:Calculator|Divider:Divi|counter[1]       ;
-; CPU:Calculator|Multiplier:Multi|counter[0]       ; Merged with CPU:Calculator|Divider:Divi|counter[0]       ;
-; CPU:Calculator|Power:Pow|tB[8,9,11..31]          ; Merged with CPU:Calculator|Power:Pow|tB[10]              ;
-; CPU:Calculator|Factorial:Fact|tA[4..9,11..31]    ; Merged with CPU:Calculator|Factorial:Fact|tA[10]         ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[0]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[0]  ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[2]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[2]  ;
-; CPU:Calculator|Multiplier:Multi|result[19]       ; Merged with CPU:Calculator|Divider:Divi|result[19]       ;
-; CPU:Calculator|Multiplier:Multi|result[18]       ; Merged with CPU:Calculator|Divider:Divi|result[18]       ;
-; CPU:Calculator|Multiplier:Multi|result[17]       ; Merged with CPU:Calculator|Divider:Divi|result[17]       ;
-; CPU:Calculator|Multiplier:Multi|result[16]       ; Merged with CPU:Calculator|Divider:Divi|result[16]       ;
-; CPU:Calculator|Multiplier:Multi|result[15]       ; Merged with CPU:Calculator|Divider:Divi|result[15]       ;
-; CPU:Calculator|Multiplier:Multi|result[14]       ; Merged with CPU:Calculator|Divider:Divi|result[14]       ;
-; CPU:Calculator|Multiplier:Multi|result[13]       ; Merged with CPU:Calculator|Divider:Divi|result[13]       ;
-; CPU:Calculator|Multiplier:Multi|result[12]       ; Merged with CPU:Calculator|Divider:Divi|result[12]       ;
-; CPU:Calculator|Multiplier:Multi|result[11]       ; Merged with CPU:Calculator|Divider:Divi|result[11]       ;
-; CPU:Calculator|Multiplier:Multi|result[10]       ; Merged with CPU:Calculator|Divider:Divi|result[10]       ;
-; CPU:Calculator|Multiplier:Multi|result[9]        ; Merged with CPU:Calculator|Divider:Divi|result[9]        ;
-; CPU:Calculator|Multiplier:Multi|result[8]        ; Merged with CPU:Calculator|Divider:Divi|result[8]        ;
-; CPU:Calculator|Multiplier:Multi|result[7]        ; Merged with CPU:Calculator|Divider:Divi|result[7]        ;
-; CPU:Calculator|Multiplier:Multi|result[6]        ; Merged with CPU:Calculator|Divider:Divi|result[6]        ;
-; CPU:Calculator|Multiplier:Multi|result[5]        ; Merged with CPU:Calculator|Divider:Divi|result[5]        ;
-; CPU:Calculator|Multiplier:Multi|result[4]        ; Merged with CPU:Calculator|Divider:Divi|result[4]        ;
-; CPU:Calculator|Multiplier:Multi|result[3]        ; Merged with CPU:Calculator|Divider:Divi|result[3]        ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[19] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[19] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[18] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[18] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[17] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[17] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[16] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[16] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[15] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[15] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[14] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[14] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[13] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[13] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[12] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[12] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[11] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[11] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[10] ; Merged with CPU:Calculator|Divider:Divi|bufferResult[10] ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[9]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[9]  ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[8]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[8]  ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[7]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[7]  ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[6]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[6]  ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[5]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[5]  ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[4]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[4]  ;
-; CPU:Calculator|Multiplier:Multi|bufferResult[3]  ; Merged with CPU:Calculator|Divider:Divi|bufferResult[3]  ;
-; counter[31]                                      ; Stuck at GND due to stuck port data_in                   ;
-; line1[125]                                       ; Merged with line1[126]                                   ;
-; LCD:DisplayLCD|rw                                ; Stuck at GND due to stuck port data_in                   ;
-; resetBCD                                         ; Stuck at VCC due to stuck port data_in                   ;
-; Keyboard:InputKeyboard|CONTA_1MS[0]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[0]         ;
-; Keyboard:InputKeyboard|CONTA_1MS[1]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[1]         ;
-; Keyboard:InputKeyboard|CONTA_1MS[2]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[2]         ;
-; Keyboard:InputKeyboard|CONTA_1MS[3]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[3]         ;
-; Total Number of Removed Registers = 377          ;                                                          ;
-+--------------------------------------------------+----------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++--------------------------------------------------+------------------------------------------------------+
+; Register name                                    ; Reason for Removal                                   ;
++--------------------------------------------------+------------------------------------------------------+
+; line2[126,127]                                   ; Stuck at GND due to stuck port data_in               ;
+; line2[125]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line2[111,119]                                   ; Stuck at GND due to stuck port data_in               ;
+; line2[109]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line2[103]                                       ; Stuck at GND due to stuck port data_in               ;
+; line2[101]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line2[87,95]                                     ; Stuck at GND due to stuck port data_in               ;
+; line2[85]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[71,79]                                     ; Stuck at GND due to stuck port data_in               ;
+; line2[69]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[63]                                        ; Stuck at GND due to stuck port data_in               ;
+; line2[61]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[55]                                        ; Stuck at GND due to stuck port data_in               ;
+; line2[53]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[39,47,49]                                  ; Stuck at GND due to stuck port data_in               ;
+; line2[37]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[31]                                        ; Stuck at GND due to stuck port data_in               ;
+; line2[29]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[23]                                        ; Stuck at GND due to stuck port data_in               ;
+; line2[21]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[15]                                        ; Stuck at GND due to stuck port data_in               ;
+; line2[13]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line2[6,7]                                       ; Stuck at GND due to stuck port data_in               ;
+; line2[5]                                         ; Stuck at VCC due to stuck port data_in               ;
+; line1[127]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[120]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[119]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[117]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[116]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[114]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[113]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[112]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[111]                                       ; Stuck at GND due to stuck port data_in               ;
+; line1[109]                                       ; Stuck at VCC due to stuck port data_in               ;
+; line1[95,96,100,103..105,108]                    ; Stuck at GND due to stuck port data_in               ;
+; line1[94]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[86,87,92]                                  ; Stuck at GND due to stuck port data_in               ;
+; line1[85]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[79,80,82]                                  ; Stuck at GND due to stuck port data_in               ;
+; line1[77]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[71,72,75]                                  ; Stuck at GND due to stuck port data_in               ;
+; line1[70]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[63]                                        ; Stuck at GND due to stuck port data_in               ;
+; line1[62]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[47,55]                                     ; Stuck at GND due to stuck port data_in               ;
+; line1[45]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[39]                                        ; Stuck at GND due to stuck port data_in               ;
+; line1[37]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[31]                                        ; Stuck at GND due to stuck port data_in               ;
+; line1[29]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[23]                                        ; Stuck at GND due to stuck port data_in               ;
+; line1[21]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[15,20]                                     ; Stuck at GND due to stuck port data_in               ;
+; line1[13]                                        ; Stuck at VCC due to stuck port data_in               ;
+; line1[7,12]                                      ; Stuck at GND due to stuck port data_in               ;
+; line1[5]                                         ; Stuck at VCC due to stuck port data_in               ;
+; line1[4]                                         ; Stuck at GND due to stuck port data_in               ;
+; CPU:Calculator|Divider:Divi|tB[16..31]           ; Stuck at GND due to stuck port data_in               ;
+; CPU:Calculator|Multiplier:Multi|tB[16..31]       ; Stuck at GND due to stuck port data_in               ;
+; operationSelector[3]                             ; Stuck at GND due to stuck port data_in               ;
+; counter[1..30]                                   ; Merged with counter[31]                              ;
+; line1[56,81,83,84,101,106,107,110,118,121,124]   ; Merged with line1[126]                               ;
+; line1[73,74,76,78,91,93,97..99,102,115,122,123]  ; Merged with line1[125]                               ;
+; line1[1,41]                                      ; Merged with line1[0]                                 ;
+; line2[4,12,20,36,48,51,68,76,124]                ; Merged with line2[116]                               ;
+; line1[9,36,43]                                   ; Merged with line1[17]                                ;
+; line1[3,6]                                       ; Merged with line1[2]                                 ;
+; line2[28,50,52,84,108]                           ; Merged with line2[100]                               ;
+; line1[61]                                        ; Merged with line1[53]                                ;
+; line2[77]                                        ; Merged with line2[45]                                ;
+; line2[14,22,30,38,54,62,70,86,110,118]           ; Merged with line2[102]                               ;
+; CPU:Calculator|FullAdder:Substract|count[31]     ; Merged with CPU:Calculator|FullAdder:Adder|count[31] ;
+; CPU:Calculator|FullAdder:Substract|count[30]     ; Merged with CPU:Calculator|FullAdder:Adder|count[30] ;
+; CPU:Calculator|FullAdder:Substract|count[29]     ; Merged with CPU:Calculator|FullAdder:Adder|count[29] ;
+; CPU:Calculator|FullAdder:Substract|count[28]     ; Merged with CPU:Calculator|FullAdder:Adder|count[28] ;
+; CPU:Calculator|FullAdder:Substract|count[27]     ; Merged with CPU:Calculator|FullAdder:Adder|count[27] ;
+; CPU:Calculator|FullAdder:Substract|count[26]     ; Merged with CPU:Calculator|FullAdder:Adder|count[26] ;
+; CPU:Calculator|FullAdder:Substract|count[25]     ; Merged with CPU:Calculator|FullAdder:Adder|count[25] ;
+; CPU:Calculator|FullAdder:Substract|count[24]     ; Merged with CPU:Calculator|FullAdder:Adder|count[24] ;
+; CPU:Calculator|FullAdder:Substract|count[23]     ; Merged with CPU:Calculator|FullAdder:Adder|count[23] ;
+; CPU:Calculator|FullAdder:Substract|count[22]     ; Merged with CPU:Calculator|FullAdder:Adder|count[22] ;
+; CPU:Calculator|FullAdder:Substract|count[21]     ; Merged with CPU:Calculator|FullAdder:Adder|count[21] ;
+; CPU:Calculator|FullAdder:Substract|count[20]     ; Merged with CPU:Calculator|FullAdder:Adder|count[20] ;
+; CPU:Calculator|FullAdder:Substract|count[19]     ; Merged with CPU:Calculator|FullAdder:Adder|count[19] ;
+; CPU:Calculator|FullAdder:Substract|count[18]     ; Merged with CPU:Calculator|FullAdder:Adder|count[18] ;
+; CPU:Calculator|FullAdder:Substract|count[17]     ; Merged with CPU:Calculator|FullAdder:Adder|count[17] ;
+; CPU:Calculator|FullAdder:Substract|count[16]     ; Merged with CPU:Calculator|FullAdder:Adder|count[16] ;
+; CPU:Calculator|FullAdder:Substract|count[15]     ; Merged with CPU:Calculator|FullAdder:Adder|count[15] ;
+; CPU:Calculator|FullAdder:Substract|count[14]     ; Merged with CPU:Calculator|FullAdder:Adder|count[14] ;
+; CPU:Calculator|FullAdder:Substract|count[13]     ; Merged with CPU:Calculator|FullAdder:Adder|count[13] ;
+; CPU:Calculator|FullAdder:Substract|count[12]     ; Merged with CPU:Calculator|FullAdder:Adder|count[12] ;
+; CPU:Calculator|FullAdder:Substract|count[11]     ; Merged with CPU:Calculator|FullAdder:Adder|count[11] ;
+; CPU:Calculator|FullAdder:Substract|count[10]     ; Merged with CPU:Calculator|FullAdder:Adder|count[10] ;
+; CPU:Calculator|FullAdder:Substract|count[9]      ; Merged with CPU:Calculator|FullAdder:Adder|count[9]  ;
+; CPU:Calculator|FullAdder:Substract|count[8]      ; Merged with CPU:Calculator|FullAdder:Adder|count[8]  ;
+; CPU:Calculator|FullAdder:Substract|count[7]      ; Merged with CPU:Calculator|FullAdder:Adder|count[7]  ;
+; CPU:Calculator|FullAdder:Substract|count[6]      ; Merged with CPU:Calculator|FullAdder:Adder|count[6]  ;
+; CPU:Calculator|FullAdder:Substract|count[4]      ; Merged with CPU:Calculator|FullAdder:Adder|count[4]  ;
+; CPU:Calculator|FullAdder:Substract|count[3]      ; Merged with CPU:Calculator|FullAdder:Adder|count[3]  ;
+; CPU:Calculator|FullAdder:Substract|count[2]      ; Merged with CPU:Calculator|FullAdder:Adder|count[2]  ;
+; CPU:Calculator|FullAdder:Substract|count[1]      ; Merged with CPU:Calculator|FullAdder:Adder|count[1]  ;
+; CPU:Calculator|FullAdder:Substract|count[0]      ; Merged with CPU:Calculator|FullAdder:Adder|count[0]  ;
+; CPU:Calculator|FullAdder:Substract|count[5]      ; Merged with CPU:Calculator|FullAdder:Adder|count[5]  ;
+; CPU:Calculator|Multiplier:Multi|tB[15]           ; Merged with CPU:Calculator|Divider:Divi|tB[15]       ;
+; CPU:Calculator|Multiplier:Multi|tB[14]           ; Merged with CPU:Calculator|Divider:Divi|tB[14]       ;
+; CPU:Calculator|Multiplier:Multi|tB[13]           ; Merged with CPU:Calculator|Divider:Divi|tB[13]       ;
+; CPU:Calculator|Multiplier:Multi|tB[12]           ; Merged with CPU:Calculator|Divider:Divi|tB[12]       ;
+; CPU:Calculator|Multiplier:Multi|tB[11]           ; Merged with CPU:Calculator|Divider:Divi|tB[11]       ;
+; CPU:Calculator|Multiplier:Multi|tB[10]           ; Merged with CPU:Calculator|Divider:Divi|tB[10]       ;
+; CPU:Calculator|Multiplier:Multi|tB[9]            ; Merged with CPU:Calculator|Divider:Divi|tB[9]        ;
+; CPU:Calculator|Multiplier:Multi|tB[8]            ; Merged with CPU:Calculator|Divider:Divi|tB[8]        ;
+; CPU:Calculator|Multiplier:Multi|tB[7]            ; Merged with CPU:Calculator|Divider:Divi|tB[7]        ;
+; CPU:Calculator|Multiplier:Multi|tB[6]            ; Merged with CPU:Calculator|Divider:Divi|tB[6]        ;
+; CPU:Calculator|Multiplier:Multi|tB[5]            ; Merged with CPU:Calculator|Divider:Divi|tB[5]        ;
+; CPU:Calculator|Multiplier:Multi|tB[4]            ; Merged with CPU:Calculator|Divider:Divi|tB[4]        ;
+; CPU:Calculator|Multiplier:Multi|tB[3]            ; Merged with CPU:Calculator|Divider:Divi|tB[3]        ;
+; CPU:Calculator|Multiplier:Multi|tB[2]            ; Merged with CPU:Calculator|Divider:Divi|tB[2]        ;
+; CPU:Calculator|Multiplier:Multi|tB[1]            ; Merged with CPU:Calculator|Divider:Divi|tB[1]        ;
+; CPU:Calculator|Multiplier:Multi|tB[0]            ; Merged with CPU:Calculator|Divider:Divi|tB[0]        ;
+; CPU:Calculator|Power:Pow|tB[8,9,11..31]          ; Merged with CPU:Calculator|Power:Pow|tB[10]          ;
+; CPU:Calculator|Factorial:Fact|tA[4..9,11..31]    ; Merged with CPU:Calculator|Factorial:Fact|tA[10]     ;
+; counter[31]                                      ; Stuck at GND due to stuck port data_in               ;
+; line1[125]                                       ; Merged with line1[126]                               ;
+; LCD:DisplayLCD|rw                                ; Stuck at GND due to stuck port data_in               ;
+; resetBCD                                         ; Stuck at VCC due to stuck port data_in               ;
+; CPU:Calculator|Divider:Divi|bufferResult[30,31]  ; Stuck at GND due to stuck port data_in               ;
+; CPU:Calculator|Divider:Divi|bufferResult[17..28] ; Stuck at GND due to stuck port clock_enable          ;
+; CPU:Calculator|Divider:Divi|bufferResult[29]     ; Stuck at GND due to stuck port data_in               ;
+; Keyboard:InputKeyboard|CONTA_1MS[0]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[0]     ;
+; Keyboard:InputKeyboard|CONTA_1MS[1]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[1]     ;
+; Keyboard:InputKeyboard|CONTA_1MS[2]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[2]     ;
+; Keyboard:InputKeyboard|CONTA_1MS[3]              ; Merged with Keyboard:InputKeyboard|CONTA_10MS[3]     ;
+; Total Number of Removed Registers = 320          ;                                                      ;
++--------------------------------------------------+------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                    ;
++------------------------------------+---------------------------+-----------------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register        ;
++------------------------------------+---------------------------+-----------------------------------------------+
+; CPU:Calculator|Divider:Divi|tB[31] ; Stuck at GND              ; CPU:Calculator|Divider:Divi|bufferResult[31], ;
+;                                    ; due to stuck port data_in ; CPU:Calculator|Divider:Divi|bufferResult[30], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[28], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[27], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[26], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[25], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[24], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[23], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[22], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[21], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[20], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[19], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[18], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[17], ;
+;                                    ;                           ; CPU:Calculator|Divider:Divi|bufferResult[29]  ;
++------------------------------------+---------------------------+-----------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -779,12 +735,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1674  ;
+; Total registers                              ; 1731  ;
 ; Number of registers using Synchronous Clear  ; 285   ;
 ; Number of registers using Synchronous Load   ; 112   ;
-; Number of registers using Asynchronous Clear ; 797   ;
+; Number of registers using Asynchronous Clear ; 834   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 944   ;
+; Number of registers using Clock Enable       ; 980   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -799,7 +755,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; LCD:DisplayLCD|ptr[2]                  ; 54      ;
 ; LCD:DisplayLCD|ptr[3]                  ; 34      ;
 ; LCD:DisplayLCD|line                    ; 5       ;
-; resetCPU                               ; 857     ;
+; resetCPU                               ; 895     ;
 ; writeRAM1_Flag                         ; 188     ;
 ; multiplier[0]                          ; 4       ;
 ; Total number of inverted registers = 8 ;         ;
@@ -843,7 +799,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Calculator|Mux68                                   ;
 ; 7:1                ; 32 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; No         ; |Calculator|CPU:Calculator|Mux63                    ;
 ; 8:1                ; 32 bits   ; 160 LEs       ; 0 LEs                ; 160 LEs                ; No         ; |Calculator|CPU:Calculator|Mux87                    ;
-; 16:1               ; 17 bits   ; 170 LEs       ; 85 LEs               ; 85 LEs                 ; No         ; |Calculator|CPU:Calculator|Mux12                    ;
+; 16:1               ; 17 bits   ; 170 LEs       ; 102 LEs              ; 68 LEs                 ; No         ; |Calculator|CPU:Calculator|Mux12                    ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 12 LEs               ; 10 LEs                 ; No         ; |Calculator|CPU:Calculator|Mux1                     ;
 ; 32:1               ; 2 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |Calculator|CPU:Calculator|FullAdder:Substract|Mux0 ;
 ; 33:1               ; 2 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |Calculator|CPU:Calculator|FullAdder:Substract|Mux2 ;
@@ -1561,11 +1517,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 1674                        ;
-;     CLR               ; 222                         ;
+; cycloneiii_ff         ; 1731                        ;
+;     CLR               ; 243                         ;
 ;     CLR SCLR          ; 64                          ;
-;     ENA               ; 336                         ;
-;     ENA CLR           ; 363                         ;
+;     ENA               ; 356                         ;
+;     ENA CLR           ; 379                         ;
 ;     ENA CLR SCLR      ; 148                         ;
 ;     ENA SCLR          ; 30                          ;
 ;     ENA SLD           ; 67                          ;
@@ -1573,22 +1529,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR SLD          ; 38                          ;
 ;     SLD               ; 7                           ;
 ;     plain             ; 394                         ;
-; cycloneiii_lcell_comb ; 7855                        ;
-;     arith             ; 2490                        ;
+; cycloneiii_lcell_comb ; 7895                        ;
+;     arith             ; 2505                        ;
 ;         1 data inputs ; 55                          ;
 ;         2 data inputs ; 716                         ;
-;         3 data inputs ; 1719                        ;
-;     normal            ; 5365                        ;
+;         3 data inputs ; 1734                        ;
+;     normal            ; 5390                        ;
 ;         0 data inputs ; 197                         ;
-;         1 data inputs ; 79                          ;
-;         2 data inputs ; 2262                        ;
-;         3 data inputs ; 589                         ;
-;         4 data inputs ; 2238                        ;
+;         1 data inputs ; 73                          ;
+;         2 data inputs ; 2270                        ;
+;         3 data inputs ; 608                         ;
+;         4 data inputs ; 2242                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 52.70                       ;
-; Average LUT depth     ; 21.46                       ;
+; Average LUT depth     ; 21.35                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1597,7 +1553,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -1607,7 +1563,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sun Jan 14 23:13:08 2024
+    Info: Processing started: Mon Jan 15 19:12:00 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Calculator -c Calculator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1665,6 +1621,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file Factori
 Info (12021): Found 2 design units, including 1 entities, in source file Random.vhd
     Info (12022): Found design unit 1: Random-ArchRandom File: /mnt/External/Codigos/Calculator32bits/Random.vhd Line: 12
     Info (12023): Found entity 1: Random File: /mnt/External/Codigos/Calculator32bits/Random.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file RGBMatrix.vhd
+    Info (12022): Found design unit 1: RGBMatrix-ArchRGB File: /mnt/External/Codigos/Calculator32bits/RGBMatrix.vhd Line: 9
+    Info (12023): Found entity 1: RGBMatrix File: /mnt/External/Codigos/Calculator32bits/RGBMatrix.vhd Line: 3
 Info (12127): Elaborating entity "Calculator" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at Calculator.vhd(8): used implicit default value for signal "leds" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 8
 Warning (10036): Verilog HDL or VHDL warning at Calculator.vhd(87): object "ramOut" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Calculator.vhd Line: 87
@@ -1818,9 +1777,9 @@ Warning (10036): Verilog HDL or VHDL warning at Multiplier.vhd(14): object "temp
 Warning (10540): VHDL Signal Declaration warning at Multiplier.vhd(15): used explicit default value for signal "tempA" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 15
 Warning (10492): VHDL Process Statement warning at Multiplier.vhd(38): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Multiplier.vhd Line: 38
 Info (12128): Elaborating entity "Divider" for hierarchy "CPU:Calculator|Divider:Divi" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 167
-Warning (10036): Verilog HDL or VHDL warning at Divider.vhd(13): object "tempResult" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 13
 Warning (10540): VHDL Signal Declaration warning at Divider.vhd(14): used explicit default value for signal "tempA" because signal was never assigned a value File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 14
-Warning (10492): VHDL Process Statement warning at Divider.vhd(37): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 37
+Warning (10036): Verilog HDL or VHDL warning at Divider.vhd(15): object "counter" assigned a value but never read File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 15
+Warning (10492): VHDL Process Statement warning at Divider.vhd(38): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 38
 Info (12128): Elaborating entity "Comparison" for hierarchy "CPU:Calculator|Comparison:Compare" File: /mnt/External/Codigos/Calculator32bits/CPU.vhd Line: 168
 Warning (10631): VHDL Process Statement warning at Comparison.vhd(14): inferring latch(es) for signal or variable "H", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/Comparison.vhd Line: 14
 Warning (10631): VHDL Process Statement warning at Comparison.vhd(14): inferring latch(es) for signal or variable "E", which holds its previous value in one or more paths through the process File: /mnt/External/Codigos/Calculator32bits/Comparison.vhd Line: 14
@@ -2100,22 +2059,22 @@ Warning (13004): Presettable and clearable registers converted to equivalent cir
     Warning (13310): Register "CPU:Calculator|Power:Pow|tB[2]" is converted into an equivalent circuit using register "CPU:Calculator|Power:Pow|tB[2]~_emulated" and latch "CPU:Calculator|Power:Pow|tB[2]~25" File: /mnt/External/Codigos/Calculator32bits/Power.vhd Line: 33
     Warning (13310): Register "CPU:Calculator|Power:Pow|tB[1]" is converted into an equivalent circuit using register "CPU:Calculator|Power:Pow|tB[1]~_emulated" and latch "CPU:Calculator|Power:Pow|tB[1]~29" File: /mnt/External/Codigos/Calculator32bits/Power.vhd Line: 33
     Warning (13310): Register "CPU:Calculator|Power:Pow|tB[0]" is converted into an equivalent circuit using register "CPU:Calculator|Power:Pow|tB[0]~_emulated" and latch "CPU:Calculator|Power:Pow|tB[0]~33" File: /mnt/External/Codigos/Calculator32bits/Power.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[15]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[15]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[15]~1" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[14]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[14]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[14]~5" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[13]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[13]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[13]~9" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[12]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[12]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[12]~13" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[11]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[11]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[11]~17" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[10]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[10]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[10]~21" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[9]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[9]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[9]~25" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[8]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[8]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[8]~29" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[7]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[7]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[7]~33" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[6]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[6]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[6]~37" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[5]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[5]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[5]~41" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[4]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[4]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[4]~45" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[3]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[3]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[3]~49" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[2]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[2]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[2]~53" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[1]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[1]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[1]~57" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
-    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[0]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[0]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[0]~61" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 33
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[15]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[15]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[15]~1" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[14]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[14]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[14]~5" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[13]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[13]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[13]~9" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[12]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[12]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[12]~13" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[11]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[11]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[11]~17" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[10]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[10]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[10]~21" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[9]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[9]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[9]~25" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[8]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[8]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[8]~29" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[7]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[7]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[7]~33" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[6]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[6]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[6]~37" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[5]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[5]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[5]~41" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[4]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[4]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[4]~45" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[3]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[3]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[3]~49" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[2]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[2]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[2]~53" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[1]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[1]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[1]~57" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
+    Warning (13310): Register "CPU:Calculator|Divider:Divi|tB[0]" is converted into an equivalent circuit using register "CPU:Calculator|Divider:Divi|tB[0]~_emulated" and latch "CPU:Calculator|Divider:Divi|tB[0]~61" File: /mnt/External/Codigos/Calculator32bits/Divider.vhd Line: 34
     Warning (13310): Register "CPU:Calculator|Factorial:Fact|tempA[2]" is converted into an equivalent circuit using register "CPU:Calculator|Factorial:Fact|tempA[2]~_emulated" and latch "CPU:Calculator|Factorial:Fact|tA[2]~5" File: /mnt/External/Codigos/Calculator32bits/Factorial.vhd Line: 34
     Warning (13310): Register "CPU:Calculator|Factorial:Fact|tempA[0]" is converted into an equivalent circuit using register "CPU:Calculator|Factorial:Fact|tempA[0]~_emulated" and latch "CPU:Calculator|Factorial:Fact|tA[0]~11" File: /mnt/External/Codigos/Calculator32bits/Factorial.vhd Line: 34
     Warning (13310): Register "CPU:Calculator|Factorial:Fact|tB[31]" is converted into an equivalent circuit using register "CPU:Calculator|Factorial:Fact|tB[31]~_emulated" and latch "CPU:Calculator|Factorial:Fact|tB[31]~1" File: /mnt/External/Codigos/Calculator32bits/Factorial.vhd Line: 34
@@ -2214,26 +2173,18 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_10_result_int[0]~22" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 37
     Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_11_result_int[0]~24" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 42
     Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|op_3~0"
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_12_result_int[0]~0" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 47
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_6_result_int[0]~14" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 72
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_7_result_int[0]~16" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 77
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_8_result_int[0]~18" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 82
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_9_result_int[0]~20" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 87
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_10_result_int[0]~22" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 37
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_11_result_int[0]~24" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 42
     Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDA|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|op_3~0"
-    Info (17048): Logic cell "BinaryToBCDLow:BinaryBCDB|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_jnh:divider|alt_u_div_5af:divider|add_sub_7_result_int[0]~16" File: /mnt/External/Codigos/Calculator32bits/db/alt_u_div_5af.tdf Line: 77
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 8396 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8456 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 8355 logic cells
+    Info (21061): Implemented 8415 logic cells
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 195 warnings
-    Info: Peak virtual memory: 521 megabytes
-    Info: Processing ended: Sun Jan 14 23:13:25 2024
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 537 megabytes
+    Info: Processing ended: Mon Jan 15 19:12:22 2024
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:29
 
 
